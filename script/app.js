@@ -49,13 +49,13 @@ function ramenSnack(){
         userObj.hunger += 1;
         userObj.money -= 2.25;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
-    } else if (userObj.hunger < 95) {
+    } else if (userObj.hunger < 99) {
         document.getElementById('broadcast').innerHTML = hungryNoMoney;
         setTimeout(clearBroadcast, 3000);
-    } else if (userObj.hunger > 95) {
+    } else if (userObj.hunger > 99) {
         document.getElementById('broadcast').innerHTML = notHungry;
         setTimeout(clearBroadcast, 3000);
-    } else if (userObj.hunger < 95 && userObj.money < 2.25){
+    } else if (userObj.hunger < 99 && userObj.money < 2.25){
         alert("you are hungry and without money.");
     }
 }
