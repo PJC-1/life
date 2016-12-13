@@ -7,9 +7,9 @@ var notHungry = "You are not hungry now.";
 
 // user object
 var userObj = {
-    money: 0,
+    money: 1.00,
     hunger: 75,
-    happiness: 100,
+    happiness: 75,
     purchased: []
 }
 
@@ -19,16 +19,22 @@ function clearBroadcast(){
 }
 
 // money
-var time = setInterval(addMoneyByTime, 1500);
+var time = setInterval(addMoneyByTime, 1700);
 
 function funTime(){
-  userObj.money += 5;
+  userObj.money += 1.00;
   document.getElementById('money').innerHTML = moneySign + userObj.money;
 }
 
 function addMoneyByTime(){
-  userObj.money += 1;
+  userObj.money += 0.25;
   document.getElementById('money').innerHTML = moneySign + userObj.money;
+}
+
+if (userObj.money < 1){
+  alert("You officially broke");
+  userObj.money = 0;
+  userObj.happiness -= 25;
 }
 
 // hunger
