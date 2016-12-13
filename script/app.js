@@ -38,7 +38,7 @@ function ramenSnack(){
     } else if (userObj.hunger < 95) {
       document.getElementById('broadcast').innerHTML = hungryNoMoney;
       setTimeout(clearBroadcast, 3000);
-    } else if (userObj.hunger >= 100) {
+    } else if (userObj.hunger > 95) {
       document.getElementById('broadcast').innerHTML = notHungry;
       setTimeout(clearBroadcast, 3000);
     } else if (userObj.hunger < 95 && userObj.money < 5){
