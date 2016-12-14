@@ -13,6 +13,10 @@ var userObj = {
     fullfillment: 0
 }
 
+var foods = {
+
+}
+
 // broadcast
 function clearBroadcast(){
     document.getElementById('broadcast').innerHTML = "";
@@ -95,4 +99,13 @@ function move() {
             document.getElementById("label").innerHTML = width * 1 + '%';
         }
     }
+}
+
+function clickShow(){
+    var y = document.getElementById('pizzaUpgrade');
+    var x = document.getElementById('pizzaPizza');
+        x.style.visibility = 'visible';
+        y.style.visibility = 'hidden';
+
+
 }

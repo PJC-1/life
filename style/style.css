@@ -6,6 +6,11 @@
     width: 75px;
 }
 
+#pizzaPizza {
+    width: 45px;
+    visibility: hidden;
+}
+
 #ramenImage {
     width: 50px;
     margin-top: 30px;
