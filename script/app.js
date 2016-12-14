@@ -9,7 +9,8 @@ var notHungry = "You are not hungry now.";
 var userObj = {
     money: 1.00,
     hunger: 75,
-    happiness: 75
+    happiness: 75,
+    fullfillment: 0
 }
 
 // broadcast
@@ -20,9 +21,23 @@ function clearBroadcast(){
 // money
 var time = setInterval(addMoneyByTime, 1700);
 
+function afterMove(){
+  userObj.money += 1.00;
+  document.getElementById('money').innerHTML = moneySign + userObj.money;
+  // document.getElementById('myBar').setAttribute("style", "width: 1%");
+  document.getElementById('myBar').style.width = "1%";
+  document.getElementById('label').innerHTML = "1%";
+}
+
+function clearProgress(){
+  document.getElementById('myBar').setAttribute("style", "width: 1%");
+  document.getElementById('label').innerHTML = "1%";
+}
+
 function funTime(){
-    userObj.money += 1.00;
-    document.getElementById('money').innerHTML = moneySign + userObj.money;
+  var elem = document.getElementById("myBar");
+  move();
+  afterMove();
 }
 
 function addMoneyByTime(){
@@ -37,7 +52,7 @@ if (userObj.money < 1){
 }
 
 // hunger
-var hunger = setInterval(gettingHungery, 30000);
+var hunger = setInterval(gettingHungery, 15000);
 
 function gettingHungery(){
     userObj.hunger -= 1;
@@ -57,5 +72,27 @@ function ramenSnack(){
         setTimeout(clearBroadcast, 3000);
     } else if (userObj.hunger < 99 && userObj.money < 2.25){
         alert("you are hungry and without money.");
+    }
+}
+
+function createPizzaSnack(){
+    var i = document.createElement("IMG");
+    i.setAttribute("src", "./assets/pizzaRolls.png");
+    i.setAttribute("width", "50");
+    document.getElementById('pizzaLocation').appendChild(i);
+}
+
+function move() {
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++;
+            elem.style.width = width + '%';
+            document.getElementById("label").innerHTML = width * 1 + '%';
+        }
     }
 }

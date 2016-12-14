@@ -10,3 +10,23 @@
     width: 50px;
     margin-top: 30px;
 }
+
+#myProgress {
+    position: relative;
+    width: 50%;
+    height: 17px;
+    background-color: grey;
+    margin-top: 10px;
+}
+#myBar {
+    position: absolute;
+    width: 1%;
+    height: 100%;
+    background-color: black;
+}
+
+#label {
+    text-align: center;
+    line-height: 16px;
+    color: white;
+}
