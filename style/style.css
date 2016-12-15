@@ -1,6 +1,3 @@
-#bestRegards {
-    margin-bottom: 50px;
-}
 
 #workImage {
     width: 75px;
@@ -15,13 +12,16 @@
     width: 50px;
     margin-top: 30px;
 }
+#progressTitle  {
+    margin-bottom: 0px;
+}
 
 #myProgress {
     position: relative;
-    width: 50%;
+    width: 30%;
     height: 17px;
     background-color: grey;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 #myBar {
     position: absolute;
@@ -34,4 +34,25 @@
     text-align: center;
     line-height: 16px;
     color: white;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#brTitle {
+  animation-duration: 2s;
+  animation-name: bounceIn;
+  margin-bottom: 50px;
+  font-size: 20px;
 }
