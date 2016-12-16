@@ -14,7 +14,14 @@ var userObj = {
 }
 
 var foodObj = {
-
+    ramenSnack: {
+        fill: 1,
+        cost: 2.25
+    },
+    pizzaSnack: {
+        fill: 3,
+        cost: 4.75
+    }
 }
 
 var skillsObj = {
