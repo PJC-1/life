@@ -49,6 +49,22 @@ function clearProgress(){
   document.getElementById('label').innerHTML = "1%";
 }
 
+// progress bar
+function move() {
+  var elem = document.getElementById("myBar");
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      document.getElementById("label").innerHTML = width * 1 + '%';
+    }
+  }
+}
+
 function funTime(){
   var elem = document.getElementById("myBar");
   move();
@@ -65,8 +81,6 @@ if (userObj.money < 1){
     userObj.money = 0;
     userObj.happiness -= 25;
 }
-
-
 
 // hunger
 var hunger = setInterval(gettingHungery, 60000);
@@ -93,11 +107,12 @@ function ramenSnack(){
 }
 
 // pizza
-
 function clearUpgradeBroadcast(){
   var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
 }
 
+// this will be replaced with the testAdding() because instead of having the
+// pizzaSnack hidden and then visable, it will be appended to the DOM.
 function clickShow(){
     var upgradeDenied = "you need more money to ungrade your food choices.";
     if (userObj.money >= 10){
@@ -127,13 +142,7 @@ function pizzaSnack(){
     }
 }
 
-// function createPizzaSnack(){
-//     var i = document.createElement("IMG");
-//     i.setAttribute("src", "./assets/pizzaRolls.png");
-//     i.setAttribute("width", "50");
-//     document.getElementById('pizzaLocation').appendChild(i);
-// }
-
+// test function to append pizzaSnack to the DOM
 function createTest(){
   var i = document.createElement("IMG");
   i.setAttribute("src", "./assets/pizzaRolls.png");
@@ -141,31 +150,21 @@ function createTest(){
   document.getElementById('addingFood').appendChild(i);
 }
 
+// used with testAdding()
+var lightSwtich = true;
+
 function testAdding(){
     if(userObj.money > 5 && lightSwtich === true) {
-      var i = document.createElement("IMG");
-      i.setAttribute("src", "./assets/pizzaRolls.png");
-      i.setAttribute("width", "50");
-      document.getElementById('addingFood').appendChild(i);
-      lightSwtich = false;
+        var i = document.createElement("IMG");
+        i.setAttribute("src", "./assets/pizzaRolls.png");
+        i.setAttribute("width", "50");
+        i.setAttribute("onclick", "pizzaSnack()");
+        i.setAttribute("id", "pizzaPizza");
+        document.getElementById('addingFood').appendChild(i);
+        lightSwtich = false;
     } else if (lightSwtich === false) {
-
+        // this will prevent appending another pizza roll to the page
     } else {
-      alert('you don\'t have enough money');
-    }
-}
-var lightSwtich = true;
-function move() {
-    var elem = document.getElementById("myBar");
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-        if (width >= 100) {
-            clearInterval(id);
-        } else {
-            width++;
-            elem.style.width = width + '%';
-            document.getElementById("label").innerHTML = width * 1 + '%';
-        }
+        alert('you don\'t have enough money');
     }
 }
