@@ -134,6 +134,27 @@ function pizzaSnack(){
 //     document.getElementById('pizzaLocation').appendChild(i);
 // }
 
+function createTest(){
+  var i = document.createElement("IMG");
+  i.setAttribute("src", "./assets/pizzaRolls.png");
+  i.setAttribute("width", "50");
+  document.getElementById('addingFood').appendChild(i);
+}
+
+function testAdding(){
+    if(userObj.money > 5 && lightSwtich === true) {
+      var i = document.createElement("IMG");
+      i.setAttribute("src", "./assets/pizzaRolls.png");
+      i.setAttribute("width", "50");
+      document.getElementById('addingFood').appendChild(i);
+      lightSwtich = false;
+    } else if (lightSwtich === false) {
+
+    } else {
+      alert('you don\'t have enough money');
+    }
+}
+var lightSwtich = true;
 function move() {
     var elem = document.getElementById("myBar");
     var width = 1;
