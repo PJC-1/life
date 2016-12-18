@@ -9,6 +9,7 @@ var notHungry = "You are not hungry now.";
 var userObj = {
     money: 1.00,
     hunger: 75,
+    foodLevel: 1,
     happiness: 75,
     fullfillment: 0
 }
@@ -16,11 +17,13 @@ var userObj = {
 var foodObj = {
     ramenSnack: {
         fill: 1,
-        cost: 2.25
+        cost: 2.25,
+        src: "./assets/ramen.png"
     },
     pizzaSnack: {
         fill: 3,
-        cost: 4.75
+        cost: 4.75,
+        src: "./assets/pizzaRolls.png"
     }
 }
 
