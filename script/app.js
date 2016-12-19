@@ -35,6 +35,7 @@ var jobObj = {
 
 }
 
+
 // broadcast
 function clearBroadcast(){
     document.getElementById('broadcast').innerHTML = "";
@@ -92,13 +93,20 @@ if (userObj.money < 1){
     userObj.happiness -= 25;
 }
 
+
 // hunger
 var hunger = setInterval(gettingHungery, 60000);
 
 function gettingHungery(){
     userObj.hunger -= 1;
     document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+    // hunger reminder
+    if (userObj.hunger < 39){
+      document.getElementById('testingBroadcast').innerHTML = "You are getting hungry try eatting some food.";
+      setTimeout(clearBroadcast, 3000);
+    }
 }
+
 
 function ramenSnack(){
     if (userObj.hunger <= 99 && userObj.money > 2.25){
@@ -170,7 +178,6 @@ function testAdding(){
         var i = document.createElement("IMG");
         // i.setAttribute("src", "./assets/pizzaRolls.png");
         i.setAttribute("src", src);
-
         i.setAttribute("width", "50");
         i.setAttribute("onclick", "pizzaSnack()");
         i.setAttribute("id", "pizzaPizza");
