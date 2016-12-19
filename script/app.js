@@ -11,6 +11,7 @@ var userObj = {
     hunger: 75,
     foodLevel: 1,
     happiness: 75,
+    exp: 0,
     fullfillment: 0
 }
 
@@ -18,12 +19,14 @@ var foodObj = {
     ramenSnack: {
         fill: 1,
         cost: 2.25,
-        src: "./assets/ramen.png"
+        src: "./assets/ramen.png",
+        level: 1
     },
     pizzaSnack: {
         fill: 3,
         cost: 4.75,
-        src: "./assets/pizzaRolls.png"
+        src: "./assets/pizzaRolls.png",
+        level: 2
     }
 }
 
