@@ -30,10 +30,12 @@ var foodObj = {
     }
 }
 
+// skills object
 var skillsObj = {
 
 }
 
+// jobs object
 var jobObj = {
 
 }
@@ -179,7 +181,6 @@ function testAdding(){
     var src = foodObj.pizzaSnack.src;
     if(userObj.money > 5 && lightSwtich === true) {
         var i = document.createElement("IMG");
-        // i.setAttribute("src", "./assets/pizzaRolls.png");
         i.setAttribute("src", src);
         i.setAttribute("width", "50");
         i.setAttribute("onclick", "pizzaSnack()");
