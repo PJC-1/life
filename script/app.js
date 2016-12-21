@@ -40,7 +40,6 @@ var jobObj = {
 
 }
 
-
 // broadcast
 function clearBroadcast(){
     document.getElementById('broadcast').innerHTML = "";
@@ -48,22 +47,6 @@ function clearBroadcast(){
 
 // money
 var time = setInterval(addMoneyByTime, 1700);
-
-function afterMove(){
-  userObj.money += 1.00;
-  document.getElementById('money').innerHTML = moneySign + userObj.money;
-  // this is another way to change the attribute
-  // document.getElementById('myBar').setAttribute("style", "width: 1%");
-  // these next to lines of code are not working yet.
-  document.getElementById('myBar').style.width = "1%";
-  document.getElementById('label').innerHTML = "1%";
-}
-
-// this function is not working yet, and does not clear the progress bar
-function clearProgress(){
-  document.getElementById('myBar').setAttribute("style", "width: 1%");
-  document.getElementById('label').innerHTML = "1%";
-}
 
 // progress bar
 function move() {
@@ -78,13 +61,18 @@ function move() {
       elem.style.width = width + '%';
       document.getElementById("label").innerHTML = width * 1 + '%';
     }
+    if (width === 100){
+      userObj.money += 1.00;
+      document.getElementById('money').innerHTML = moneySign + userObj.money;
+      document.getElementById('myBar').setAttribute("style", "width: 1%");
+      document.getElementById('label').innerHTML = "1%";
+    }
   }
 }
 
 function funTime(){
   var elem = document.getElementById("myBar");
   move();
-  afterMove();
 }
 
 function addMoneyByTime(){
