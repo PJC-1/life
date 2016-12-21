@@ -122,22 +122,6 @@ function clearUpgradeBroadcast(){
     var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
 }
 
-// this will be replaced with the testAdding() because instead of having the
-// pizzaSnack hidden and then visable, it will be appended to the DOM.
-
-// function clickShow(){
-//     var upgradeDenied = "you need more money to ungrade your food choices.";
-//     if (userObj.money >= 10){
-//         var y = document.getElementById('pizzaUpgrade');
-//         var x = document.getElementById('pizzaPizza');
-//         x.style.visibility = 'visible';
-//         y.style.visibility = 'hidden';
-//     } else {
-//       document.getElementById('upgradeBroadcast').innerHTML = upgradeDenied;
-//       setTimeout(clearUpgradeBroadcast, 2000);
-//     }
-// }
-
 function pizzaSnack(){
     if (userObj.hunger <= 97 && userObj.money > 4.75){
         userObj.hunger += 3;
@@ -153,14 +137,6 @@ function pizzaSnack(){
         alert("you are hungry and without money.");
     }
 }
-
-// test function to append pizzaSnack to the DOM
-// function createTest(){
-//   var i = document.createElement("IMG");
-//   i.setAttribute("src", "./assets/pizzaRolls.png");
-//   i.setAttribute("width", "50");
-//   document.getElementById('addingFood').appendChild(i);
-// }
 
 // used with testAdding()
 var lightSwtich = true;
