@@ -50,29 +50,29 @@ var time = setInterval(addMoneyByTime, 1700);
 
 // progress bar
 function move() {
-  var elem = document.getElementById("myBar");
-  var width = 1;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-    } else {
-      width++;
-      elem.style.width = width + '%';
-      document.getElementById("label").innerHTML = width * 1 + '%';
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++;
+            elem.style.width = width + '%';
+            document.getElementById("label").innerHTML = width * 1 + '%';
+        }
+        if (width === 100){
+            userObj.money += 1.00;
+            document.getElementById('money').innerHTML = moneySign + userObj.money;
+            document.getElementById('myBar').setAttribute("style", "width: 1%");
+            document.getElementById('label').innerHTML = "1%";
+        }
     }
-    if (width === 100){
-      userObj.money += 1.00;
-      document.getElementById('money').innerHTML = moneySign + userObj.money;
-      document.getElementById('myBar').setAttribute("style", "width: 1%");
-      document.getElementById('label').innerHTML = "1%";
-    }
-  }
 }
 
 function funTime(){
-  var elem = document.getElementById("myBar");
-  move();
+    var elem = document.getElementById("myBar");
+    move();
 }
 
 function addMoneyByTime(){
@@ -92,11 +92,11 @@ var hunger = setInterval(gettingHungery, 60000);
 
 function gettingHungery(){
     userObj.hunger -= 1;
-    document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+        document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
     // hunger reminder
     if (userObj.hunger < 39){
-      document.getElementById('testingBroadcast').innerHTML = "You are getting hungry try eatting some food.";
-      setTimeout(clearBroadcast, 3000);
+        document.getElementById('testingBroadcast').innerHTML = "You are getting hungry try eatting some food.";
+        setTimeout(clearBroadcast, 3000);
     }
 }
 
@@ -119,7 +119,7 @@ function ramenSnack(){
 
 // pizza
 function clearUpgradeBroadcast(){
-  var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
+    var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
 }
 
 // this will be replaced with the testAdding() because instead of having the
