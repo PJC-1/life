@@ -71,11 +71,14 @@ function move() {
             clearInterval(id);
         } else {
             width++;
+            //this line is what increments the width attribute in the progress bar element
             elem.style.width = width + '%';
             document.getElementById("label").innerHTML = width * 1 + '%';
         }
         if (width === 100){
+            console.log(userObj.money);
             userObj.money += 1.00;
+            console.log(userObj.money);
             document.getElementById('money').innerHTML = moneySign + userObj.money;
             document.getElementById('myBar').setAttribute("style", "width: 1%");
             document.getElementById('label').innerHTML = "1%";
@@ -83,6 +86,9 @@ function move() {
     }
 }
 
+// need to check if this function is necessary, might have been created
+// with the intension of combining functionality, but as it stands it seems to
+// only have the move(), so possibily delete it.
 function funTime(){
     var elem = document.getElementById("myBar");
     move();
@@ -123,6 +129,7 @@ function clearUpgradeBroadcast(){
     var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
 }
 
+// wired to the onclick in index.html
 function pizzaSnack(){
     if (userObj.hunger <= 97 && userObj.money > 4.75){
         userObj.hunger += 3;
