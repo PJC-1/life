@@ -79,6 +79,8 @@ function move() {
             console.log(userObj.money);
             userObj.money += 1.00;
             console.log(userObj.money);
+            userObj.hunger -= .5;
+            document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
             document.getElementById('money').innerHTML = moneySign + userObj.money;
             document.getElementById('myBar').setAttribute("style", "width: 1%");
             document.getElementById('label').innerHTML = "1%";
