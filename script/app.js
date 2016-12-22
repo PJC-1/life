@@ -153,7 +153,7 @@ var pizzaSwtich = true;
 
 function testAdding(){
     var src = foodObj.pizzaSnack.src;
-    if(userObj.money > 5 && pizzaSwtich === true) {
+    if(userObj.money > 10 && pizzaSwtich === true) {
         var i = document.createElement("IMG");
         i.setAttribute("src", src);
         i.setAttribute("width", "50");
