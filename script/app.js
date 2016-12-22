@@ -151,6 +151,9 @@ function testAdding(){
         i.setAttribute("id", "pizzaPizza");
         document.getElementById('addingFood').appendChild(i);
         lightSwtich = false;
+        var parent = document.getElementById("parentDivTest");
+        var child = document.getElementById("testButton");
+        parent.removeChild(child);
     } else if (lightSwtich === false) {
         // this will prevent appending another pizza roll to the page
     } else {
