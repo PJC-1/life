@@ -15,6 +15,7 @@ var userObj = {
     fullfillment: 0
 }
 
+// food object
 var foodObj = {
     ramenSnack: {
         fill: 1,
@@ -48,6 +49,17 @@ function clearBroadcast(){
 // money
 var time = setInterval(addMoneyByTime, 1700);
 
+function addMoneyByTime(){
+  userObj.money += 0.25;
+  document.getElementById('money').innerHTML = moneySign + userObj.money;
+}
+
+if (userObj.money < 1){
+  alert("You officially broke");
+  userObj.money = 0;
+  userObj.happiness -= 25;
+}
+
 // progress bar
 function move() {
     var elem = document.getElementById("myBar");
@@ -75,18 +87,6 @@ function funTime(){
     move();
 }
 
-function addMoneyByTime(){
-    userObj.money += 0.25;
-    document.getElementById('money').innerHTML = moneySign + userObj.money;
-}
-
-if (userObj.money < 1){
-    alert("You officially broke");
-    userObj.money = 0;
-    userObj.happiness -= 25;
-}
-
-
 // hunger
 var hunger = setInterval(gettingHungery, 60000);
 
@@ -100,7 +100,7 @@ function gettingHungery(){
     }
 }
 
-
+// ramen
 function ramenSnack(){
     if (userObj.hunger <= 99 && userObj.money > 2.25){
         userObj.hunger += 1;
@@ -139,22 +139,23 @@ function pizzaSnack(){
 }
 
 // used with testAdding()
-var lightSwtich = true;
+var pizzaSwtich = true;
 
 function testAdding(){
     var src = foodObj.pizzaSnack.src;
-    if(userObj.money > 5 && lightSwtich === true) {
+    if(userObj.money > 5 && pizzaSwtich === true) {
         var i = document.createElement("IMG");
         i.setAttribute("src", src);
         i.setAttribute("width", "50");
         i.setAttribute("onclick", "pizzaSnack()");
         i.setAttribute("id", "pizzaPizza");
         document.getElementById('addingFood').appendChild(i);
-        lightSwtich = false;
+        pizzaSwtich = false;
+        // this code will remove the upgrade button
         var parent = document.getElementById("parentDivTest");
         var child = document.getElementById("testButton");
         parent.removeChild(child);
-    } else if (lightSwtich === false) {
+    } else if (pizzaSwtich === false) {
         // this will prevent appending another pizza roll to the page
     } else {
         alert('you don\'t have enough money');
