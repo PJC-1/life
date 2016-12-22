@@ -12,6 +12,7 @@ var userObj = {
     foodLevel: 1,
     happiness: 75,
     exp: 0,
+    level: 1,
     fullfillment: 0
 }
 
