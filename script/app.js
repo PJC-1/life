@@ -139,10 +139,10 @@ function pizzaSnack(){
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
     } else if (userObj.hunger < 97) {
         document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
-        setTimeout(clearBroadcast, 3000);
+        setTimeout(clearUpgradeBroadcast, 3000);
     } else if (userObj.hunger > 97) {
         document.getElementById('upgradeBroadcast').innerHTML = notHungry;
-        setTimeout(clearBroadcast, 3000);
+        setTimeout(clearUpgradeBroadcast, 3000);
     } else if (userObj.hunger < 97 && userObj.money < 4.75){
         alert("you are hungry and without money.");
     }
