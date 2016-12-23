@@ -39,7 +39,12 @@ var skillsObj = {
 
 // jobs object
 var jobObj = {
-
+    internship: {
+        level: 1,
+        exp: 5,
+        hunger: 1,
+        fullfillment: 0
+    }
 }
 
 // broadcast
