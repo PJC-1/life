@@ -1,11 +1,15 @@
-// cached strings
+////////////////////
+// cached strings //
+////////////////////
 var moneySign = "$ ";
 var purchasedSign = "Purchased: ";
 var hungerSign = "Hunger: ";
 var hungryNoMoney = "You are hungry, but don't have enough money for this item.";
 var notHungry = "You are not hungry now.";
 
-// user object
+/////////////////
+// user object //
+/////////////////
 var userObj = {
     money:        1.00,
     hunger:       75,
@@ -17,7 +21,9 @@ var userObj = {
     fullfillment: 0
 }
 
-// food object
+/////////////////
+// food object //
+/////////////////
 var foodObj = {
     ramenSnack: {
         fill:  1,
@@ -33,43 +39,52 @@ var foodObj = {
     }
 }
 
-// jobs object
+/////////////////
+// jobs object //
+/////////////////
 var jobObj = {
-  internship: {
-    level:        1,
-    money:        1.00,
-    exp:          5,
-    hunger:       .5,
-    fullfillment: 0
-  }
+    internship: {
+        level:        1,
+        money:        1.00,
+        exp:          5,
+        hunger:       .5,
+        fullfillment: 0
+    }
 }
 
-// skills object
+///////////////////
+// skills object //
+///////////////////
 var skillsObj = {
 
 }
 
-
-// broadcast
+///////////////
+// broadcast //
+///////////////
 function clearBroadcast(){
     document.getElementById('broadcast').innerHTML = "";
 }
 
-// money
+///////////
+// money //
+///////////
 var time = setInterval(addMoneyByTime, 1700);
 
 function addMoneyByTime(){
-  userObj.money += 0.25;
-  document.getElementById('money').innerHTML = moneySign + userObj.money;
+    userObj.money += 0.25;
+    document.getElementById('money').innerHTML = moneySign + userObj.money;
 }
 
 if (userObj.money < 1){
-  alert("You officially broke");
-  userObj.money = 0;
-  userObj.happiness -= 25;
+    alert("You officially broke");
+    userObj.money = 0;
+    userObj.happiness -= 25;
 }
 
-// progress bar
+//////////////////
+// progress bar //
+//////////////////
 function move() {
     var elem = document.getElementById("myBar");
     var width = 1;
@@ -106,7 +121,9 @@ function funTime(){
     move();
 }
 
-// hunger
+////////////
+// hunger //
+////////////
 var hunger = setInterval(gettingHungery, 60000);
 
 function gettingHungery(){
@@ -119,7 +136,9 @@ function gettingHungery(){
     }
 }
 
-// ramen
+///////////
+// ramen //
+///////////
 function ramenSnack(){
     if (userObj.hunger <= 99 && userObj.money > 2.25){
         userObj.hunger += 1;
@@ -136,7 +155,9 @@ function ramenSnack(){
     }
 }
 
-// pizza
+///////////
+// pizza //
+///////////
 function clearUpgradeBroadcast(){
     var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
 }
