@@ -41,8 +41,9 @@ var skillsObj = {
 var jobObj = {
     internship: {
         level: 1,
+        money: 1.00,
         exp: 5,
-        hunger: 1,
+        hunger: .5,
         fullfillment: 0
     }
 }
@@ -82,11 +83,11 @@ function move() {
         }
         if (width === 100){
             console.log(userObj.money);
-            userObj.money += 1.00;
+            userObj.money += jobObj.internship.money;
             console.log(userObj.money);
-            userObj.hunger -= .5;
+            userObj.hunger -= jobObj.internship.hunger;
             // exp is not yet wired up
-            userObj.exp += 5;
+            userObj.exp += jobObj.internship.exp;
             document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
             document.getElementById('money').innerHTML = moneySign + userObj.money;
             document.getElementById('myBar').setAttribute("style", "width: 1%");
