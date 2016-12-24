@@ -85,6 +85,8 @@ function move() {
             userObj.money += 1.00;
             console.log(userObj.money);
             userObj.hunger -= .5;
+            // exp is not yet wired up
+            userObj.exp += 5;
             document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
             document.getElementById('money').innerHTML = moneySign + userObj.money;
             document.getElementById('myBar').setAttribute("style", "width: 1%");
