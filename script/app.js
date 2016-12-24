@@ -7,29 +7,41 @@ var notHungry = "You are not hungry now.";
 
 // user object
 var userObj = {
-    money: 1.00,
-    hunger: 75,
-    foodLevel: 1,
-    happiness: 75,
-    exp: 0,
-    level: 1,
+    money:        1.00,
+    hunger:       75,
+    foodLevel:    1,
+    happiness:    75,
+    exp:          0,
+    level:        1,
+    skills:       [],
     fullfillment: 0
 }
 
 // food object
 var foodObj = {
     ramenSnack: {
-        fill: 1,
-        cost: 2.25,
-        src: "./assets/ramen.png",
+        fill:  1,
+        cost:  2.25,
+        src:   "./assets/ramen.png",
         level: 1
     },
     pizzaSnack: {
-        fill: 3,
-        cost: 4.75,
-        src: "./assets/pizzaRolls.png",
+        fill:  3,
+        cost:  4.75,
+        src:   "./assets/pizzaRolls.png",
         level: 2
     }
+}
+
+// jobs object
+var jobObj = {
+  internship: {
+    level:        1,
+    money:        1.00,
+    exp:          5,
+    hunger:       .5,
+    fullfillment: 0
+  }
 }
 
 // skills object
@@ -37,16 +49,6 @@ var skillsObj = {
 
 }
 
-// jobs object
-var jobObj = {
-    internship: {
-        level: 1,
-        money: 1.00,
-        exp: 5,
-        hunger: .5,
-        fullfillment: 0
-    }
-}
 
 // broadcast
 function clearBroadcast(){
