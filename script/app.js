@@ -142,8 +142,8 @@ function clearUpgradeBroadcast(){
 // wired to the onclick in index.html
 function pizzaSnack(){
     if (userObj.hunger <= 97 && userObj.money > 4.75){
-        userObj.hunger += 3;
-        userObj.money -= 4.75;
+        userObj.hunger += foodObj.pizzaSnack.fill;
+        userObj.money -= foodObj.pizzaSnack.cost;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
     } else if (userObj.hunger < 97) {
         document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
