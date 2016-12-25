@@ -1,3 +1,14 @@
+/*@font-face {
+    font-family: 'brushScript';
+    src: url('../assets/fonts/brush_s_.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#testFont {
+  font-family: 'brushScript';
+}*/
+
 #colUn {
     width: 70%;
     margin: 10px;
@@ -67,8 +78,9 @@
 }
 
 #brTitle {
+  font-family: 'Sacramento', cursive;
   animation-duration: 2s;
   animation-name: bounceIn;
   margin-bottom: 50px;
-  font-size: 20px;
+  font-size: 40px;
 }
