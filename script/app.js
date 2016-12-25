@@ -1,5 +1,5 @@
 ////////////////////
-// cached strings //
+// CACHED STRINGS //
 ////////////////////
 var moneySign = "$ ";
 var purchasedSign = "Purchased: ";
@@ -8,7 +8,7 @@ var hungryNoMoney = "You are hungry, but don't have enough money for this item."
 var notHungry = "You are not hungry now.";
 
 /////////////////
-// user object //
+// USER OBJECT //
 /////////////////
 var userObj = {
     money:        1.00,
@@ -22,7 +22,7 @@ var userObj = {
 }
 
 /////////////////
-// food object //
+// FOOD OBJECT //
 /////////////////
 var foodObj = {
     ramenSnack: {
@@ -40,7 +40,7 @@ var foodObj = {
 }
 
 /////////////////
-// jobs object //
+// JOBS OBJECT //
 /////////////////
 var jobObj = {
     internship: {
@@ -53,21 +53,21 @@ var jobObj = {
 }
 
 ///////////////////
-// skills object //
+// SKILLS OBJECT //
 ///////////////////
 var skillsObj = {
-
+    // empty object for now
 }
 
 ///////////////
-// broadcast //
+// BROADCAST //
 ///////////////
 function clearBroadcast(){
     document.getElementById('broadcast').innerHTML = "";
 }
 
 ///////////
-// money //
+// MONEY //
 ///////////
 var time = setInterval(addMoneyByTime, 1700);
 
@@ -77,13 +77,14 @@ function addMoneyByTime(){
 }
 
 if (userObj.money < 1){
+    // at some point change alert to something else
     alert("You officially broke");
     userObj.money = 0;
     userObj.happiness -= 25;
 }
 
 //////////////////
-// progress bar //
+// PROGRESS BAR //
 //////////////////
 function move() {
     var elem = document.getElementById("myBar");
@@ -99,9 +100,8 @@ function move() {
             document.getElementById("label").innerHTML = width * 1 + '%';
         }
         if (width === 100){
-            console.log(userObj.money);
+            // find out why this is adding both money + hunger twice
             userObj.money += jobObj.internship.money;
-            console.log(userObj.money);
             userObj.hunger -= jobObj.internship.hunger;
             // exp is not yet wired up
             userObj.exp += jobObj.internship.exp;
@@ -122,7 +122,7 @@ function funTime(){
 }
 
 ////////////
-// hunger //
+// HUNGER //
 ////////////
 var hunger = setInterval(gettingHungery, 60000);
 
@@ -137,7 +137,7 @@ function gettingHungery(){
 }
 
 ///////////
-// ramen //
+// RAMEN //
 ///////////
 function ramenSnack(){
     if (userObj.hunger <= 99 && userObj.money > 2.25){
@@ -156,7 +156,7 @@ function ramenSnack(){
 }
 
 ///////////
-// pizza //
+// PIZZA //
 ///////////
 function clearUpgradeBroadcast(){
     var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";

@@ -1,3 +1,19 @@
+#colUn {
+    width: 70%;
+    margin: 10px;
+    background: #e6fff2;
+}
+
+#colDeux {
+    width: 30%;
+    background: #ccf5ff;
+    margin: 10px;
+    text-align: center;
+}
+
+#colWrapper {
+    display: flex;
+}
 
 #workImage {
     width: 75px;
