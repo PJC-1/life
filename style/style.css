@@ -1,3 +1,11 @@
+#colWrapper {
+  /*
+    This defines a flex container; inline or block depending on the given value.
+    It enables a flex context for all its direct children.
+  */
+  display: flex;
+}
+
 #colUn {
     width: 70%;
     margin: 10px;
@@ -9,10 +17,6 @@
     background: #ccf5ff;
     margin: 10px;
     text-align: center;
-}
-
-#colWrapper {
-    display: flex;
 }
 
 #workImage {
