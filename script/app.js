@@ -88,7 +88,7 @@ if (userObj.money < 1){
 //////////////////
 function move() {
     var elem = document.getElementById("myBar");
-    var width = 1;
+    var width = 0;
     var id = setInterval(frame, 10);
     function frame() {
         if (width >= 100) {
@@ -107,8 +107,8 @@ function move() {
             userObj.exp += jobObj.internship.exp;
             document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
             document.getElementById('money').innerHTML = moneySign + userObj.money;
-            document.getElementById('myBar').setAttribute("style", "width: 1%");
-            document.getElementById('label').innerHTML = "1%";
+            document.getElementById('myBar').setAttribute("style", "width: 0%");
+            document.getElementById('label').innerHTML = "0%";
         }
     }
 }
