@@ -1,7 +1,7 @@
 ////////////////////
 // CACHED STRINGS //
 ////////////////////
-var moneySign = "$ ";
+var moneySign = "Money: $ ";
 var purchasedSign = "Purchased: ";
 var hungerSign = "Hunger: ";
 var hungryNoMoney = "You are hungry, but don't have enough money for this item.";
