@@ -72,9 +72,27 @@
 }
 
 #brTitle {
-  font-family: 'Sacramento', cursive;
-  animation-duration: 2s;
-  animation-name: bounceIn;
-  margin-bottom: 50px;
-  font-size: 40px;
+    font-family: 'Sacramento', cursive;
+    animation-duration: 2s;
+    animation-name: bounceIn;
+    margin-bottom: 50px;
+    font-size: 40px;
 }
+
+#colDeux {
+  font-family: monospace;
+
+}
+
+#colUn {
+  font-family: monospace;
+
+}
+
+/*#money {
+    font-family: monospace;
+}
+
+#userHunger {
+    font-family: monospace;
+}*/
