@@ -72,6 +72,8 @@
 }
 
 #brTitle {
+    margin-top: 20px;
+    margin-left: 20px;
     font-family: 'Sacramento', cursive;
     animation-duration: 2s;
     animation-name: bounceIn;
