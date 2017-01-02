@@ -21,6 +21,7 @@
 }
 
 #workImage {
+    margin-left: 20px;
     width: 75px;
 }
 
@@ -29,12 +30,22 @@
     /*visibility: hidden;*/
 }
 
+#parentDivTest {
+    margin-left: 10px;
+}
+
+#addingFood {
+    margin-left: 20px;
+}
+
 #ramenImage {
     width: 50px;
+    margin-left: 20px;
     margin-top: 30px;
 }
 #progressTitle  {
     margin-bottom: 0px;
+    margin-left: 35px;
 }
 
 #myProgress {
@@ -43,6 +54,7 @@
     height: 17px;
     background-color: grey;
     margin-top: 0px;
+    margin-left: 20px;
 }
 #myBar {
     position: absolute;
