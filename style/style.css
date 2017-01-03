@@ -1,4 +1,10 @@
 img {
+    /*
+      This displays an element as a block element (like a <p>). This will
+      have each of the food upgrade images be displayed on a new line, perhaps
+      later you can create each of the food upgrades with a particular class so
+      not all images will have this css.
+    */
     display: block;
 }
 
