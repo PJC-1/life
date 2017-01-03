@@ -11,6 +11,9 @@ var notHungry = "You are not hungry now.";
 // USER OBJECT //
 /////////////////
 var userObj = {
+    employment:   [
+                      jobObj.internship
+                  ],
     money:        1.00,
     hunger:       75,
     foodLevel:    1,
@@ -54,7 +57,8 @@ var jobObj = {
         money:        1.00,
         exp:          5,
         hunger:       .5,
-        fullfillment: 0
+        fullfillment: 0,
+        current:      true
     }
 }
 
