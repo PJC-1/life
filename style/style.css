@@ -1,3 +1,7 @@
+img {
+    display: block;
+}
+
 #colWrapper {
   /*
     This defines a flex container; inline or block depending on the given value.
@@ -27,7 +31,6 @@
 
 #pizzaPizza {
     width: 45px;
-    /*visibility: hidden;*/
 }
 
 #parentDivTest {
