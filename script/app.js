@@ -36,6 +36,12 @@ var foodObj = {
         cost:  4.75,
         src:   "./assets/pizzaRolls.png",
         level: 2
+    },
+    happySnack: {
+        fill:  5,
+        cost:  6.00,
+        src:   "./assets/happyMeal.png",
+        level: 3
     }
 }
 
@@ -196,9 +202,43 @@ function testAdding(){
         var parent = document.getElementById("parentDivTest");
         var child = document.getElementById("testButton");
         parent.removeChild(child);
+        // create a new upgrade button for the happy meal
+        var x = document.createElement("BUTTON");
+        var t = document.createTextNode("upgrade");
+        x.appendChild(t);
+        x.setAttribute("id", "happyButton");
+        x.setAttribute("onclick", "addHappy()");
+        document.getElementById('upgradeFoodInject').appendChild(x);
     } else if (pizzaSwtich === false) {
         // this will prevent appending another pizza roll to the page
     } else {
         alert('you don\'t have enough money');
     }
+}
+
+////////////////
+// HAPPY MEAL //
+////////////////
+var happySwitch = true;
+
+function addHappy(){
+    // create a new upgrade button
+    var happySrc = foodObj.happySnack.src;
+    if (userObj.money > 15 && happySwitch === true){
+        var z = document.createElement("IMG");
+        z.setAttribute("src", happySrc);
+        z.setAttribute("width", "50");
+        z.setAttribute("onclick", "happySnack()");
+        z.setAttribute("id", "happyHappy");
+        document.getElementById('addingFood').appendChild(z);
+        happySwitch = false;
+    } else if (happySwitch === false) {
+        // this will prevent appending another happy meal
+    } else {
+        alert('you don\'t have enought money');
+    }
+}
+
+function happySnack(){
+  console.log("testing happySnack onclick");
 }
