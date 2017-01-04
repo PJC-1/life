@@ -13,6 +13,7 @@ var notHungry =     "You are not hungry now.";
 var userObj = {
     employment:   [
                       {
+                          // intern will be the default job for the user
                           internship: {
                               title:        "Intern",
                               description:  "test description string",
@@ -143,6 +144,18 @@ function funTime(){
     var elem = document.getElementById("myBar");
     move();
 }
+
+//////////
+// WORK //
+//////////
+
+// "self-invoking function "
+(function () {
+    document.getElementById("testingSpan").innerHTML = userObj.employment[0].internship.title;
+    console.log("this should only happen once!");
+})();
+
+
 
 ////////////
 // HUNGER //
