@@ -57,6 +57,12 @@ var foodObj = {
         cost:  6.00,
         src:   "./assets/happyMeal.png",
         level: 3
+    },
+    cheeseBurger: {
+        fill:  5,
+        cost:  6.00,
+        src:   "./assets/cheeseBurger.png",
+        level: 3
     }
 }
 
@@ -246,14 +252,14 @@ function testAdding(){
     }
 }
 
-////////////////
-// HAPPY MEAL //
-////////////////
+///////////////////
+// CHEESE BURGER //
+///////////////////
 var happySwitch = true;
 
 function addHappy(){
     // create a new upgrade button
-    var happySrc = foodObj.happySnack.src;
+    var happySrc = foodObj.cheeseBurger.src;
     if (userObj.money > 15 && happySwitch === true){
         var z = document.createElement("IMG");
         z.setAttribute("src", happySrc);
