@@ -1,11 +1,11 @@
 ////////////////////
 // CACHED STRINGS //
 ////////////////////
-var moneySign =     "Money: $ ";
-var purchasedSign = "Purchased: ";
-var hungerSign =    "Hunger: ";
-var hungryNoMoney = "You are hungry, but don't have enough money for this item.";
-var notHungry =     "You are not hungry now.";
+var moneySign     =     "Money: $ ";
+var purchasedSign =     "Purchased: ";
+var hungerSign    =     "Hunger: ";
+var hungryNoMoney =     "You are hungry, but don't have enough money for this item.";
+var notHungry     =     "You are not hungry now.";
 
 /////////////////
 // USER OBJECT //
@@ -149,10 +149,10 @@ function funTime(){
 // WORK //
 //////////
 
-// "self-invoking function "
+// self-invoking function, you have to add parentheses around the function to
+// indicate that it is a function expression:
 (function () {
     document.getElementById("testingSpan").innerHTML = userObj.employment[0].internship.title;
-    console.log("this should only happen once!");
 })();
 
 
