@@ -1,11 +1,11 @@
 ////////////////////
 // CACHED STRINGS //
 ////////////////////
-var moneySign     =     "Money: $ ";
-var purchasedSign =     "Purchased: ";
-var hungerSign    =     "Hunger: ";
-var hungryNoMoney =     "You are hungry, but don't have enough money for this item.";
-var notHungry     =     "You are not hungry now.";
+var moneySign     =  "Money: $ ";
+var purchasedSign =  "Purchased: ";
+var hungerSign    =  "Hunger: ";
+var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
+var notHungry     =  "You are not hungry now.";
 
 /////////////////
 // USER OBJECT //
@@ -15,25 +15,25 @@ var userObj = {
                       {
                           // intern will be the default job for the user
                           internship: {
-                              title:        "Intern",
-                              description:  "test description string",
-                              level:        1,
-                              money:        1.00,
-                              exp:          5,
-                              hunger:       .5,
-                              fullfillment: 0,
-                              current:      true
+                              title        :   "Intern",
+                              description  :   "test description string",
+                              level        :   1,
+                              money        :   1.00,
+                              exp          :   5,
+                              hunger       :   .5,
+                              fullfillment :   0,
+                              current      :   true
                           }
                       }
                   ],
-    money:        1.00,
-    hunger:       75,
-    foodLevel:    1,
-    happiness:    75,
-    exp:          0,
-    level:        1,
-    skills:       [],
-    fullfillment: 0
+    money        :  1.00,
+    hunger       :  75,
+    foodLevel    :  1,
+    happiness    :  75,
+    exp          :  0,
+    level        :  1,
+    skills       :  [],
+    fullfillment :  0
 }
 
 /////////////////
@@ -41,28 +41,28 @@ var userObj = {
 /////////////////
 var foodObj = {
     ramenSnack: {
-        fill:  1,
-        cost:  2.25,
-        src:   "./assets/ramen.png",
-        level: 1
+        fill  :  1,
+        cost  :  2.25,
+        src   :  "./assets/ramen.png",
+        level :  1
     },
     pizzaSnack: {
-        fill:  3,
-        cost:  4.75,
-        src:   "./assets/pizzaRolls.png",
-        level: 2
+        fill  :  3,
+        cost  :  4.75,
+        src   :  "./assets/pizzaRolls.png",
+        level :  2
     },
     happySnack: {
-        fill:  5,
-        cost:  6.00,
-        src:   "./assets/happyMeal.png",
-        level: 3
+        fill  :  5,
+        cost  :  6.00,
+        src   :  "./assets/happyMeal.png",
+        level :  3
     },
     cheeseBurger: {
-        fill:  5,
-        cost:  6.00,
-        src:   "./assets/cheeseBurger.png",
-        level: 3
+        fill  :  5,
+        cost  :  6.00,
+        src   :  "./assets/cheeseBurger.png",
+        level :  3
     }
 }
 
@@ -71,14 +71,14 @@ var foodObj = {
 /////////////////
 var jobObj = {
     internship: {
-        title:        "Intern",
-        description:  "test description string",
-        level:        1,
-        money:        1.00,
-        exp:          5,
-        hunger:       .5,
-        fullfillment: 0,
-        current:      true
+        title        :  "Intern",
+        description  :  "test description string",
+        level        :  1,
+        money        :  1.00,
+        exp          :  5,
+        hunger       :  .5,
+        fullfillment :  0,
+        current      :  true
     }
 }
 
