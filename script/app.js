@@ -1,11 +1,11 @@
 ////////////////////
 // CACHED STRINGS //
 ////////////////////
-var moneySign = "Money: $ ";
+var moneySign =     "Money: $ ";
 var purchasedSign = "Purchased: ";
-var hungerSign = "Hunger: ";
+var hungerSign =    "Hunger: ";
 var hungryNoMoney = "You are hungry, but don't have enough money for this item.";
-var notHungry = "You are not hungry now.";
+var notHungry =     "You are not hungry now.";
 
 /////////////////
 // USER OBJECT //
@@ -257,5 +257,5 @@ function addHappy(){
 }
 
 function happySnack(){
-  console.log("testing happySnack onclick");
+    console.log("testing happySnack onclick");
 }
