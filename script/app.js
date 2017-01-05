@@ -16,7 +16,7 @@ var userObj = {
                           // intern will be the default job for the user
                           internship: {
                               title        :   "Intern",
-                              description  :   "test description string",
+                              description  :   "The Web Development Intern will work closely with the Executive Director and staff on a variety of digital projects. The intern will conceptualize and manage the organization’s website as well as format and design electronic newsletters for members and families. This position helps to extend the resources in order to better assist and meet the needs of our members and the families that we serve",
                               level        :   1,
                               money        :   1.00,
                               exp          :   5,
@@ -72,13 +72,23 @@ var foodObj = {
 var jobObj = {
     internship: {
         title        :  "Intern",
-        description  :  "test description string",
+        description  :  "The Web Development Intern will work closely with the Executive Director and staff on a variety of digital projects. The intern will conceptualize and manage the organization’s website as well as format and design electronic newsletters for members and families. This position helps to extend the resources in order to better assist and meet the needs of our members and the families that we serve",
         level        :  1,
         money        :  1.00,
         exp          :  5,
         hunger       :  .5,
         fullfillment :  0,
         current      :  true
+    },
+    supportEngineer: {
+        title        :  "Software Support Engineer",
+        description  :  "Support Engineers deliver effective technical customer support to our rapidly growing customer base, delivering solutions to both technical and non-technical end users while also supporting a wide range of technologies. Support Engineers may be required to be on-call on a rotating basis throughout the year.",
+        level        :  2,
+        money        :  3.00,
+        exp          :  10,
+        hunger       :  2,
+        fullfillment :  0,
+        current      :  false
     }
 }
 
@@ -243,7 +253,7 @@ function testAdding(){
         var t = document.createTextNode("upgrade");
         x.appendChild(t);
         x.setAttribute("id", "happyButton");
-        x.setAttribute("onclick", "addHappy()");
+        x.setAttribute("onclick", "addCheese()");
         document.getElementById('upgradeFoodInject').appendChild(x);
     } else if (pizzaSwtich === false) {
         // this will prevent appending another pizza roll to the page
@@ -255,12 +265,12 @@ function testAdding(){
 ///////////////////
 // CHEESE BURGER //
 ///////////////////
-var happySwitch = true;
+var cheeseSwitch = true;
 
-function addHappy(){
+function addCheese(){
     // create a new upgrade button
     var happySrc = foodObj.cheeseBurger.src;
-    if (userObj.money > 15 && happySwitch === true){
+    if (userObj.money > 15 && cheeseSwitch === true){
         var z = document.createElement("IMG");
         z.setAttribute("src", happySrc);
         z.setAttribute("width", "50");
@@ -268,7 +278,7 @@ function addHappy(){
         z.setAttribute("id", "happyHappy");
         document.getElementById('addingFood').appendChild(z);
         happySwitch = false;
-    } else if (happySwitch === false) {
+    } else if (cheeseSwitch === false) {
         // this will prevent appending another happy meal
     } else {
         alert('you don\'t have enought money');
