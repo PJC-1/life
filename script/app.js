@@ -26,7 +26,7 @@ var userObj = {
                           }
                       }
                   ],
-    money        :  1.00,
+    money        :  0.00,
     hunger       :  75,
     foodLevel    :  1,
     happiness    :  75,
@@ -109,16 +109,22 @@ function clearBroadcast(){
 ///////////
 // MONEY //
 ///////////
+
+// self-invoking function, to display the money when the page is first loaded
+(function () {
+    document.getElementById("moneySpan").innerHTML = moneySign + userObj.money;
+})();
+
 var time = setInterval(addMoneyByTime, 1700);
 
 function addMoneyByTime(){
     userObj.money += 0.25;
-    document.getElementById('money').innerHTML = moneySign + userObj.money;
+    document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
 }
 
 if (userObj.money < 1){
     // at some point change alert to something else
-    alert("You officially broke");
+    // alert("You officially broke");
     userObj.money = 0;
     userObj.happiness -= 25;
 }
