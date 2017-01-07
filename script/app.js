@@ -113,7 +113,9 @@ function clearBroadcast() {
 // test function to upgrade users job
 function upgradeJob() {
  // add code here that will push the next job into the userObj.employment array
-
+ jobObj.supportEngineer
+ userObj.employment.push( jobObj.supportEngineer);
+ console.log(userObj.employment);
 }
 
 ///////////
