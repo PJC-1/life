@@ -102,8 +102,18 @@ var skillsObj = {
 ///////////////
 // BROADCAST //
 ///////////////
-function clearBroadcast(){
+function clearBroadcast() {
     document.getElementById('broadcast').innerHTML = "";
+}
+
+////////////////
+// EMPLOYMENT //
+////////////////
+
+// test function to upgrade users job
+function upgradeJob() {
+ // add code here that will push the next job into the userObj.employment array
+
 }
 
 ///////////
@@ -152,7 +162,7 @@ function move() {
             // exp is not yet wired up
             userObj.exp += jobObj.internship.exp;
             document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
-            document.getElementById('money').innerHTML = moneySign + userObj.money;
+            document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
             document.getElementById('myBar').setAttribute("style", "width: 0%");
             document.getElementById('label').innerHTML = "0%";
         }
@@ -162,7 +172,7 @@ function move() {
 // need to check if this function is necessary, might have been created
 // with the intension of combining functionality, but as it stands it seems to
 // only have the move(), so possibily delete it.
-function funTime(){
+function funTime() {
     var elem = document.getElementById("myBar");
     move();
 }
@@ -184,7 +194,7 @@ function funTime(){
 ////////////
 var hunger = setInterval(gettingHungery, 60000);
 
-function gettingHungery(){
+function gettingHungery() {
     userObj.hunger -= 1;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
     // hunger reminder
@@ -197,7 +207,7 @@ function gettingHungery(){
 ///////////
 // RAMEN //
 ///////////
-function ramenSnack(){
+function ramenSnack() {
     if (userObj.hunger <= 99 && userObj.money > 2.25){
         userObj.hunger += 1;
         userObj.money -= 2.25;
@@ -216,12 +226,12 @@ function ramenSnack(){
 ///////////
 // PIZZA //
 ///////////
-function clearUpgradeBroadcast(){
+function clearUpgradeBroadcast() {
     var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
 }
 
 // wired to the onclick in index.html
-function pizzaSnack(){
+function pizzaSnack() {
     if (userObj.hunger <= 97 && userObj.money > 4.75){
         userObj.hunger += foodObj.pizzaSnack.fill;
         userObj.money -= foodObj.pizzaSnack.cost;
@@ -240,7 +250,7 @@ function pizzaSnack(){
 // used with testAdding()
 var pizzaSwtich = true;
 
-function testAdding(){
+function testAdding() {
     var src = foodObj.pizzaSnack.src;
     if(userObj.money > 10 && pizzaSwtich === true) {
         var i = document.createElement("IMG");
@@ -273,7 +283,7 @@ function testAdding(){
 ///////////////////
 var cheeseSwitch = true;
 
-function addCheese(){
+function addCheese() {
     // create a new upgrade button
     var happySrc = foodObj.cheeseBurger.src;
     if (userObj.money > 15 && cheeseSwitch === true){
@@ -291,6 +301,6 @@ function addCheese(){
     }
 }
 
-function happySnack(){
+function happySnack() {
     console.log("testing happySnack onclick");
 }
