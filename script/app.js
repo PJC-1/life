@@ -80,19 +80,19 @@ var jobObj = [
             hunger       :  .5,
             fullfillment :  0,
             current      :  true
-      }
+        }
     } ,
     {
-      supportEngineer: {
-          title        :  "Software Support Engineer",
-          description  :  "Support Engineers deliver effective technical customer support to our rapidly growing customer base, delivering solutions to both technical and non-technical end users while also supporting a wide range of technologies. Support Engineers may be required to be on-call on a rotating basis throughout the year.",
-          level        :  2,
-          money        :  3.00,
-          exp          :  10,
-          hunger       :  2,
-          fullfillment :  0,
-          current      :  false
-      }
+        supportEngineer: {
+            title        :  "Software Support Engineer",
+            description  :  "Support Engineers deliver effective technical customer support to our rapidly growing customer base, delivering solutions to both technical and non-technical end users while also supporting a wide range of technologies. Support Engineers may be required to be on-call on a rotating basis throughout the year.",
+            level        :  2,
+            money        :  3.00,
+            exp          :  10,
+            hunger       :  2,
+            fullfillment :  0,
+            current      :  false
+        }
     }
 ]
 
@@ -116,13 +116,14 @@ function clearBroadcast() {
 
 // test function to upgrade users job
 (function upgradeJob() {
- // add code here that will push the next job into the userObj.employment array
- jobObj.supportEngineer
- // this seems to work beter if the jobObj is an array of objects instead of an
- // object of objects. NOTE: look into this futher because accessing objects is
- // a lot easier than having to go through an array everytime.
- userObj.employment.push( jobObj[1]);
- console.log(userObj.employment);
+    // add code here that will push the next job into the userObj.employment array
+    jobObj.supportEngineer
+    // this seems to work beter if the jobObj is an array of objects instead of an
+    // object of objects. NOTE: look into this futher because accessing objects is
+    // a lot easier than having to go through an array everytime.
+    // doing length - 1 could be useful later on for upgrading
+    userObj.employment.push( jobObj[jobObj.length - 1]);
+    console.log(userObj.employment);
 })();
 
 ///////////
