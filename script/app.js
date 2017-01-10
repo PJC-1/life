@@ -12,6 +12,8 @@ var notHungry     =  "You are not hungry now.";
 /////////////////
 var userObj = {
     // just use a self-invoking function to add the default job.
+    // NOTE: keeping the jobObj as an object instead of an array will be a better
+    // idea, and then we can keep employment as an array, for now.
     employment:   [],
     money        :  0.00,
     hunger       :  75,
