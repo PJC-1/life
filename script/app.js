@@ -11,21 +11,8 @@ var notHungry     =  "You are not hungry now.";
 // USER OBJECT //
 /////////////////
 var userObj = {
-    employment:   [
-                      {
-                          // intern will be the default job for the user
-                          internship: {
-                              title        :   "Intern",
-                              description  :   "The Web Development Intern will work closely with the Executive Director and staff on a variety of digital projects. The intern will conceptualize and manage the organization’s website as well as format and design electronic newsletters for members and families. This position helps to extend the resources in order to better assist and meet the needs of our members and the families that we serve",
-                              level        :   1,
-                              money        :   1.00,
-                              exp          :   5,
-                              hunger       :   .5,
-                              fullfillment :   0,
-                              current      :   true
-                          }
-                      }
-                  ],
+    // just use a self-invoking function to add the default job.
+    employment:   [],
     money        :  0.00,
     hunger       :  75,
     foodLevel    :  1,
@@ -117,7 +104,7 @@ function clearBroadcast() {
     // object of objects. NOTE: look into this futher because accessing objects is
     // a lot easier than having to go through an array everytime.
     // doing length - 1 could be useful later on for upgrading
-    userObj.employment.push( jobObj.supportEngineer);
+    userObj.employment.push(jobObj.internship);
     console.log(userObj.employment);
 })();
 
@@ -189,7 +176,7 @@ function funTime() {
 // self-invoking function, you have to add parentheses around the function to
 // indicate that it is a function expression:
 (function () {
-    document.getElementById("testingSpan").innerHTML = userObj.employment[0].internship.title;
+    document.getElementById("testingSpan").innerHTML = jobObj.internship.title;
 })();
 
 
