@@ -69,8 +69,7 @@ var foodObj = {
 /////////////////
 // JOBS OBJECT //
 /////////////////
-var jobObj = [
-    {
+var jobObj = {
         internship: {
             title        :  "Intern",
             description  :  "The Web Development Intern will work closely with the Executive Director and staff on a variety of digital projects. The intern will conceptualize and manage the organization’s website as well as format and design electronic newsletters for members and families. This position helps to extend the resources in order to better assist and meet the needs of our members and the families that we serve",
@@ -80,9 +79,7 @@ var jobObj = [
             hunger       :  .5,
             fullfillment :  0,
             current      :  true
-        }
-    } ,
-    {
+        },
         supportEngineer: {
             title        :  "Software Support Engineer",
             description  :  "Support Engineers deliver effective technical customer support to our rapidly growing customer base, delivering solutions to both technical and non-technical end users while also supporting a wide range of technologies. Support Engineers may be required to be on-call on a rotating basis throughout the year.",
@@ -93,8 +90,7 @@ var jobObj = [
             fullfillment :  0,
             current      :  false
         }
-    }
-]
+}
 
 ///////////////////
 // SKILLS OBJECT //
@@ -117,12 +113,11 @@ function clearBroadcast() {
 // test function to upgrade users job
 (function upgradeJob() {
     // add code here that will push the next job into the userObj.employment array
-    jobObj.supportEngineer
     // this seems to work beter if the jobObj is an array of objects instead of an
     // object of objects. NOTE: look into this futher because accessing objects is
     // a lot easier than having to go through an array everytime.
     // doing length - 1 could be useful later on for upgrading
-    userObj.employment.push( jobObj[jobObj.length - 1]);
+    userObj.employment.push( jobObj.supportEngineer);
     console.log(userObj.employment);
 })();
 
