@@ -98,6 +98,8 @@ function clearBroadcast() {
 /////////////////////////////
 // CLEAR ANOTHER BROADCAST //
 /////////////////////////////
+//  maybe find a solution to consolidate the broadcast system, from multiple to
+//  a single way of broadcasting
 function clearTestBroadcast() {
     document.getElementById('testingBroadcast').innerHTML = "";
 }
