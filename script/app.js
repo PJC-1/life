@@ -95,6 +95,13 @@ function clearBroadcast() {
     document.getElementById('broadcast').innerHTML = "";
 }
 
+/////////////////////////////
+// CLEAR ANOTHER BROADCAST //
+/////////////////////////////
+function clearTestBroadcast() {
+    document.getElementById('testingBroadcast').innerHTML = "";
+}
+
 ////////////////
 // EMPLOYMENT //
 ////////////////
@@ -194,7 +201,10 @@ function gettingHungery() {
     // hunger reminder
     if (userObj.hunger < 39){
         document.getElementById('testingBroadcast').innerHTML = "You are getting hungry try eatting some food.";
-        setTimeout(clearBroadcast, 3000);
+        setTimeout(clearTestBroadcast, 3000);
+    }
+    if (userObj.hunger < 0){
+        userObj.hunger = 0;
     }
 }
 
