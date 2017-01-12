@@ -308,5 +308,7 @@ function addCheese() {
 }
 
 function happySnack() {
+    // add some functionality here to restore health when you click the
+    // cheese burger, also think about the next food maybe something healthier
     console.log("testing happySnack onclick");
 }
