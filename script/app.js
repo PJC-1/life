@@ -61,7 +61,18 @@ var foodObj = {
 var jobObj = {
         internship: {
             title        :  "Intern",
-            description  :  "The Web Development Intern will work closely with the Executive Director and staff on a variety of digital projects. The intern will conceptualize and manage the organization’s website as well as format and design electronic newsletters for members and families. This position helps to extend the resources in order to better assist and meet the needs of our members and the families that we serve",
+            // this is the only way to do a multi line string that seems to not
+            // break in any other situation, but it doesn't look very nice, look
+            // into it
+            description  :  "The Web Development Intern will work closely with "
+                            + "the Executive Director and staff on a variety of "
+                            + "digital projects. The intern will conceptualize "
+                            + "and manage the organization’s website as well as "
+                            + "format and design electronic newsletters for "
+                            + "members and families. This position helps to "
+                            + "extend the resources in order to better assist "
+                            + "and meet the needs of our members and the "
+                            + "families that we serve",
             level        :  1,
             money        :  1.00,
             exp          :  5,
@@ -71,7 +82,13 @@ var jobObj = {
         },
         supportEngineer: {
             title        :  "Software Support Engineer",
-            description  :  "Support Engineers deliver effective technical customer support to our rapidly growing customer base, delivering solutions to both technical and non-technical end users while also supporting a wide range of technologies. Support Engineers may be required to be on-call on a rotating basis throughout the year.",
+            description  :  "Support Engineers deliver effective technical "
+                            + "customer support to our rapidly growing customer "
+                            + "base, delivering solutions to both technical and "
+                            + "non-technical end users while also supporting a "
+                            + "wide range of technologies. Support Engineers may"
+                            + " be required to be on-call on a rotating basis "
+                            + "throughout the year.",
             level        :  2,
             money        :  3.00,
             exp          :  10,
