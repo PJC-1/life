@@ -1,6 +1,7 @@
 ////////////////////
 // CACHED STRINGS //
 ////////////////////
+
 var moneySign     =  "Money: $ ";
 var purchasedSign =  "Purchased: ";
 var hungerSign    =  "Hunger: ";
@@ -10,6 +11,7 @@ var notHungry     =  "You are not hungry now.";
 /////////////////
 // USER OBJECT //
 /////////////////
+
 var userObj = {
     // just use a self-invoking function to add the default job.
     // NOTE: keeping the jobObj as an object instead of an array will be a better
@@ -28,6 +30,7 @@ var userObj = {
 /////////////////
 // FOOD OBJECT //
 /////////////////
+
 var foodObj = {
     ramenSnack: {
         fill  :  1,
@@ -58,6 +61,7 @@ var foodObj = {
 /////////////////
 // JOBS OBJECT //
 /////////////////
+
 var jobObj = {
         internship: {
             title        :  "Intern",
@@ -101,6 +105,7 @@ var jobObj = {
 ///////////////////
 // SKILLS OBJECT //
 ///////////////////
+
 var skillsObj = {
     // empty object for now
 }
@@ -108,13 +113,11 @@ var skillsObj = {
 ///////////////
 // BROADCAST //
 ///////////////
+
 function clearBroadcast() {
     document.getElementById('broadcast').innerHTML = "";
 }
 
-/////////////////////////////
-// CLEAR ANOTHER BROADCAST //
-/////////////////////////////
 //  maybe find a solution to consolidate the broadcast system, from multiple to
 //  a single way of broadcasting
 function clearTestBroadcast() {
@@ -134,6 +137,12 @@ function clearTestBroadcast() {
     // doing length - 1 could be useful later on for upgrading
     userObj.employment.push(jobObj.internship);
     console.log(userObj.employment);
+})();
+
+// self-invoking function, you have to add parentheses around the function to
+// indicate that it is a function expression:
+(function () {
+    document.getElementById("testingSpan").innerHTML = jobObj.internship.title;
 })();
 
 ///////////
@@ -197,21 +206,10 @@ function funTime() {
     move();
 }
 
-//////////
-// WORK //
-//////////
-
-// self-invoking function, you have to add parentheses around the function to
-// indicate that it is a function expression:
-(function () {
-    document.getElementById("testingSpan").innerHTML = jobObj.internship.title;
-})();
-
-
-
 ////////////
 // HUNGER //
 ////////////
+
 var hunger = setInterval(gettingHungery, 60000);
 
 function gettingHungery() {
@@ -230,6 +228,7 @@ function gettingHungery() {
 ///////////
 // RAMEN //
 ///////////
+
 function ramenSnack() {
     if (userObj.hunger <= 99 && userObj.money > 2.25){
         userObj.hunger += 1;
@@ -249,6 +248,7 @@ function ramenSnack() {
 ///////////
 // PIZZA //
 ///////////
+
 function clearUpgradeBroadcast() {
     var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
 }
@@ -304,6 +304,7 @@ function testAdding() {
 ///////////////////
 // CHEESE BURGER //
 ///////////////////
+
 var cheeseSwitch = true;
 
 function addCheese() {
