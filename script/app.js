@@ -21,6 +21,8 @@ var userObj = {
     hunger       :  75,
     foodLevel    :  1,
     happiness    :  75,
+    // maybe mood can effect productivity and be tied to mini-games
+    mood         :  [],
     exp          :  0,
     level        :  1,
     skills       :  [],
@@ -253,7 +255,6 @@ function clearUpgradeBroadcast() {
     var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
 }
 
-// wired to the onclick in index.html
 function pizzaSnack() {
     if (userObj.hunger <= 97 && userObj.money > 4.75){
         userObj.hunger += foodObj.pizzaSnack.fill;
@@ -273,9 +274,10 @@ function pizzaSnack() {
 // used with testAdding()
 var pizzaSwtich = true;
 
+// change the name of this function to something else
 function testAdding() {
     var src = foodObj.pizzaSnack.src;
-    if(userObj.money > 10 && pizzaSwtich === true) {
+    if (userObj.money > 10 && pizzaSwtich === true) {
         var i = document.createElement("IMG");
         i.setAttribute("src", src);
         i.setAttribute("width", "50");
@@ -326,7 +328,9 @@ function addCheese() {
 }
 
 function happySnack() {
-    // add some functionality here to restore health when you click the
-    // cheese burger, also think about the next food maybe something healthier
-    console.log("testing happySnack onclick");
+    if (userObj.hunger < 95 && userObj.money > 6.00){
+        userObj.hunger += foodObj.cheeseBurger.fill;
+        userObj.money -= foodObj.cheeseBurger.cost;
+        document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+    }
 }
