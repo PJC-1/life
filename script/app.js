@@ -260,7 +260,7 @@ function pizzaSnack() {
         userObj.hunger += foodObj.pizzaSnack.fill;
         userObj.money -= foodObj.pizzaSnack.cost;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
-    } else if (userObj.hunger < 97) {
+    } else if (userObj.hunger < 97 && userObj.money < 4.75) {
         document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
         setTimeout(clearUpgradeBroadcast, 3000);
     } else if (userObj.hunger > 97) {
@@ -332,5 +332,13 @@ function happySnack() {
         userObj.hunger += foodObj.cheeseBurger.fill;
         userObj.money -= foodObj.cheeseBurger.cost;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+    } else if (userObj.hunger < 95 && userObj.money < 6.00){
+        document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
+        setTimeout(clearUpgradeBroadcast, 3000);
+    } else if (userObj.hunger > 95) {
+        document.getElementById('upgradeBroadcast').innerHTML = notHungry;
+        setTimeout(clearUpgradeBroadcast, 3000);
+    } else if (userObj.hunger < 95 && userObj.money < 6.00){
+        alert("you are hungry and without money.");
     }
 }
