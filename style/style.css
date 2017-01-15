@@ -1,3 +1,18 @@
+.upgradeBtn {
+    border-radius: 0px;
+    text-decoration: none;
+    background: #9bd7d7;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    font-family: helvetica;
+    margin: 18px;
+}
+
+.upgradeBtn:hover {
+    background: #70ffd6;
+}
+
 img {
     /*
       This displays an element as a block element (like a <p>). This will
@@ -110,11 +125,3 @@ img {
   font-family: monospace;
 
 }
-
-/*#money {
-    font-family: monospace;
-}
-
-#userHunger {
-    font-family: monospace;
-}*/

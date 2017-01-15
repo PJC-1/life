@@ -284,6 +284,7 @@ function testAdding() {
         i.setAttribute("width", "50");
         i.setAttribute("onclick", "pizzaSnack()");
         i.setAttribute("id", "pizzaPizza");
+        i.setAttribute("class", "upgradeBtn");
         document.getElementById('addingFood').appendChild(i);
         pizzaSwtich = false;
         // this code will remove the upgrade button
@@ -320,6 +321,7 @@ function addCheese() {
         z.setAttribute("width", "50");
         z.setAttribute("onclick", "happySnack()");
         z.setAttribute("id", "happyHappy");
+        z.setAttribute("class", "upgradeBtn");
         document.getElementById('addingFood').appendChild(z);
         cheeseSwitch = false;
     } else if (cheeseSwitch === false) {
