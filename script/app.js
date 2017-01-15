@@ -300,7 +300,6 @@ function testAdding() {
     } else if (pizzaSwtich === false) {
         // this will prevent appending another pizza roll to the page
     } else {
-        // alert('you don\'t have enough money');
         document.getElementById("broadcast").innerHTML = noMoney;
         setTimeout(clearBroadcast, 2000);
     }
@@ -322,11 +321,12 @@ function addCheese() {
         z.setAttribute("onclick", "happySnack()");
         z.setAttribute("id", "happyHappy");
         document.getElementById('addingFood').appendChild(z);
-        happySwitch = false;
+        cheeseSwitch = false;
     } else if (cheeseSwitch === false) {
-        // this will prevent appending another happy meal
+        // this will prevent appending another cheese burger
     } else {
-        alert('you don\'t have enought money');
+        document.getElementById("broadcast").innerHTML = noMoney;
+        setTimeout(clearBroadcast, 2000);
     }
 }
 
