@@ -7,6 +7,7 @@ var purchasedSign =  "Purchased: ";
 var hungerSign    =  "Hunger: ";
 var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
 var notHungry     =  "You are not hungry now.";
+var noMoney       =  "You do not have enought money for that."
 
 /////////////////
 // USER OBJECT //
@@ -299,7 +300,9 @@ function testAdding() {
     } else if (pizzaSwtich === false) {
         // this will prevent appending another pizza roll to the page
     } else {
-        alert('you don\'t have enough money');
+        // alert('you don\'t have enough money');
+        document.getElementById("broadcast").innerHTML = noMoney;
+        setTimeout(clearBroadcast, 2000);
     }
 }
 
