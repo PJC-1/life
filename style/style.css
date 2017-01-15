@@ -3,6 +3,7 @@
     text-decoration: none;
     background: #9bd7d7;
     border: none;
+    color: white;
     padding: 10px;
     font-size: 15px;
     font-family: helvetica;
@@ -11,6 +12,7 @@
 
 .upgradeBtn:hover {
     background: #70ffd6;
+    color: #9d26ff;
 }
 
 img {
