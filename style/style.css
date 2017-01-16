@@ -1,3 +1,7 @@
+/******************/
+/* UPGRADE BUTTON */
+/******************/
+
 .upgradeBtn {
     border-radius: 0px;
     text-decoration: none;
@@ -12,8 +16,17 @@
 
 .upgradeBtn:hover {
     background: #70ffd6;
-    color: #9d26ff;
+    color: #7c7087;
 }
+
+#parentDivTest {
+  margin-left: 10px;
+}
+
+
+/*********/
+/* IMAGE */
+/*********/
 
 img {
     /*
@@ -24,6 +37,11 @@ img {
     */
     display: block;
 }
+
+
+/***********/
+/* COLUMNS */
+/***********/
 
 #colWrapper {
   /*
@@ -37,6 +55,8 @@ img {
     width: 70%;
     margin: 10px;
     background: #e6fff2;
+    font-family: monospace;
+
 }
 
 #colDeux {
@@ -45,6 +65,39 @@ img {
     background: #ccf5ff;
     margin: 10px;
     text-align: center;
+    font-family: monospace;
+
+}
+
+
+/****************/
+/* PROGRESS BAR */
+/****************/
+
+#progressTitle  {
+  margin-bottom: 0px;
+  margin-left: 35px;
+}
+
+#myProgress {
+  position: relative;
+  width: 30%;
+  height: 17px;
+  background-color: grey;
+  margin-top: 0px;
+  margin-left: 20px;
+}
+#myBar {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: black;
+}
+
+#label {
+  text-align: center;
+  line-height: 16px;
+  color: white;
 }
 
 #workImage {
@@ -52,46 +105,19 @@ img {
     width: 75px;
 }
 
-#pizzaPizza {
-    width: 45px;
-}
 
-#parentDivTest {
-    margin-left: 10px;
-}
+/*****************************/
+/* TITLE AND TITLE ANIMATION */
+/*****************************/
 
-#addingFood {
-    margin-left: 20px;
-}
-
-#ramenImage {
-    width: 50px;
-    margin-left: 20px;
-}
-#progressTitle  {
-    margin-bottom: 0px;
-    margin-left: 35px;
-}
-
-#myProgress {
-    position: relative;
-    width: 30%;
-    height: 17px;
-    background-color: grey;
-    margin-top: 0px;
-    margin-left: 20px;
-}
-#myBar {
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    background-color: black;
-}
-
-#label {
-    text-align: center;
-    line-height: 16px;
-    color: white;
+#brTitle {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family: 'Sacramento', cursive;
+  animation-duration: 2s;
+  animation-name: bounceIn;
+  margin-bottom: 50px;
+  font-size: 40px;
 }
 
 @keyframes bounceIn {
@@ -108,22 +134,20 @@ img {
   }
 }
 
-#brTitle {
-    margin-top: 20px;
+
+/***************/
+/* FOOD IMAGES */
+/***************/
+
+#addingFood {
+  margin-left: 20px;
+}
+
+#pizzaPizza {
+    width: 45px;
+}
+
+#ramenImage {
+    width: 50px;
     margin-left: 20px;
-    font-family: 'Sacramento', cursive;
-    animation-duration: 2s;
-    animation-name: bounceIn;
-    margin-bottom: 50px;
-    font-size: 40px;
-}
-
-#colDeux {
-  font-family: monospace;
-
-}
-
-#colUn {
-  font-family: monospace;
-
 }
