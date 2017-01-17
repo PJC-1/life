@@ -16,9 +16,8 @@ var noMoney       =  "You do not have enought money for that."
 /////////////////
 
 var userObj = {
-    // just use a self-invoking function to add the default job.
-    // NOTE: keeping the jobObj as an object instead of an array will be a better
-    // idea, and then we can keep employment as an array, for now.
+    //  think about how you are going to use employment in the userObj in order
+    //  to validate having userObj.employment an empty array.
     employment:   [],
     money        :  0.00,
     hunger       :  75,
@@ -119,6 +118,15 @@ var skillsObj = {
 }
 
 
+////////////////////////
+// FAME-TOKENS OBJECT //
+////////////////////////
+
+var tokenObj = {
+    // this will be an object of fame-tokens
+}
+
+
 ///////////////
 // BROADCAST //
 ///////////////
@@ -191,7 +199,7 @@ function move() {
     var elem = document.getElementById("myBar");
     var width = 0;
     // here you can set the milleseconds to add delay.
-    var id = setInterval(frame, 75);
+    var id = setInterval(frame, 20);
     function frame() {
         if (width >= 100) {
             clearInterval(id);
@@ -339,7 +347,7 @@ var cheeseSwitch = true;
 function addCheese() {
     // create a new upgrade button
     var happySrc = foodObj.cheeseBurger.src;
-    if (userObj.money > 15 && cheeseSwitch === true){
+    if (userObj.money > 20 && cheeseSwitch === true){
         var z = document.createElement("IMG");
         z.setAttribute("src", happySrc);
         z.setAttribute("width", "50");
