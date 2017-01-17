@@ -9,6 +9,7 @@ var hungryNoMoney =  "You are hungry, but don't have enough money for this item.
 var notHungry     =  "You are not hungry now.";
 var noMoney       =  "You do not have enought money for that."
 
+
 /////////////////
 // USER OBJECT //
 /////////////////
@@ -29,6 +30,7 @@ var userObj = {
     skills       :  [],
     fullfillment :  0
 }
+
 
 /////////////////
 // FOOD OBJECT //
@@ -60,6 +62,7 @@ var foodObj = {
         level :  3
     }
 }
+
 
 /////////////////
 // JOBS OBJECT //
@@ -105,6 +108,7 @@ var jobObj = {
         }
 }
 
+
 ///////////////////
 // SKILLS OBJECT //
 ///////////////////
@@ -112,6 +116,7 @@ var jobObj = {
 var skillsObj = {
     // empty object for now
 }
+
 
 ///////////////
 // BROADCAST //
@@ -126,6 +131,7 @@ function clearBroadcast() {
 function clearTestBroadcast() {
     document.getElementById('testingBroadcast').innerHTML = "";
 }
+
 
 ////////////////
 // EMPLOYMENT //
@@ -147,6 +153,7 @@ function clearTestBroadcast() {
 (function () {
     document.getElementById("testingSpan").innerHTML = jobObj.internship.title;
 })();
+
 
 ///////////
 // MONEY //
@@ -171,9 +178,11 @@ if (userObj.money < 1){
     userObj.happiness -= 25;
 }
 
+
 //////////////////
 // PROGRESS BAR //
 //////////////////
+
 function move() {
     var elem = document.getElementById("myBar");
     var width = 0;
@@ -209,6 +218,7 @@ function funTime() {
     move();
 }
 
+
 ////////////
 // HUNGER //
 ////////////
@@ -227,6 +237,7 @@ function gettingHungery() {
         userObj.hunger = 0;
     }
 }
+
 
 ///////////
 // RAMEN //
@@ -247,6 +258,7 @@ function ramenSnack() {
         alert("you are hungry and without money.");
     }
 }
+
 
 ///////////
 // PIZZA //
@@ -284,7 +296,7 @@ function testAdding() {
         i.setAttribute("width", "50");
         i.setAttribute("onclick", "pizzaSnack()");
         i.setAttribute("id", "pizzaPizza");
-        i.setAttribute("class", "upgradeBtn");
+        // i.setAttribute("class", "upgradeBtn");
         document.getElementById('addingFood').appendChild(i);
         pizzaSwtich = false;
         // this code will remove the upgrade button
@@ -297,6 +309,8 @@ function testAdding() {
         x.appendChild(t);
         x.setAttribute("id", "happyButton");
         x.setAttribute("onclick", "addCheese()");
+        // add a "upgradeBtn" class to this button
+        x.setAttribute("class", "upgradeBtn");
         document.getElementById('upgradeFoodInject').appendChild(x);
     } else if (pizzaSwtich === false) {
         // this will prevent appending another pizza roll to the page
@@ -305,6 +319,7 @@ function testAdding() {
         setTimeout(clearBroadcast, 2000);
     }
 }
+
 
 ///////////////////
 // CHEESE BURGER //
@@ -321,7 +336,8 @@ function addCheese() {
         z.setAttribute("width", "50");
         z.setAttribute("onclick", "happySnack()");
         z.setAttribute("id", "happyHappy");
-        z.setAttribute("class", "upgradeBtn");
+        // you might need to take this out or create a new class for this
+        // z.setAttribute("class", "upgradeBtn");
         document.getElementById('addingFood').appendChild(z);
         cheeseSwitch = false;
     } else if (cheeseSwitch === false) {
