@@ -3,6 +3,7 @@
 ////////////////////
 
 var moneySign     =  "Money: $ ";
+var expSign       =  "Exp: ";
 var purchasedSign =  "Purchased: ";
 var hungerSign    =  "Hunger: ";
 var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
@@ -85,7 +86,7 @@ var jobObj = {
                             + "families that we serve",
             level        :  1,
             money        :  1.00,
-            exp          :  5,
+            exp          :  2.5,
             hunger       :  .5,
             fullfillment :  0,
             current      :  true
@@ -101,7 +102,7 @@ var jobObj = {
                             + "throughout the year.",
             level        :  2,
             money        :  3.00,
-            exp          :  10,
+            exp          :  5,
             hunger       :  2,
             fullfillment :  0,
             current      :  false
@@ -207,6 +208,7 @@ function move() {
             userObj.hunger -= jobObj.internship.hunger;
             // exp is not yet wired up
             userObj.exp += jobObj.internship.exp;
+            document.getElementById('userExp').innerHTML = expSign + userObj.exp;
             document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
             document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
             document.getElementById('myBar').setAttribute("style", "width: 0%");
@@ -216,9 +218,6 @@ function move() {
     }
 }
 
-// need to check if this function is necessary, might have been created
-// with the intension of combining functionality, but as it stands it seems to
-// only have the move(), so possibily delete it.
 function funTime() {
     if (progressSwitch === false){
         // disabled onclick while progress bar is in use.
