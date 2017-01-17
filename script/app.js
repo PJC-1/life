@@ -28,6 +28,7 @@ var userObj = {
     exp          :  0,
     level        :  1,
     skills       :  [],
+    tokens       :  [],
     fullfillment :  0
 }
 

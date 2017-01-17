@@ -52,12 +52,33 @@ img {
     display: flex;
 }
 
+@media screen and (max-width: 450px) and (min-width: 300px) {
+    /*
+      Media queries use the same specificity as regular CSS so in order to get
+      #colUn's medua query selector to take precedence, prepend an ancestor
+      element to it.
+    */
+    body #colWrapper {
+        display: block;
+    }
+
+    body #colUn {
+        width: 90%;
+    }
+
+    body #colDeux {
+        width: 90%;
+    }
+}
+
+
 #colUn {
     width: 70%;
     margin: 10px;
     background: #e6fff2;
     font-family: monospace;
 }
+
 
 #colDeux {
     width: 30%;
