@@ -190,7 +190,7 @@ function move() {
     var elem = document.getElementById("myBar");
     var width = 0;
     // here you can set the milleseconds to add delay.
-    var id = setInterval(frame, 10);
+    var id = setInterval(frame, 75);
     function frame() {
         if (width >= 100) {
             clearInterval(id);
