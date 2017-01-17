@@ -183,14 +183,19 @@ if (userObj.money < 1){
 // PROGRESS BAR //
 //////////////////
 
+// creating a switch to disable the job button while doing a job.
+var progressSwitch = true;
+
 function move() {
     var elem = document.getElementById("myBar");
     var width = 0;
+    // here you can set the milleseconds to add delay.
     var id = setInterval(frame, 10);
     function frame() {
         if (width >= 100) {
             clearInterval(id);
         } else {
+            progressSwitch = false;
             width++;
             //this line is what increments the width attribute in the progress bar element
             elem.style.width = width + '%';
@@ -206,6 +211,7 @@ function move() {
             document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
             document.getElementById('myBar').setAttribute("style", "width: 0%");
             document.getElementById('label').innerHTML = "0%";
+            progressSwitch = true;
         }
     }
 }
@@ -215,7 +221,12 @@ function move() {
 // only have the move(), so possibily delete it.
 function funTime() {
     var elem = document.getElementById("myBar");
-    move();
+    if (progressSwitch === false){
+        // disabled onclick while progress bar is in use.
+        console.log("working...");
+    } else {
+        move();
+    }
 }
 
 
