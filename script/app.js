@@ -220,7 +220,6 @@ function move() {
 // with the intension of combining functionality, but as it stands it seems to
 // only have the move(), so possibily delete it.
 function funTime() {
-    var elem = document.getElementById("myBar");
     if (progressSwitch === false){
         // disabled onclick while progress bar is in use.
         console.log("working...");
