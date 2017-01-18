@@ -127,17 +127,17 @@ var tokenObj = {
     // each tier will represent a new set of tokens available to the user.
     tierOne: {
         jordan6: {
-            src: "./assets/jordan6.png",
-            description: "Jordan 6 Retro Black Infrared",
-            price: 199.99,
-            fullfillment: 0
+            src          :  "./assets/jordan6.png",
+            description  :  "Jordan 6 Retro Black Infrared",
+            price        :  199.99,
+            fullfillment :  0
         }
     },
     tierTwo: {
-
+    // empty for now
     },
     tierThree: {
-
+    // empty for now
     }
 }
 
