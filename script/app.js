@@ -328,7 +328,6 @@ function testAdding() {
         i.setAttribute("width", "50");
         i.setAttribute("onclick", "pizzaSnack()");
         i.setAttribute("id", "pizzaPizza");
-        // i.setAttribute("class", "upgradeBtn");
         document.getElementById('addingFood').appendChild(i);
         pizzaSwtich = false;
         // this code will remove the upgrade button
