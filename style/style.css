@@ -52,6 +52,15 @@ img {
     display: flex;
 }
 
+.flexy {
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background: #e3ceff;
+    margin: 10px;
+}
+
+
 @media screen and (max-width: 450px) and (min-width: 300px) {
     /*
       Media queries use the same specificity as regular CSS so in order to get
@@ -89,12 +98,18 @@ img {
 }
 
 #colTrois {
-    display: flex;
-    width: 100%;
-    height: 300px;
-    background: #e3ceff;
-    margin: 10px;
+
 }
+
+/**********/
+/* TOKENS */
+/**********/
+#tokenTitle {
+  font-family: monospace;;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
 
 /****************/
 /* PROGRESS BAR */
