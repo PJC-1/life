@@ -110,15 +110,6 @@ var jobObj = {
 }
 
 
-///////////////////
-// SKILLS OBJECT //
-///////////////////
-
-var skillsObj = {
-    // empty object for now
-}
-
-
 ////////////////////////
 // FAME-TOKENS OBJECT //
 ////////////////////////
@@ -139,6 +130,15 @@ var tokenObj = {
     tierThree: {
     // empty for now
     }
+}
+
+
+///////////////////
+// SKILLS OBJECT //
+///////////////////
+
+var skillsObj = {
+  // empty object for now
 }
 
 
