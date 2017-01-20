@@ -255,8 +255,10 @@ function funTime() {
 // FAME-TOKENS //
 /////////////////
 
-function initToken() {
-    // wire this to the onlick that unlocks the tier-1 tokens
+function unlockTierI() {
+    // wire this to the onlick that unlocks the tier-I tokens
+    // this function should iterate though the tier-I object and append each
+    // fame-token.
 }
 
 
