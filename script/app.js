@@ -18,7 +18,7 @@ var noMoney       =  "You do not have enought money for that."
 var userObj = {
     //  think about how you are going to use employment in the userObj in order
     //  to validate having userObj.employment an empty array.
-    employment:   [],
+    employment   :  [],
     money        :  0.00,
     hunger       :  75,
     foodLevel    :  1,
@@ -248,6 +248,15 @@ function funTime() {
     } else {
         move();
     }
+}
+
+
+/////////////////
+// FAME-TOKENS //
+/////////////////
+
+function initToken() {
+    // wire this to the onlick that unlocks the tier-1 tokens
 }
 
 
