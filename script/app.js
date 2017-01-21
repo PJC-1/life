@@ -172,6 +172,11 @@ function clearTestBroadcast() {
     console.log(userObj.employment);
 })();
 
+// create a function to upgrade to the next job
+function supportUpgrade(){
+  
+}
+
 // self-invoking function, you have to add parentheses around the function to
 // indicate that it is a function expression:
 (function () {
@@ -269,7 +274,7 @@ function unlockTierI() {
 var hunger = setInterval(gettingHungery, 60000);
 
 function gettingHungery() {
-    userObj.hunger -= 1;
+    userObj.hunger -= 5;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
     // hunger reminder
     if (userObj.hunger < 39){
