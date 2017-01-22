@@ -268,6 +268,8 @@ function unlockTierI() {
 
     // this iterates through the the tiers so now you need to get into teirOne
     for (var key in tokenObj) {
+        // hasOwnProperty() filters out built-in key-value pairs inherited by
+        // parent (i.e. prototype || __proto__) 
         if (tokenObj.hasOwnProperty(key)) {
             console.log(key + " ->" + tokenObj[key]);
         }
