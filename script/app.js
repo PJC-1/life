@@ -173,7 +173,7 @@ function clearTestBroadcast() {
 })();
 
 // create a function to upgrade to the next job
-function supportUpgrade(){
+function supportUpgrade() {
     // this will have to push the new job into the userObj
     // and then iterate to that new job, this might change how the rest of the
     // functionality interacts with the jobs. look into it.
@@ -197,12 +197,12 @@ function supportUpgrade(){
 
 var time = setInterval(addMoneyByTime, 1700);
 
-function addMoneyByTime(){
+function addMoneyByTime() {
     userObj.money += 0.25;
     document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
 }
 
-if (userObj.money < 1){
+if (userObj.money < 1) {
     // at some point change alert to something else
     // alert("You officially broke");
     userObj.money = 0;
@@ -232,7 +232,7 @@ function move() {
             elem.style.width = width + '%';
             document.getElementById("label").innerHTML = width * 1 + '%';
         }
-        if (width === 100){
+        if (width === 100) {
             // find out why this is adding both money + hunger twice
             userObj.money += jobObj.internship.money;
             userObj.hunger -= jobObj.internship.hunger;
@@ -249,7 +249,7 @@ function move() {
 }
 
 function funTime() {
-    if (progressSwitch === false){
+    if (progressSwitch === false) {
         // disabled onclick while progress bar is in use.
         console.log("working...");
     } else {
@@ -265,11 +265,9 @@ function funTime() {
 function unlockTierI() {
     // maybe just access tierOne and then iterate through that object to be
     // able to access each token in tierOne.
-
-    // this iterates through the the tiers so now you need to get into teirOne
     for (var key in tokenObj) {
         // hasOwnProperty() filters out built-in key-value pairs inherited by
-        // parent (i.e. prototype || __proto__) 
+        // parent (i.e. prototype || __proto__)
         if (tokenObj.hasOwnProperty(key)) {
             console.log(key + " ->" + tokenObj[key]);
         }
@@ -287,11 +285,11 @@ function gettingHungery() {
     userObj.hunger -= 5;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
     // hunger reminder
-    if (userObj.hunger < 39){
+    if (userObj.hunger < 39) {
         document.getElementById('testingBroadcast').innerHTML = "You are getting hungry try eatting some food.";
         setTimeout(clearTestBroadcast, 3000);
     }
-    if (userObj.hunger < 0){
+    if (userObj.hunger < 0) {
         userObj.hunger = 0;
     }
 }
@@ -302,7 +300,7 @@ function gettingHungery() {
 ///////////
 
 function ramenSnack() {
-    if (userObj.hunger <= 99 && userObj.money > 2.25){
+    if (userObj.hunger <= 99 && userObj.money > 2.25) {
         userObj.hunger += 1;
         userObj.money -= 2.25;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
@@ -312,7 +310,7 @@ function ramenSnack() {
     } else if (userObj.hunger > 99) {
         document.getElementById('broadcast').innerHTML = notHungry;
         setTimeout(clearBroadcast, 3000);
-    } else if (userObj.hunger < 99 && userObj.money < 2.25){
+    } else if (userObj.hunger < 99 && userObj.money < 2.25) {
         alert("you are hungry and without money.");
     }
 }
@@ -327,7 +325,7 @@ function clearUpgradeBroadcast() {
 }
 
 function pizzaSnack() {
-    if (userObj.hunger <= 97 && userObj.money > 4.75){
+    if (userObj.hunger <= 97 && userObj.money > 4.75) {
         userObj.hunger += foodObj.pizzaSnack.fill;
         userObj.money -= foodObj.pizzaSnack.cost;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
@@ -337,7 +335,7 @@ function pizzaSnack() {
     } else if (userObj.hunger > 97) {
         document.getElementById('upgradeBroadcast').innerHTML = notHungry;
         setTimeout(clearUpgradeBroadcast, 3000);
-    } else if (userObj.hunger < 97 && userObj.money < 4.75){
+    } else if (userObj.hunger < 97 && userObj.money < 4.75) {
         alert("you are hungry and without money.");
     }
 }
@@ -387,7 +385,7 @@ var cheeseSwitch = true;
 function addCheese() {
     // create a new upgrade button
     var happySrc = foodObj.cheeseBurger.src;
-    if (userObj.money > 20 && cheeseSwitch === true){
+    if (userObj.money > 20 && cheeseSwitch === true) {
         var z = document.createElement("IMG");
         z.setAttribute("src", happySrc);
         z.setAttribute("width", "50");
@@ -406,11 +404,11 @@ function addCheese() {
 }
 
 function happySnack() {
-    if (userObj.hunger < 95 && userObj.money > 6.00){
+    if (userObj.hunger < 95 && userObj.money > 6.00) {
         userObj.hunger += foodObj.cheeseBurger.fill;
         userObj.money -= foodObj.cheeseBurger.cost;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
-    } else if (userObj.hunger < 95 && userObj.money < 6.00){
+    } else if (userObj.hunger < 95 && userObj.money < 6.00) {
         document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
         setTimeout(clearUpgradeBroadcast, 3000);
     } else if (userObj.hunger > 95) {
