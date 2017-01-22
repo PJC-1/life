@@ -263,6 +263,9 @@ function funTime() {
 /////////////////
 
 function unlockTierI() {
+    // maybe just access tierOne and then iterate through that object to be
+    // able to access each token in tierOne.
+
     // this iterates through the the tiers so now you need to get into teirOne
     for (var key in tokenObj) {
         if (tokenObj.hasOwnProperty(key)) {
