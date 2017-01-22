@@ -174,9 +174,9 @@ function clearTestBroadcast() {
 
 // create a function to upgrade to the next job
 function supportUpgrade(){
-  // this will have to push the new job into the userObj
-  // and then iterate to that new job, this might change how the rest of the
-  // functionality interacts with the jobs. look into it.
+    // this will have to push the new job into the userObj
+    // and then iterate to that new job, this might change how the rest of the
+    // functionality interacts with the jobs. look into it.
 }
 
 // self-invoking function, you have to add parentheses around the function to
@@ -263,9 +263,12 @@ function funTime() {
 /////////////////
 
 function unlockTierI() {
-    // wire this to the onlick that unlocks the tier-I tokens
-    // this function should iterate though the tier-I object and append each
-    // fame-token.
+    // this iterates through the the tiers so now you need to get into teirOne
+    for (var key in tokenObj) {
+        if (tokenObj.hasOwnProperty(key)) {
+            console.log(key + " ->" + tokenObj[key]);
+        }
+    }
 }
 
 
