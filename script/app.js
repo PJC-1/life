@@ -130,7 +130,7 @@ var tokenObj = {
     tierThree: {
     // empty for now
     }
-}
+};
 
 
 ///////////////////
@@ -265,11 +265,16 @@ function funTime() {
 function unlockTierI() {
     // maybe just access tierOne and then iterate through that object to be
     // able to access each token in tierOne.
-    for (var key in tokenObj) {
+
+    var tierI = tokenObj.tierOne
+    console.log("this is tierI: ", tierI);
+
+    for (var key in tierI) {
         // hasOwnProperty() filters out built-in key-value pairs inherited by
         // parent (i.e. prototype || __proto__)
-        if (tokenObj.hasOwnProperty(key)) {
-            console.log(key + " ->" + tokenObj[key]);
+        if (tierI.hasOwnProperty(key)) {
+            // note how I am able to access the prince.
+            console.log(key + " ->" + tierI[key].price);
         }
     }
 }
