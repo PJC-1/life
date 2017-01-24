@@ -265,18 +265,26 @@ function funTime() {
 function unlockTierI() {
     // maybe just access tierOne and then iterate through that object to be
     // able to access each token in tierOne.
-
     var tierI = tokenObj.tierOne
-    console.log("this is tierI: ", tierI);
 
-    for (var key in tierI) {
-        // hasOwnProperty() filters out built-in key-value pairs inherited by
-        // parent (i.e. prototype || __proto__)
-        if (tierI.hasOwnProperty(key)) {
-            // note how I am able to access the prince.
-            console.log(key + " ->" + tierI[key].price);
+    if (userObj.money >= 10.00) {
+        for (var key in tierI) {
+            // hasOwnProperty() filters out built-in key-value pairs inherited by
+            // parent (i.e. prototype || __proto__)
+            if (tierI.hasOwnProperty(key)) {
+                // note how I am able to access the price.
+                console.log(key + " ->" + tierI[key].price);
+                var i = document.createElement("IMG");
+                i.setAttribute("src", tierI[key].src);
+                i.setAttribute("width", "75");
+                // wire a function that will purchase the token
+                document.getElementById("tokenInject").appendChild(i);
+            }
         }
+    } else {
+        alert("test");
     }
+
 }
 
 
