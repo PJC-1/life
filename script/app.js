@@ -117,10 +117,19 @@ var jobObj = {
 var tokenObj = {
     // each tier will represent a new set of tokens available to the user.
     tierOne: {
+        rubiks: {
+            src          :  "./assets/rubiks.png",
+            // the width key is a good idea to get better sizing
+            width        :  "50",
+            description  :  "3-D combination puzzle",
+            price        :  99.75,
+            fullfillment :  10
+        },
         jordan6: {
             src          :  "./assets/jordan6.png",
+            width        :  "75",
             description  :  "Jordan 6 Retro Black Infrared",
-            price        :  199.99,
+            price        :  199.25,
             fullfillment :  0
         }
     },
@@ -276,7 +285,7 @@ function unlockTierI() {
                 console.log(key + " ->" + tierI[key].price);
                 var i = document.createElement("IMG");
                 i.setAttribute("src", tierI[key].src);
-                i.setAttribute("width", "75");
+                i.setAttribute("width", tierI[key].width);
                 // wire a function that will purchase the token
                 document.getElementById("tokenInject").appendChild(i);
             }
