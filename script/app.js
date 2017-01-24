@@ -271,12 +271,14 @@ function funTime() {
 // FAME-TOKENS //
 /////////////////
 
+var tierSwitch = true;
+
 function unlockTierI() {
     // maybe just access tierOne and then iterate through that object to be
     // able to access each token in tierOne.
-    var tierI = tokenObj.tierOne
+    var tierI = tokenObj.tierOne;
 
-    if (userObj.money >= 10.00) {
+    if (userObj.money >= 10.00 && tierSwitch === true) {
         for (var key in tierI) {
             // hasOwnProperty() filters out built-in key-value pairs inherited by
             // parent (i.e. prototype || __proto__)
@@ -290,10 +292,12 @@ function unlockTierI() {
                 document.getElementById("tokenInject").appendChild(i);
             }
         }
+        tierSwitch = false;
+    } else if (tierSwitch === false) {
+        // to prevent unlocking multiple times
     } else {
-        alert("test");
+        console.log("test");
     }
-
 }
 
 
