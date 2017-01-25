@@ -36,7 +36,7 @@ img {
       later you can create each of the food upgrades with a particular class so
       not all images will have this css.
     */
-    display: block;
+    display: inline-block;
 }
 
 #tierIImg {
@@ -197,5 +197,4 @@ img {
 
 #ramenImage {
     width: 50px;
-    margin-left: 20px;
 }
