@@ -39,6 +39,9 @@ img {
     display: block;
 }
 
+#tierIImg {
+    display: inline-block;
+}
 
 /***********/
 /* COLUMNS */

@@ -288,6 +288,7 @@ function unlockTierI() {
                 var i = document.createElement("IMG");
                 i.setAttribute("src", tierI[key].src);
                 i.setAttribute("width", tierI[key].width);
+                i.setAttribute("id", "tierIImg");
                 // wire a function that will purchase the token
                 document.getElementById("tokenInject").appendChild(i);
             }
