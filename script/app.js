@@ -122,7 +122,7 @@ var tokenObj = {
             // the width key is a good idea to get better sizing
             width        :  "50",
             description  :  "3-D combination puzzle",
-            price        :  99.75,
+            price        :  4.75,
             fullfillment :  10
         },
         jordan6: {
@@ -130,6 +130,13 @@ var tokenObj = {
             width        :  "75",
             description  :  "Jordan 6 Retro Black Infrared",
             price        :  199.25,
+            fullfillment :  0
+        },
+        iPhone: {
+            src          :  "./assets/iPhone.png",
+            width        :  "60",
+            description  :  "32GB Apple iPhone 7 Plus",
+            price        :  769.75,
             fullfillment :  0
         }
     },
