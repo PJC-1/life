@@ -48,6 +48,7 @@ img {
 /* LOCKED */
 /**********/
 
+/* using relatives and absolutes to get the overlay of images to work */
 .pRent {
     position: relative;
     top: 0;
