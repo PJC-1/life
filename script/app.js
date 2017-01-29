@@ -119,28 +119,22 @@ var tokenObj = {
     tierOne: {
         rubiks: {
             src          :  "./assets/rubiks.png",
-            lockSrc      :  "./assets/locked.png",
             // the width key is a good idea to get better sizing
             width        :  "50",
-            lockWidth    :  "50",
             description  :  "3-D combination puzzle",
             price        :  4.75,
             fullfillment :  10
         },
         jordan6: {
             src          :  "./assets/jordan6.png",
-            lockSrc      :  "./assets/locked.png",
             width        :  "75",
-            lockWidth    :  "50",
             description  :  "Jordan 6 Retro Black Infrared",
             price        :  199.25,
             fullfillment :  0
         },
         iPhone: {
             src          :  "./assets/iPhone.png",
-            lockSrc      :  "./assets/locked.png",
             width        :  "60",
-            lockWidth    :  "50",
             description  :  "32GB Apple iPhone 7 Plus",
             price        :  769.75,
             fullfillment :  0
@@ -302,6 +296,7 @@ function unlockTierI() {
                 i.setAttribute("src", tierI[key].src);
                 i.setAttribute("width", tierI[key].width);
                 i.setAttribute("id", "tierIImg");
+                i.setAttribute("class", "img1");
                 // wire a function that will purchase the token
                 document.getElementById("tokenInject").appendChild(i);
             }
