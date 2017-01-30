@@ -8,7 +8,7 @@ var purchasedSign =  "Purchased: ";
 var hungerSign    =  "Hunger: ";
 var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
 var notHungry     =  "You are not hungry now.";
-var noMoney       =  "You do not have enought money for that."
+var noMoney       =  "You do not have enought money for that.";
 
 
 /////////////////
