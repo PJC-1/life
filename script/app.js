@@ -211,16 +211,16 @@ function supportUpgrade() {
     document.getElementById("moneySpan").innerHTML = moneySign + userObj.money;
 })();
 
-var time = setInterval(addMoneyByTime, 1700);
+// maybe you could take this out, and replace it for boosts
+// var time = setInterval(addMoneyByTime, 1700);
+//
+// function addMoneyByTime() {
+//     userObj.money += 0.25;
+//     document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+// }
 
-function addMoneyByTime() {
-    userObj.money += 0.25;
-    document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-}
-
-if (userObj.money < 1) {
-    // at some point change alert to something else
-    // alert("You officially broke");
+if (userObj.money <= 0) {
+    // you can broadcast a message
     userObj.money = 0;
     userObj.happiness -= 25;
 }
