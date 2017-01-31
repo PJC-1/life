@@ -121,6 +121,7 @@ var tokenObj = {
             src          :  "./assets/rubiks.png",
             // the width key is a good idea to get better sizing
             width        :  "50",
+            id           :  "rubiksID",
             description  :  "3-D combination puzzle",
             price        :  4.75,
             fullfillment :  10
@@ -128,6 +129,7 @@ var tokenObj = {
         jordan6: {
             src          :  "./assets/jordan6.png",
             width        :  "75",
+            id           :  "jordanID",
             description  :  "Jordan 6 Retro Black Infrared",
             price        :  199.25,
             fullfillment :  0
@@ -135,6 +137,7 @@ var tokenObj = {
         iPhone: {
             src          :  "./assets/iPhone.png",
             width        :  "60",
+            id           :  "iphoneID",
             description  :  "32GB Apple iPhone 7 Plus",
             price        :  769.75,
             fullfillment :  0
@@ -295,7 +298,7 @@ function unlockTierI() {
                 var i = document.createElement("IMG");
                 i.setAttribute("src", tierI[key].src);
                 i.setAttribute("width", tierI[key].width);
-                i.setAttribute("id", "tierIImg");
+                i.setAttribute("id", tierI[key].id);
                 i.setAttribute("class", "img1");
                 i.setAttribute("style", "filter:blur(5px)");
                 // wire a function that will purchase the token
@@ -308,6 +311,10 @@ function unlockTierI() {
     } else {
         console.log("test");
     }
+}
+
+function removeFilter() {
+    // add functionality to remove the filter on the token img
 }
 
 
