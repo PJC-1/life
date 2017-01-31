@@ -297,7 +297,7 @@ function unlockTierI() {
                 i.setAttribute("width", tierI[key].width);
                 i.setAttribute("id", "tierIImg");
                 i.setAttribute("class", "img1");
-                // i.setAttribute("filter", "blur(5px)");
+                i.setAttribute("style", "filter:blur(5px)");
                 // wire a function that will purchase the token
                 document.getElementById("tokenInject").appendChild(i);
             }
