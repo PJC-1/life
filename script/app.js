@@ -302,7 +302,7 @@ function unlockTierI() {
                 i.setAttribute("class", "img1");
                 i.setAttribute("style", "filter:blur(5px)");
                 // wire a function that will purchase the token
-                i.setAttribute("onclick", "removeFilter()");
+                i.setAttribute("onclick", "rmFltrRubiks()");
                 document.getElementById("tokenInject").appendChild(i);
             }
         }
@@ -314,9 +314,8 @@ function unlockTierI() {
     }
 }
 
-function removeFilter() {
-    // add functionality to remove the filter on the token img
-    console.log("Test token onclick");
+function rmFltrRubiks() {
+    document.getElementById("rubiksID").removeAttribute("style");
 }
 
 
