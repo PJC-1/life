@@ -314,11 +314,23 @@ function unlockTierI() {
     }
 }
 
+var rubiksSwitch = true;
+
 function rmFltrRubiks() {
     // maybe you could possibly use "this" to grab the id, that way you will
     // not need to create an function for each token.
-    document.getElementById("rubiksID").removeAttribute("style");
-    // add some purchase functionality here
+    if (userObj.money > tokenObj.tierOne.rubiks.price && rubiksSwitch === true) {
+        userObj.money -= tokenObj.tierOne.rubiks.price;
+        userObj.tokens.push(tokenObj.tierOne.rubiks);
+        console.log("Checking userObjs tokens ", userObj.tokens)
+        document.getElementById("rubiksID").removeAttribute("style");
+        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        rubiksSwitch = false;
+    } else if (rubiksSwitch === false) {
+        // to prevent multiple purchasing
+    } else if (userObj.money < tokenObj.tierOne.rubiks.price) {
+        
+    }
 }
 
 
