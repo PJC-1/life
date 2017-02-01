@@ -318,6 +318,7 @@ function rmFltrRubiks() {
     // maybe you could possibly use "this" to grab the id, that way you will
     // not need to create an function for each token.
     document.getElementById("rubiksID").removeAttribute("style");
+    // add some purchase functionality here
 }
 
 
