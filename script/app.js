@@ -175,6 +175,14 @@ function clearTestBroadcast() {
     document.getElementById('testingBroadcast').innerHTML = "";
 }
 
+function clearUpgradeBroadcast() {
+    document.getElementById('upgradeBroadcast').innerHTML = "";
+}
+
+function clearTknBroadcast() {
+    document.getElementById('tknBroadcast').innerHTML = "";
+}
+
 
 ////////////////
 // EMPLOYMENT //
@@ -301,7 +309,7 @@ function unlockTierI() {
                 i.setAttribute("id", tierI[key].id);
                 i.setAttribute("class", "img1");
                 i.setAttribute("style", "filter:blur(5px)");
-                // wire a function that will purchase the token
+                // you will need to add onclick as a token's key
                 i.setAttribute("onclick", "rmFltrRubiks()");
                 document.getElementById("tokenInject").appendChild(i);
             }
@@ -329,7 +337,9 @@ function rmFltrRubiks() {
     } else if (rubiksSwitch === false) {
         // to prevent multiple purchasing
     } else if (userObj.money < tokenObj.tierOne.rubiks.price) {
-        
+
+        document.getElementById("tknBroadcast").innerHTML="You need more money to purcahse this item.";
+        setTimeout(clearTknBroadcast, 3000);
     }
 }
 
@@ -363,6 +373,7 @@ function ramenSnack() {
         userObj.hunger += 1;
         userObj.money -= 2.25;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
     } else if (userObj.hunger < 99) {
         document.getElementById('broadcast').innerHTML = hungryNoMoney;
         setTimeout(clearBroadcast, 3000);
@@ -378,10 +389,6 @@ function ramenSnack() {
 ///////////
 // PIZZA //
 ///////////
-
-function clearUpgradeBroadcast() {
-    var emptyString = document.getElementById('upgradeBroadcast').innerHTML = "";
-}
 
 function pizzaSnack() {
     if (userObj.hunger <= 97 && userObj.money > 4.75) {
