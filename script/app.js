@@ -337,7 +337,6 @@ function rmFltrRubiks() {
     } else if (rubiksSwitch === false) {
         // to prevent multiple purchasing
     } else if (userObj.money < tokenObj.tierOne.rubiks.price) {
-
         document.getElementById("tknBroadcast").innerHTML="You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
     }
@@ -395,6 +394,7 @@ function pizzaSnack() {
         userObj.hunger += foodObj.pizzaSnack.fill;
         userObj.money -= foodObj.pizzaSnack.cost;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
     } else if (userObj.hunger < 97 && userObj.money < 4.75) {
         document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
         setTimeout(clearUpgradeBroadcast, 3000);
@@ -474,6 +474,7 @@ function happySnack() {
         userObj.hunger += foodObj.cheeseBurger.fill;
         userObj.money -= foodObj.cheeseBurger.cost;
         document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
     } else if (userObj.hunger < 95 && userObj.money < 6.00) {
         document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
         setTimeout(clearUpgradeBroadcast, 3000);
