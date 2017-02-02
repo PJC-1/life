@@ -389,24 +389,6 @@ function ramenSnack() {
 // PIZZA //
 ///////////
 
-function pizzaSnack() {
-    if (userObj.hunger <= 97 && userObj.money > 4.75) {
-        userObj.hunger += foodObj.pizzaSnack.fill;
-        userObj.money -= foodObj.pizzaSnack.cost;
-        document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
-        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-    } else if (userObj.hunger < 97 && userObj.money < 4.75) {
-        document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
-        setTimeout(clearUpgradeBroadcast, 3000);
-    } else if (userObj.hunger > 97) {
-        document.getElementById('upgradeBroadcast').innerHTML = notHungry;
-        setTimeout(clearUpgradeBroadcast, 3000);
-    } else if (userObj.hunger < 97 && userObj.money < 4.75) {
-        alert("you are hungry and without money.");
-    }
-}
-
-// used with testAdding()
 var pizzaSwtich = true;
 
 // change the name of this function to something else
@@ -438,6 +420,23 @@ function testAdding() {
     } else {
         document.getElementById("broadcast").innerHTML = noMoney;
         setTimeout(clearBroadcast, 2000);
+    }
+}
+
+function pizzaSnack() {
+    if (userObj.hunger <= 97 && userObj.money > 4.75) {
+        userObj.hunger += foodObj.pizzaSnack.fill;
+        userObj.money -= foodObj.pizzaSnack.cost;
+        document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+    } else if (userObj.hunger < 97 && userObj.money < 4.75) {
+        document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
+        setTimeout(clearUpgradeBroadcast, 3000);
+    } else if (userObj.hunger > 97) {
+        document.getElementById('upgradeBroadcast').innerHTML = notHungry;
+        setTimeout(clearUpgradeBroadcast, 3000);
+    } else if (userObj.hunger < 97 && userObj.money < 4.75) {
+        alert("you are hungry and without money.");
     }
 }
 
