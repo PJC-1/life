@@ -133,13 +133,19 @@ img {
 /* TOKENS */
 /**********/
 #tokenTitle {
-    font-family: monospace;;
+    font-family: monospace;
     font-size: 18px;
     margin-left: 10px;
 }
 
 #tokenInject {
     padding: 15px;
+}
+
+#tknBroadcast {
+    font-family: monospace;
+    font-size: 15px;
+    margin-left: 10px;
 }
 
 
