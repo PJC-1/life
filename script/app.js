@@ -317,8 +317,8 @@ function unlockTierI() {
         tierSwitch = false;
     } else if (tierSwitch === false) {
         // to prevent unlocking multiple times
-    } else {
-        console.log("test");
+    } else if (userObj.money < 10.00 && tierSwitch === true) {
+        console.log("test broadcast");
     }
 }
 
