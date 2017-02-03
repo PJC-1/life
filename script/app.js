@@ -318,7 +318,9 @@ function unlockTierI() {
     } else if (tierSwitch === false) {
         // to prevent unlocking multiple times
     } else if (userObj.money < 10.00 && tierSwitch === true) {
+        // this might be a good opportunity to integrate users experience
         document.getElementById("tknBroadcast").innerHTML = "You need more money to unlock tier-I.";
+        setTimeout(clearTknBroadcast, 3000);
     }
 }
 
