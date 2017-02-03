@@ -318,7 +318,7 @@ function unlockTierI() {
     } else if (tierSwitch === false) {
         // to prevent unlocking multiple times
     } else if (userObj.money < 10.00 && tierSwitch === true) {
-        console.log("test broadcast");
+        document.getElementById("tknBroadcast").innerHTML = "You need more money to unlock tier-I.";
     }
 }
 
@@ -337,7 +337,7 @@ function rmFltrRubiks() {
     } else if (rubiksSwitch === false) {
         // to prevent multiple purchasing
     } else if (userObj.money < tokenObj.tierOne.rubiks.price) {
-        document.getElementById("tknBroadcast").innerHTML="You need more money to purcahse this item.";
+        document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
     }
 }
