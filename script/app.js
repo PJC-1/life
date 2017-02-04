@@ -122,6 +122,7 @@ var tokenObj = {
             // the width key is a good idea to get better sizing
             width        :  "50",
             id           :  "rubiksID",
+            func         :  "rmFltrRubiks()",
             description  :  "3-D combination puzzle",
             price        :  4.75,
             fullfillment :  10
@@ -310,7 +311,7 @@ function unlockTierI() {
                 i.setAttribute("class", "img1");
                 i.setAttribute("style", "filter:blur(5px)");
                 // you will need to add onclick as a token's key
-                i.setAttribute("onclick", "rmFltrRubiks()");
+                i.setAttribute("onclick", tierI[key].func);
                 document.getElementById("tokenInject").appendChild(i);
             }
         }
