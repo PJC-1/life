@@ -131,6 +131,7 @@ var tokenObj = {
             src          :  "./assets/jordan6.png",
             width        :  "75",
             id           :  "jordanID",
+            func         :  "rmFltrJordan()",
             description  :  "Jordan 6 Retro Black Infrared",
             price        :  199.25,
             fullfillment :  0
@@ -324,6 +325,11 @@ function unlockTierI() {
     }
 }
 
+
+/////////////////
+// RUBIKS CUBE //
+/////////////////
+
 var rubiksSwitch = true;
 
 function rmFltrRubiks() {
@@ -342,6 +348,15 @@ function rmFltrRubiks() {
         document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
     }
+}
+
+
+////////////////
+// AIR-JORDAN //
+////////////////
+
+function rmFltrJordan() {
+    // build out similar functionality as the remove filter rubiks function
 }
 
 
