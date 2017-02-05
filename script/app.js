@@ -16,8 +16,6 @@ var noMoney       =  "You do not have enought money for that.";
 /////////////////
 
 var userObj = {
-    //  think about how you are going to use employment in the userObj in order
-    //  to validate having userObj.employment an empty array.
     employment   :  [],
     money        :  0.00,
     hunger       :  75,
@@ -72,9 +70,6 @@ var foodObj = {
 var jobObj = {
         internship: {
             title        :  "Intern",
-            // this is the only way to do a multi line string that seems to not
-            // break in any other situation, but it doesn't look very nice, look
-            // into it
             description  :  "The Web Development Intern will work closely with "
                             + "the Executive Director and staff on a variety of "
                             + "digital projects. The intern will conceptualize "
@@ -115,11 +110,9 @@ var jobObj = {
 ////////////////////////
 
 var tokenObj = {
-    // each tier will represent a new set of tokens available to the user.
     tierOne: {
         rubiks: {
             src          :  "./assets/rubiks.png",
-            // the width key is a good idea to get better sizing
             width        :  "50",
             id           :  "rubiksID",
             func         :  "rmFltrRubiks()",
