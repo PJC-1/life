@@ -332,7 +332,7 @@ function rmFltrRubiks() {
         userObj.money -= tokenObj.tierOne.rubiks.price;
         userObj.tokens.push(tokenObj.tierOne.rubiks);
         console.log("Checking userObjs tokens ", userObj.tokens)
-        document.getElementById("rubiksID").removeAttribute("style");
+        document.getElementById(tokenObj.tierOne.rubiks.id).removeAttribute("style");
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
         rubiksSwitch = false;
     } else if (rubiksSwitch === false) {
