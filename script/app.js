@@ -348,8 +348,22 @@ function rmFltrRubiks() {
 // AIR-JORDAN //
 ////////////////
 
+var jordanSwitch = true;
+
 function rmFltrJordan() {
-    // build out similar functionality as the remove filter rubiks function
+    if (userObj.money > tokenObj.tierOne.jordan6.price && jordanSwitch === true) {
+        userObj.money -= tokenObj.tierOne.jordan6.price;
+        userObj.tokens.push(tokenObj.tierOne.jordan6);
+        console.log("Checking userObjs tokens ", userObj.tokens)
+        document.getElementById(tokenObj.tierOne.jordan6.id).removeAttribute("style");
+        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        rubiksSwitch = false;
+    } else if (jordanSwitch === false) {
+        // to prevent multiple purchasing
+    } else if (userObj.money < tokenObj.tierOne.jordan6.price) {
+        document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
+        setTimeout(clearTknBroadcast, 3000);
+    }
 }
 
 
