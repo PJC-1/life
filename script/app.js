@@ -323,6 +323,8 @@ function unlockTierI() {
 // RUBIKS CUBE //
 /////////////////
 
+// when you create a function that handles all the remove filter you might have
+// add the switch as a key in the token's object.
 var rubiksSwitch = true;
 
 function rmFltrRubiks() {
@@ -375,7 +377,7 @@ var hunger = setInterval(gettingHungery, 60000);
 
 function gettingHungery() {
     userObj.hunger -= 5;
-        document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+    document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
     // hunger reminder
     if (userObj.hunger < 39) {
         document.getElementById('testingBroadcast').innerHTML = "You are getting hungry try eatting some food.";
