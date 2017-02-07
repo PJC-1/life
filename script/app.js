@@ -323,8 +323,6 @@ function unlockTierI() {
 // RUBIKS CUBE //
 /////////////////
 
-// when you create a function that handles all the remove filter you might have
-// add the switch as a key in the token's object.
 var rubiksSwitch = true;
 
 function rmFltrRubiks() {
@@ -366,6 +364,26 @@ function rmFltrJordan() {
         document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
     }
+}
+
+
+///////////////////
+// REMOVE FILTER //
+///////////////////
+
+// remember to figure out a way to use the filterSwitch either add it to token's
+// object or make several global variables
+
+function removeFilterTkn(userObject, tokenObject) {
+    // use an if condition that checks the token's swtich and compares the user's
+    // money to the token's price
+    // if that condition is met then subtract the tokens price to the users money
+    // push the token into the user's tokens
+    // remove the filter attribute
+    // update the users money in the view
+    // set the filterSwitch to false
+    // else if the filterSwitch is equal to false then nothing
+    // else if condition that users money is less than token's price then broadcast
 }
 
 
