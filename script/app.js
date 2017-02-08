@@ -116,6 +116,7 @@ var tokenObj = {
             width        :  "50",
             id           :  "rubiksID",
             func         :  "rmFltrRubiks()",
+            switch       :  true,
             description  :  "3-D combination puzzle",
             price        :  4.75,
             fullfillment :  10
@@ -125,6 +126,7 @@ var tokenObj = {
             width        :  "75",
             id           :  "jordanID",
             func         :  "rmFltrJordan()",
+            switch       :  true,
             description  :  "Jordan 6 Retro Black Infrared",
             price        :  199.25,
             fullfillment :  0
@@ -133,6 +135,8 @@ var tokenObj = {
             src          :  "./assets/iPhone.png",
             width        :  "60",
             id           :  "iphoneID",
+            func         :  "rmFltrIphone",
+            switch       :  true,
             description  :  "32GB Apple iPhone 7 Plus",
             price        :  769.75,
             fullfillment :  0
@@ -370,9 +374,6 @@ function rmFltrJordan() {
 ///////////////////
 // REMOVE FILTER //
 ///////////////////
-
-// remember to figure out a way to use the filterSwitch either add it to token's
-// object or make several global variables
 
 function removeFilterTkn(userObject, tokenObject) {
     // use an if condition that checks the token's swtich and compares the user's
