@@ -375,6 +375,8 @@ function rmFltrJordan() {
 // REMOVE FILTER //
 ///////////////////
 
+// you will need to figure out all the different arguments so that you can use
+// the removeFilterTkn function for all the tokens.
 function removeFilterTkn(userObject, tokenObject) {
     // use an if condition that checks the token's swtich and compares the user's
     // money to the token's price
