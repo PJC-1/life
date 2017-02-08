@@ -116,7 +116,7 @@ var tokenObj = {
             width        :  "50",
             id           :  "rubiksID",
             func         :  "rmFltrRubiks()",
-            switch       :  true,
+            fltrSwitch   :  true,
             description  :  "3-D combination puzzle",
             price        :  4.75,
             fullfillment :  10
@@ -126,7 +126,7 @@ var tokenObj = {
             width        :  "75",
             id           :  "jordanID",
             func         :  "rmFltrJordan()",
-            switch       :  true,
+            fltrSwitch   :  true,
             description  :  "Jordan 6 Retro Black Infrared",
             price        :  199.25,
             fullfillment :  0
@@ -136,7 +136,7 @@ var tokenObj = {
             width        :  "60",
             id           :  "iphoneID",
             func         :  "rmFltrIphone",
-            switch       :  true,
+            fltrSwitch   :  true,
             description  :  "32GB Apple iPhone 7 Plus",
             price        :  769.75,
             fullfillment :  0
