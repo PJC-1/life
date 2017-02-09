@@ -329,6 +329,7 @@ function unlockTierI() {
 
 function rmFltrRubiks() {
     if (userObj.money > tokenObj.tierOne.rubiks.price && tokenObj.tierOne.rubiks.fltrSwitch === true) {
+        // incorporate fullfillment points
         userObj.money -= tokenObj.tierOne.rubiks.price;
         userObj.tokens.push(tokenObj.tierOne.rubiks);
         console.log("Checking userObjs tokens ", userObj.tokens)
