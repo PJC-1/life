@@ -135,7 +135,7 @@ var tokenObj = {
             src          :  "./assets/iPhone.png",
             width        :  "60",
             id           :  "iphoneID",
-            func         :  "rmFltrIphone",
+            func         :  "rmFltrIphone()",
             fltrSwitch   :  true,
             description  :  "32GB Apple iPhone 7 Plus",
             price        :  769.75,
@@ -341,6 +341,7 @@ function rmFltrRubiks() {
         rubiksSwitch = false;
     } else if (rubiksSwitch === false) {
         // to prevent multiple purchasing
+        console.log("rubiksSwitch: " + rubiksSwitch);
     } else if (userObj.money < tokenObj.tierOne.rubiks.price) {
         document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
@@ -361,10 +362,35 @@ function rmFltrJordan() {
         console.log("Checking userObjs tokens ", userObj.tokens)
         document.getElementById(tokenObj.tierOne.jordan6.id).removeAttribute("style");
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-        rubiksSwitch = false;
+        jordanSwitch = false;
     } else if (jordanSwitch === false) {
         // to prevent multiple purchasing
+        console.log("jordanSwitch: " + jordanSwitch);
     } else if (userObj.money < tokenObj.tierOne.jordan6.price) {
+        document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
+        setTimeout(clearTknBroadcast, 3000);
+    }
+}
+
+
+////////////
+// IPHONE //
+////////////
+
+var iphoneSwitch = true;
+
+function rmFltrIphone() {
+    if (userObj.money > tokenObj.tierOne.iPhone.price && iphoneSwitch === true) {
+        userObj.money -= tokenObj.tierOne.iPhone.price;
+        userObj.tokens.push(tokenObj.tierOne.iPhone);
+        console.log("Checking userObjs tokens ", userObj.tokens)
+        document.getElementById(tokenObj.tierOne.iPhone.id).removeAttribute("style");
+        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        iphoneSwitch = false;
+    } else if (iphoneSwitch === false) {
+        // to prevent multiple purchasing
+        console.log("iphoneSwitch: " + iphoneSwitch);
+    } else if (userObj.money < tokenObj.tierOne.iPhone.price) {
         document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
     }
@@ -377,6 +403,7 @@ function rmFltrJordan() {
 
 // you will need to figure out all the different arguments so that you can use
 // the removeFilterTkn function for all the tokens.
+
 function removeFilterTkn(userObject, tokenObject) {
     // use an if condition that checks the token's swtich and compares the user's
     // money to the token's price
