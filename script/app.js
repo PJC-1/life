@@ -328,8 +328,6 @@ function unlockTierI() {
 /////////////////
 
 function rmFltrRubiks() {
-    // maybe you could possibly use "this" to grab the id, that way you will
-    // not need to create an function for each token.
     if (userObj.money > tokenObj.tierOne.rubiks.price && tokenObj.tierOne.rubiks.fltrSwitch === true) {
         userObj.money -= tokenObj.tierOne.rubiks.price;
         userObj.tokens.push(tokenObj.tierOne.rubiks);
@@ -351,19 +349,17 @@ function rmFltrRubiks() {
 // AIR-JORDAN //
 ////////////////
 
-var jordanSwitch = true;
-
 function rmFltrJordan() {
-    if (userObj.money > tokenObj.tierOne.jordan6.price && jordanSwitch === true) {
+    if (userObj.money > tokenObj.tierOne.jordan6.price && tokenObj.tierOne.jordan6.fltrSwitch === true) {
         userObj.money -= tokenObj.tierOne.jordan6.price;
         userObj.tokens.push(tokenObj.tierOne.jordan6);
         console.log("Checking userObjs tokens ", userObj.tokens)
         document.getElementById(tokenObj.tierOne.jordan6.id).removeAttribute("style");
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-        jordanSwitch = false;
-    } else if (jordanSwitch === false) {
+        tokenObj.tierOne.jordan6.fltrSwitch = false;
+    } else if (tokenObj.tierOne.jordan6.fltrSwitch === false) {
         // to prevent multiple purchasing
-        console.log("jordanSwitch: " + jordanSwitch);
+        console.log("fltrSwitch: " + tokenObj.tierOne.jordan6.fltrSwitch);
     } else if (userObj.money < tokenObj.tierOne.jordan6.price) {
         document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
