@@ -327,21 +327,19 @@ function unlockTierI() {
 // RUBIKS CUBE //
 /////////////////
 
-var rubiksSwitch = true;
-
 function rmFltrRubiks() {
     // maybe you could possibly use "this" to grab the id, that way you will
     // not need to create an function for each token.
-    if (userObj.money > tokenObj.tierOne.rubiks.price && rubiksSwitch === true) {
+    if (userObj.money > tokenObj.tierOne.rubiks.price && tokenObj.tierOne.rubiks.fltrSwitch === true) {
         userObj.money -= tokenObj.tierOne.rubiks.price;
         userObj.tokens.push(tokenObj.tierOne.rubiks);
         console.log("Checking userObjs tokens ", userObj.tokens)
         document.getElementById(tokenObj.tierOne.rubiks.id).removeAttribute("style");
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-        rubiksSwitch = false;
-    } else if (rubiksSwitch === false) {
+        tokenObj.tierOne.rubiks.fltrSwitch = false;
+    } else if (tokenObj.tierOne.rubiks.fltrSwitch === false) {
         // to prevent multiple purchasing
-        console.log("rubiksSwitch: " + rubiksSwitch);
+        console.log("fltrSwitch: " + tokenObj.tierOne.rubiks.fltrSwitch);
     } else if (userObj.money < tokenObj.tierOne.rubiks.price) {
         document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
