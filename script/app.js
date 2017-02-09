@@ -371,17 +371,15 @@ function rmFltrJordan() {
 // IPHONE //
 ////////////
 
-var iphoneSwitch = true;
-
 function rmFltrIphone() {
-    if (userObj.money > tokenObj.tierOne.iPhone.price && iphoneSwitch === true) {
+    if (userObj.money > tokenObj.tierOne.iPhone.price && tokenObj.tierOne.iPhone.fltrSwitch === true) {
         userObj.money -= tokenObj.tierOne.iPhone.price;
         userObj.tokens.push(tokenObj.tierOne.iPhone);
         console.log("Checking userObjs tokens ", userObj.tokens)
         document.getElementById(tokenObj.tierOne.iPhone.id).removeAttribute("style");
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-        iphoneSwitch = false;
-    } else if (iphoneSwitch === false) {
+        tokenObj.tierOne.iPhone.fltrSwitch = false;
+    } else if (tokenObj.tierOne.iPhone.fltrSwitch === false) {
         // to prevent multiple purchasing
         console.log("iphoneSwitch: " + iphoneSwitch);
     } else if (userObj.money < tokenObj.tierOne.iPhone.price) {
