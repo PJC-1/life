@@ -352,17 +352,18 @@ function rmFltrRubiks() {
 ////////////////
 
 function rmFltrJordan() {
-    if (userObj.money > tokenObj.tierOne.jordan6.price && tokenObj.tierOne.jordan6.fltrSwitch === true) {
-        userObj.money -= tokenObj.tierOne.jordan6.price;
-        userObj.tokens.push(tokenObj.tierOne.jordan6);
+    var jordan6 = tokenObj.tierOne.jordan6;
+    if (userObj.money > jordan6.price && jordan6.fltrSwitch === true) {
+        userObj.money -= jordan6.price;
+        userObj.tokens.push(jordan6);
         console.log("Checking userObjs tokens ", userObj.tokens)
-        document.getElementById(tokenObj.tierOne.jordan6.id).removeAttribute("style");
+        document.getElementById(jordan6.id).removeAttribute("style");
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-        tokenObj.tierOne.jordan6.fltrSwitch = false;
-    } else if (tokenObj.tierOne.jordan6.fltrSwitch === false) {
+        jordan6.fltrSwitch = false;
+    } else if (jordan6.fltrSwitch === false) {
         // to prevent multiple purchasing
-        console.log("fltrSwitch: " + tokenObj.tierOne.jordan6.fltrSwitch);
-    } else if (userObj.money < tokenObj.tierOne.jordan6.price) {
+        console.log("fltrSwitch: " + jordan6.fltrSwitch);
+    } else if (userObj.money < jordan6.price) {
         document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
     }
