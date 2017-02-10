@@ -328,18 +328,19 @@ function unlockTierI() {
 /////////////////
 
 function rmFltrRubiks() {
-    if (userObj.money > tokenObj.tierOne.rubiks.price && tokenObj.tierOne.rubiks.fltrSwitch === true) {
+    var rubiks = tokenObj.tierOne.rubiks;
+    if (userObj.money > rubiks.price && rubiks.fltrSwitch === true) {
         // incorporate fullfillment points
-        userObj.money -= tokenObj.tierOne.rubiks.price;
-        userObj.tokens.push(tokenObj.tierOne.rubiks);
+        userObj.money -= rubiks.price;
+        userObj.tokens.push(rubiks);
         console.log("Checking userObjs tokens ", userObj.tokens)
-        document.getElementById(tokenObj.tierOne.rubiks.id).removeAttribute("style");
+        document.getElementById(rubiks.id).removeAttribute("style");
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-        tokenObj.tierOne.rubiks.fltrSwitch = false;
-    } else if (tokenObj.tierOne.rubiks.fltrSwitch === false) {
+        rubiks.fltrSwitch = false;
+    } else if (rubiks.fltrSwitch === false) {
         // to prevent multiple purchasing
-        console.log("fltrSwitch: " + tokenObj.tierOne.rubiks.fltrSwitch);
-    } else if (userObj.money < tokenObj.tierOne.rubiks.price) {
+        console.log("fltrSwitch: " + rubiks.fltrSwitch);
+    } else if (userObj.money < rubiks.price) {
         document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
     }
