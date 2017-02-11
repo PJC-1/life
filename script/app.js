@@ -356,7 +356,7 @@ function rmFltrRubiks() {
 function rmFltrJordan() {
 
     var jordan6 = tokenObj.tierOne.jordan6;
-    
+
     if (userObj.money > jordan6.price && jordan6.fltrSwitch === true) {
         userObj.money -= jordan6.price;
         userObj.tokens.push(jordan6);
@@ -379,17 +379,20 @@ function rmFltrJordan() {
 ////////////
 
 function rmFltrIphone() {
-    if (userObj.money > tokenObj.tierOne.iPhone.price && tokenObj.tierOne.iPhone.fltrSwitch === true) {
-        userObj.money -= tokenObj.tierOne.iPhone.price;
-        userObj.tokens.push(tokenObj.tierOne.iPhone);
+
+    var iphone = tokenObj.tierOne.iPhone;
+
+    if (userObj.money > iphone.price && iphone.fltrSwitch === true) {
+        userObj.money -= iphone.price;
+        userObj.tokens.push(iphone);
         console.log("Checking userObjs tokens ", userObj.tokens)
-        document.getElementById(tokenObj.tierOne.iPhone.id).removeAttribute("style");
+        document.getElementById(iphone.id).removeAttribute("style");
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-        tokenObj.tierOne.iPhone.fltrSwitch = false;
-    } else if (tokenObj.tierOne.iPhone.fltrSwitch === false) {
+        iphone.fltrSwitch = false;
+    } else if (iphone.fltrSwitch === false) {
         // to prevent multiple purchasing
-        console.log("iphoneSwitch: " + iphoneSwitch);
-    } else if (userObj.money < tokenObj.tierOne.iPhone.price) {
+        console.log("iphoneSwitch: " + iphone.fltrSwitch);
+    } else if (userObj.money < iphone.price) {
         document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
     }
