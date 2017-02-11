@@ -328,7 +328,9 @@ function unlockTierI() {
 /////////////////
 
 function rmFltrRubiks() {
+
     var rubiks = tokenObj.tierOne.rubiks;
+
     if (userObj.money > rubiks.price && rubiks.fltrSwitch === true) {
         // incorporate fullfillment points
         userObj.money -= rubiks.price;
@@ -352,7 +354,9 @@ function rmFltrRubiks() {
 ////////////////
 
 function rmFltrJordan() {
+
     var jordan6 = tokenObj.tierOne.jordan6;
+    
     if (userObj.money > jordan6.price && jordan6.fltrSwitch === true) {
         userObj.money -= jordan6.price;
         userObj.tokens.push(jordan6);
