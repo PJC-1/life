@@ -111,6 +111,7 @@ var jobObj = {
 
 var tokenObj = {
     tierOne: {
+        tierSwitch: true,
         rubiks: {
             src          :  "./assets/rubiks.png",
             width        :  "50",
@@ -288,14 +289,11 @@ function funTime() {
 // FAME-TOKENS //
 /////////////////
 
-var tierSwitch = true;
-
 function unlockTierI() {
-    // maybe just access tierOne and then iterate through that object to be
-    // able to access each token in tierOne.
+
     var tierI = tokenObj.tierOne;
 
-    if (userObj.money >= 10.00 && tierSwitch === true) {
+    if (userObj.money >= 10.00 && tierI.tierSwitch === true) {
         for (var key in tierI) {
             // hasOwnProperty() filters out built-in key-value pairs inherited by
             // parent (i.e. prototype || __proto__)
@@ -313,10 +311,10 @@ function unlockTierI() {
                 document.getElementById("tokenInject").appendChild(i);
             }
         }
-        tierSwitch = false;
-    } else if (tierSwitch === false) {
+        tierI.tierSwitch = false;
+    } else if (tierI.tierSwitch === false) {
         // to prevent unlocking multiple times
-    } else if (((userObj.money < 10.00) && (userObj.exp >= 10.00) && (tierSwitch === true)) || ((userObj.money < 10.00) && (userObj.exp < 10.00) && (tierSwitch === true))) {
+    } else if (((userObj.money < 10.00) && (userObj.exp >= 10.00) && (tierI.tierSwitch === true)) || ((userObj.money < 10.00) && (userObj.exp < 10.00) && (tierI.tierSwitch === true))) {
         document.getElementById("tknBroadcast").innerHTML = "You are unworthy of unlocking Tier-I. Consider working more.";
         setTimeout(clearTknBroadcast, 3000);
     }
@@ -433,7 +431,7 @@ function gettingHungery() {
         document.getElementById('testingBroadcast').innerHTML = "You are getting hungry try eatting some food.";
         setTimeout(clearTestBroadcast, 3000);
     }
-    if (userObj.hunger < 0) {
+    if (userObj.hunger <= 0) {
         userObj.hunger = 0;
     }
 }
