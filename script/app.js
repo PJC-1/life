@@ -63,6 +63,15 @@ var foodObj = {
 }
 
 
+//////////////////
+// BOOST OBJECT //
+//////////////////
+
+var boostObj = {
+    // boosts will increase productivity
+}
+
+
 /////////////////
 // JOBS OBJECT //
 /////////////////
