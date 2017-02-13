@@ -241,7 +241,6 @@ if (userObj.money <= 0) {
 // PROGRESS BAR //
 //////////////////
 
-// creating a switch to disable the job button while doing a job.
 var progressSwitch = true;
 
 function move() {
