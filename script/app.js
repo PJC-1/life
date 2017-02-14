@@ -68,25 +68,25 @@ var foodObj = {
 //////////////////
 
 var boostObj = {
+    coffee: {
+        width         :  "50",
+        id            :  "coffeeID",
+        fltrSwitch    :  true,
+        description   :  "Coffee is a brewed drink prepared from roasted coffee beans. Coffee can have a stimulating effect on humans because of its caffeine content.",
+        price         :  4.75,
+        fullfillment  :  0,
+        durration     :  10000,
+        func          :  "coffeeBoost()",
+        src           :  "./assets/coffee.png"
+    },
     redBull: {
         width         :  "50",
         id            :  "rbID",
         fltrSwitch    :  true,
         description   :  "Red Bull gives you wings",
-        price         :  5.75,
+        price         :  8.75,
         fullfillment  :  0,
-        durration     :  10000,
-        func          :  "redbullBoost()",
-        src           :  "./assets/redbull.png"
-    },
-    turkishCoffee: {
-        width         :  "50",
-        id            :  "tcID",
-        fltrSwitch    :  true,
-        description   :  "Red Bull gives you wings",
-        price         :  5.75,
-        fullfillment  :  0,
-        durration     :  10000,
+        durration     :  20000,
         func          :  "redbullBoost()",
         src           :  "./assets/redbull.png"
     }
