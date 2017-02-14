@@ -78,6 +78,17 @@ var boostObj = {
         durration     :  10000,
         func          :  "redbullBoost()",
         src           :  "./assets/redbull.png"
+    },
+    turkishCoffee: {
+        width         :  "50",
+        id            :  "tcID",
+        fltrSwitch    :  true,
+        description   :  "Red Bull gives you wings",
+        price         :  5.75,
+        fullfillment  :  0,
+        durration     :  10000,
+        func          :  "redbullBoost()",
+        src           :  "./assets/redbull.png"
     }
 }
 
@@ -130,7 +141,6 @@ var jobObj = {
 
 var tokenObj = {
     tierOne: {
-        tierSwitch: true,
         rubiks: {
             src          :  "./assets/rubiks.png",
             width        :  "50",
@@ -307,11 +317,13 @@ function funTime() {
 // FAME-TOKENS //
 /////////////////
 
+var tOneSwitch = true;
+
 function unlockTierI() {
 
     var tierI = tokenObj.tierOne;
 
-    if (userObj.money >= 10.00 && tierI.tierSwitch === true) {
+    if (userObj.money >= 10.00 && tOneSwitch === true) {
         for (var key in tierI) {
             // hasOwnProperty() filters out built-in key-value pairs inherited by
             // parent (i.e. prototype || __proto__)
@@ -329,10 +341,10 @@ function unlockTierI() {
                 document.getElementById("tokenInject").appendChild(i);
             }
         }
-        tierI.tierSwitch = false;
-    } else if (tierI.tierSwitch === false) {
+        tOneSwitch = false;
+    } else if (tOneSwitch === false) {
         // to prevent unlocking multiple times
-    } else if (((userObj.money < 10.00) && (userObj.exp >= 10.00) && (tierI.tierSwitch === true)) || ((userObj.money < 10.00) && (userObj.exp < 10.00) && (tierI.tierSwitch === true))) {
+    } else if (((userObj.money < 10.00) && (userObj.exp >= 10.00) && (tOneSwitch === true)) || ((userObj.money < 10.00) && (userObj.exp < 10.00) && (tOneSwitch === true))) {
         document.getElementById("tknBroadcast").innerHTML = "You are unworthy of unlocking Tier-I. Consider working more.";
         setTimeout(clearTknBroadcast, 3000);
     }
