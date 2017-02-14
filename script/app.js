@@ -68,7 +68,17 @@ var foodObj = {
 //////////////////
 
 var boostObj = {
-    // boosts will increase productivity
+    redBull: {
+        width         :  "50",
+        id            :  "rbID",
+        fltrSwitch    :  true,
+        description   :  "Red Bull gives you wings",
+        price         :  5.75,
+        fullfillment  :  0,
+        durration     :  10000,
+        func          :  "redbullBoost()",
+        src           :  "./assets/redbull.png"
+    }
 }
 
 
