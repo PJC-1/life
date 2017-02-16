@@ -21,7 +21,6 @@ var userObj = {
     hunger       :  75,
     foodLevel    :  1,
     happiness    :  75,
-    // maybe mood can effect productivity and be tied to mini-games
     mood         :  [],
     exp          :  0,
     level        :  1,
@@ -587,4 +586,13 @@ function happySnack() {
     } else if (userObj.hunger < 95 && userObj.money < 6.00){
         alert("you are hungry and without money.");
     }
+}
+
+
+///////////
+// BOOST //
+///////////
+
+function boostAdding() {
+    // build out functionality to append the first boost to the view
 }
