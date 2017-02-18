@@ -593,6 +593,6 @@ function happySnack() {
 // BOOST //
 ///////////
 
-function boostAdding() {
-    // build out functionality to append the first boost to the view
+function coffeeBoost() {
+    console.log("testing coffeeBoost wire.");
 }
