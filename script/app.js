@@ -586,5 +586,7 @@ function happySnack() {
 ///////////
 
 function coffeeBoost() {
-    console.log("testing coffeeBoost wire.");
+    // what you could do is create a setinterval that will increment the users money
+    // and also invoke a settimeout that will terminate the setInterval for the boosts duration
+    // this will create boost effect.
 }
