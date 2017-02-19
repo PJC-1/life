@@ -319,9 +319,7 @@ function funTime() {
 var tOneSwitch = true;
 
 function unlockTierI() {
-
     var tierI = tokenObj.tierOne;
-
     if (userObj.money >= 10.00 && tOneSwitch === true) {
         for (var key in tierI) {
             // hasOwnProperty() filters out built-in key-value pairs inherited by
@@ -355,9 +353,7 @@ function unlockTierI() {
 /////////////////
 
 function rmFltrRubiks() {
-
     var rubiks = tokenObj.tierOne.rubiks;
-
     if (userObj.money > rubiks.price && rubiks.fltrSwitch === true) {
         // incorporate fullfillment points
         userObj.money -= rubiks.price;
@@ -381,9 +377,7 @@ function rmFltrRubiks() {
 ////////////////
 
 function rmFltrJordan() {
-
     var jordan6 = tokenObj.tierOne.jordan6;
-
     if (userObj.money > jordan6.price && jordan6.fltrSwitch === true) {
         userObj.money -= jordan6.price;
         userObj.tokens.push(jordan6);
@@ -406,9 +400,7 @@ function rmFltrJordan() {
 ////////////
 
 function rmFltrIphone() {
-
     var iphone = tokenObj.tierOne.iPhone;
-
     if (userObj.money > iphone.price && iphone.fltrSwitch === true) {
         userObj.money -= iphone.price;
         userObj.tokens.push(iphone);
