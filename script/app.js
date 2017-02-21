@@ -587,12 +587,16 @@ function happySnack() {
 ///////////
 
 function coffeeBoost() {
-    // now use a setTime out to cancel the setInterval
-
-    var time = setInterval(addMoneyByTime, 500);
+    var time = setInterval(addMoneyByTime, 300);
 
     function addMoneyByTime() {
         userObj.money += 1;
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
     }
+    // This is not working yet
+    // setTimeout(coffeeDurration(), 3000);
+    //
+    // function coffeeDurration() {
+    //     clearInterval(time);
+    // }
 }
