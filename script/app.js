@@ -587,9 +587,7 @@ function happySnack() {
 ///////////
 
 function coffeeBoost() {
-    // what you could do is create a setinterval that will increment the users money
-    // and also invoke a settimeout that will terminate the setInterval for the boosts duration
-    // this will create boost effect.
+    // now use a setTime out to cancel the setInterval
 
     var time = setInterval(addMoneyByTime, 500);
 
