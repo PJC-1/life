@@ -590,4 +590,11 @@ function coffeeBoost() {
     // what you could do is create a setinterval that will increment the users money
     // and also invoke a settimeout that will terminate the setInterval for the boosts duration
     // this will create boost effect.
+
+    var time = setInterval(addMoneyByTime, 500);
+
+    function addMoneyByTime() {
+        userObj.money += 1;
+        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+    }
 }
