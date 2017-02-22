@@ -594,9 +594,9 @@ function coffeeBoost() {
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
     }
     // This is not working yet
-    // setTimeout(coffeeDurration(), 3000);
-    //
-    // function coffeeDurration() {
-    //     clearInterval(time);
-    // }
+    setTimeout(coffeeDurration, 3000);
+
+    function coffeeDurration() {
+        clearInterval(time);
+    }
 }
