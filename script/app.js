@@ -588,12 +588,13 @@ function happySnack() {
 ///////////
 
 function coffeeBoost() {
-    var time = setInterval(addMoneyByTime, 300);
+    var coffee = boostObj.coffee;
+    var time = setInterval(addMoneyByTime, coffee.rate);
     function addMoneyByTime() {
         userObj.money += 1;
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
     }
-    setTimeout(coffeeDurration, 3000);
+    setTimeout(coffeeDurration, coffee.durration);
     function coffeeDurration() {
         clearInterval(time);
     }
