@@ -600,3 +600,7 @@ function coffeeBoost() {
         clearInterval(time);
     }
 }
+
+function boostAdding() {
+    console.log("this is wired to the boost upgrade btn");
+}
