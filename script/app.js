@@ -74,8 +74,8 @@ var boostObj = {
         description   :  "Coffee is a brewed drink prepared from roasted coffee beans. Coffee can have a stimulating effect on humans because of its caffeine content.",
         price         :  4.75,
         fullfillment  :  0,
-        // use durration with the setTimeout
-        durration     :  10000,
+        durration     :  5000,
+        rate          :  300,
         func          :  "coffeeBoost()",
         src           :  "./assets/coffee.png"
     },
@@ -86,7 +86,8 @@ var boostObj = {
         description   :  "Red Bull gives you wings",
         price         :  8.75,
         fullfillment  :  0,
-        durration     :  20000,
+        durration     :  10000,
+        rate          :  100,
         func          :  "redbullBoost()",
         src           :  "./assets/redbull.png"
     }
@@ -588,14 +589,11 @@ function happySnack() {
 
 function coffeeBoost() {
     var time = setInterval(addMoneyByTime, 300);
-
     function addMoneyByTime() {
         userObj.money += 1;
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
     }
-    // This is not working yet
     setTimeout(coffeeDurration, 3000);
-
     function coffeeDurration() {
         clearInterval(time);
     }
