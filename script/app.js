@@ -589,15 +589,21 @@ function happySnack() {
 
 function coffeeBoost() {
     var coffee = boostObj.coffee;
-    // use an if statement to place a condition that checks the users money vs boost cost
-    var time = setInterval(addMoneyByTime, coffee.rate);
-    function addMoneyByTime() {
-        userObj.money += 1;
+
+    if(userObj.money >= coffee.price){
+        var time = setInterval(addMoneyByTime, coffee.rate);
+        userObj.money -= coffee.price;
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-    }
-    setTimeout(coffeeDurration, coffee.durration);
-    function coffeeDurration() {
-        clearInterval(time);
+        function addMoneyByTime() {
+          userObj.money += 1;
+          document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        }
+        setTimeout(coffeeDurration, coffee.durration);
+        function coffeeDurration() {
+          clearInterval(time);
+        }
+    } else {
+        console.log("logging the else for the coffeeBoost");
     }
 }
 
