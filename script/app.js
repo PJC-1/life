@@ -589,6 +589,7 @@ function happySnack() {
 
 function coffeeBoost() {
     var coffee = boostObj.coffee;
+    // use an if statement to place a condition that checks the users money vs boost cost
     var time = setInterval(addMoneyByTime, coffee.rate);
     function addMoneyByTime() {
         userObj.money += 1;
