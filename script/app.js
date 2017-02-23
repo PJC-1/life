@@ -590,17 +590,19 @@ function happySnack() {
 function coffeeBoost() {
     var coffee = boostObj.coffee;
 
-    if(userObj.money >= coffee.price){
+    if (userObj.money >= coffee.price) {
         var time = setInterval(addMoneyByTime, coffee.rate);
         userObj.money -= coffee.price;
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        // consider adding some functionality to incorporate a cooldown period
+        // until a boost can be used again
         function addMoneyByTime() {
-          userObj.money += 1;
-          document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+            userObj.money += 1;
+            document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
         }
         setTimeout(coffeeDurration, coffee.durration);
         function coffeeDurration() {
-          clearInterval(time);
+            clearInterval(time);
         }
     } else {
         console.log("logging the else for the coffeeBoost");
