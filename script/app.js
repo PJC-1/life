@@ -589,7 +589,6 @@ function happySnack() {
 
 function coffeeBoost() {
     var coffee = boostObj.coffee;
-
     if (userObj.money >= coffee.price) {
         var time = setInterval(addMoneyByTime, coffee.rate);
         userObj.money -= coffee.price;
@@ -604,7 +603,9 @@ function coffeeBoost() {
         function coffeeDurration() {
             clearInterval(time);
         }
+        // think about what negative effects the coffee boost will have on the user
     } else {
+        // you can add a broadcast here.
         console.log("logging the else for the coffeeBoost");
     }
 }
