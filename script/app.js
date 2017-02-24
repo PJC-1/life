@@ -587,9 +587,11 @@ function happySnack() {
 // BOOST //
 ///////////
 
+var coffeeCoolDown = true;
+
 function coffeeBoost() {
     var coffee = boostObj.coffee;
-    if (userObj.money >= coffee.price) {
+    if (userObj.money >= coffee.price && coffeeCoolDown === true) {
         var time = setInterval(addMoneyByTime, coffee.rate);
         userObj.money -= coffee.price;
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
@@ -603,10 +605,11 @@ function coffeeBoost() {
         function coffeeDurration() {
             clearInterval(time);
         }
+        coffeeCoolDown = false;
         // think about what negative effects the coffee boost will have on the user
-    } else {
+    } else if (coffeeCoolDown === false) {
         // you can add a broadcast here.
-        console.log("logging the else for the coffeeBoost");
+        console.log("logging false for cool down");
     }
 }
 
