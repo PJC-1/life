@@ -595,8 +595,6 @@ function coffeeBoost() {
         var time = setInterval(addMoneyByTime, coffee.rate);
         userObj.money -= coffee.price;
         document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-        // consider adding some functionality to incorporate a cooldown period
-        // until a boost can be used again
         function addMoneyByTime() {
             userObj.money += 1;
             document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
@@ -604,9 +602,13 @@ function coffeeBoost() {
         setTimeout(coffeeDurration, coffee.durration);
         function coffeeDurration() {
             clearInterval(time);
+            setTimeout(coolDownSwitch, 3000);
         }
         coffeeCoolDown = false;
-        // think about what negative effects the coffee boost will have on the user
+        function coolDownSwitch() {
+            coffeeCoolDown = true;
+            console.log("cool down complete");
+        }
     } else if (coffeeCoolDown === false) {
         // you can add a broadcast here.
         console.log("logging false for cool down");
