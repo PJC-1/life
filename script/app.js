@@ -593,22 +593,22 @@ function coffeeBoost() {
     var coffee = boostObj.coffee;
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
         var time = setInterval(addMoneyByTime, coffee.rate);
-        userObj.money -= coffee.price;
-        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
         function addMoneyByTime() {
             userObj.money += 1;
             document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
         }
-        setTimeout(coffeeDurration, coffee.durration);
         function coffeeDurration() {
             clearInterval(time);
             setTimeout(coolDownSwitch, 3000);
         }
-        coffeeCoolDown = false;
         function coolDownSwitch() {
             coffeeCoolDown = true;
             console.log("cool down complete");
         }
+        userObj.money -= coffee.price;
+        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        setTimeout(coffeeDurration, coffee.durration);
+        coffeeCoolDown = false;
     } else if (coffeeCoolDown === false) {
         // you can add a broadcast here.
         console.log("logging false for cool down");
