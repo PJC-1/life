@@ -576,15 +576,16 @@ var coffeeCoolDown = true;
 
 function coffeeBoost() {
     var coffee = boostObj.coffee;
+    var moneySpan = document.getElementById('moneySpan');
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
         var time = setInterval(addMoneyByTime, coffee.rate);
         userObj.money -= coffee.price;
-        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        moneySpan.innerHTML = moneySign + userObj.money;
         setTimeout(coffeeDurration, coffee.durration);
         coffeeCoolDown = false;
         function addMoneyByTime() {
             userObj.money += 1;
-            document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+            moneySpan.innerHTML = moneySign + userObj.money;
         }
         function coffeeDurration() {
             clearInterval(time);
