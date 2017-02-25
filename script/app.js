@@ -11,6 +11,7 @@ var notHungry     =  "You are not hungry now.";
 var noMoney       =  "You do not have enought money for that.";
 // some of these cached strings can be keys in their respective objects
 var coffeeBreak   =  "You need to wait before having more coffee.";
+var tier1Locked   =  "You are unworthy of unlocking Tier-I. Consider working more.";
 
 
 /////////////////
@@ -222,11 +223,6 @@ function clearTknBroadcast() {
 
 // test function to upgrade users job
 (function upgradeJob() {
-    // add code here that will push the next job into the userObj.employment array
-    // this seems to work beter if the jobObj is an array of objects instead of an
-    // object of objects. NOTE: look into this futher because accessing objects is
-    // a lot easier than having to go through an array everytime.
-    // doing length - 1 could be useful later on for upgrading
     userObj.employment.push(jobObj.internship);
     console.log(userObj.employment);
 })();
@@ -238,8 +234,6 @@ function supportUpgrade() {
     // functionality interacts with the jobs. look into it.
 }
 
-// self-invoking function, you have to add parentheses around the function to
-// indicate that it is a function expression:
 (function () {
     document.getElementById("testingSpan").innerHTML = jobObj.internship.title;
 })();
@@ -249,21 +243,11 @@ function supportUpgrade() {
 // MONEY //
 ///////////
 
-// self-invoking function, to display the money when the page is first loaded
 (function () {
     document.getElementById("moneySpan").innerHTML = moneySign + userObj.money;
 })();
 
-// maybe you could take this out, and replace it for boosts
-// var time = setInterval(addMoneyByTime, 1700);
-//
-// function addMoneyByTime() {
-//     userObj.money += 0.25;
-//     document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-// }
-
 if (userObj.money <= 0) {
-    // you can broadcast a message
     userObj.money = 0;
     userObj.happiness -= 25;
 }
@@ -309,7 +293,6 @@ function move() {
 function funTime() {
     if (progressSwitch === false) {
         // disabled onclick while progress bar is in use.
-        console.log("working...");
     } else {
         move();
     }
@@ -346,7 +329,7 @@ function unlockTierI() {
     } else if (tOneSwitch === false) {
         // to prevent unlocking multiple times
     } else if (((userObj.money < 10.00) && (userObj.exp >= 10.00) && (tOneSwitch === true)) || ((userObj.money < 10.00) && (userObj.exp < 10.00) && (tOneSwitch === true))) {
-        document.getElementById("tknBroadcast").innerHTML = "You are unworthy of unlocking Tier-I. Consider working more.";
+        document.getElementById("tknBroadcast").innerHTML = tier1Locked;
         setTimeout(clearTknBroadcast, 3000);
     }
 }
