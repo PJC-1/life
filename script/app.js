@@ -9,6 +9,8 @@ var hungerSign    =  "Hunger: ";
 var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
 var notHungry     =  "You are not hungry now.";
 var noMoney       =  "You do not have enought money for that.";
+// some of these cached strings can be keys in their respective objects
+var coffeeBreak   =  "You need to wait before having more coffee.";
 
 
 /////////////////
@@ -607,10 +609,9 @@ function coffeeBoost() {
         }
         function coolDownSwitch() {
             coffeeCoolDown = true;
-            console.log("cool down complete");
         }
     } else if (coffeeCoolDown === false) {
-        document.getElementById("testingBroadcast").innerHTML = "You need to wait before you can have another cup of coffee.";
+        document.getElementById("testingBroadcast").innerHTML = coffeeBreak;
         setTimeout(clearTestBroadcast, 2000);
     }
 }
