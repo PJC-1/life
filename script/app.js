@@ -551,16 +551,19 @@ function addCheese() {
 }
 
 function happySnack() {
+    var bCast = document.getElementById('upgradeBroadcast');
+    var uHunger = document.getElementById('userHunger');
+    var uMoney = document.getElementById('moneySpan');
     if (userObj.hunger < 95 && userObj.money > 6.00) {
         userObj.hunger += foodObj.cheeseBurger.fill;
         userObj.money -= foodObj.cheeseBurger.cost;
-        document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
-        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        uHunger.innerHTML = hungerSign + userObj.hunger;
+        uMoney.innerHTML = moneySign + userObj.money;
     } else if (userObj.hunger < 95 && userObj.money < 6.00) {
-        document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
+        bCast.innerHTML = hungryNoMoney;
         setTimeout(clearUpgradeBroadcast, 3000);
     } else if (userObj.hunger > 95) {
-        document.getElementById('upgradeBroadcast').innerHTML = notHungry;
+        bCast.innerHTML = notHungry;
         setTimeout(clearUpgradeBroadcast, 3000);
     } else if (userObj.hunger < 95 && userObj.money < 6.00){
         alert("you are hungry and without money.");
@@ -577,6 +580,7 @@ var coffeeCoolDown = true;
 function coffeeBoost() {
     var coffee = boostObj.coffee;
     var moneySpan = document.getElementById('moneySpan');
+    var bCast = document.getElementById("testingBroadcast");
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
         var time = setInterval(addMoneyByTime, coffee.rate);
         userObj.money -= coffee.price;
@@ -595,7 +599,7 @@ function coffeeBoost() {
             coffeeCoolDown = true;
         }
     } else if (coffeeCoolDown === false) {
-        document.getElementById("testingBroadcast").innerHTML = coffeeBreak;
+        bCast.innerHTML = coffeeBreak;
         setTimeout(clearTestBroadcast, 2000);
     }
 }
