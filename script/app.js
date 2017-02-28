@@ -506,16 +506,19 @@ function testAdding() {
 }
 
 function pizzaSnack() {
+    var upCast = document.getElementById('upgradeBroadcast');
+    var uMoney = document.getElementById('moneySpan');
+    var uHunger = document.getElementById('userHunger');
     if (userObj.hunger <= 97 && userObj.money > 4.75) {
         userObj.hunger += foodObj.pizzaSnack.fill;
         userObj.money -= foodObj.pizzaSnack.cost;
-        document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
-        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        uHunger.innerHTML = hungerSign + userObj.hunger;
+        uMoney.innerHTML = moneySign + userObj.money;
     } else if (userObj.hunger < 97 && userObj.money < 4.75) {
-        document.getElementById('upgradeBroadcast').innerHTML = hungryNoMoney;
+        upCast.innerHTML = hungryNoMoney;
         setTimeout(clearUpgradeBroadcast, 3000);
     } else if (userObj.hunger > 97) {
-        document.getElementById('upgradeBroadcast').innerHTML = notHungry;
+        upCast.innerHTML = notHungry;
         setTimeout(clearUpgradeBroadcast, 3000);
     } else if (userObj.hunger < 97 && userObj.money < 4.75) {
         alert("you are hungry and without money.");
