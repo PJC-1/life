@@ -530,6 +530,8 @@ function pizzaSnack() {
 var cheeseSwitch = true;
 
 function addCheese() {
+    var bCast = document.getElementById("broadcast");
+    var foodAdd = document.getElementById('addingFood');
     // create a new upgrade button
     var happySrc = foodObj.cheeseBurger.src;
     if (userObj.money > 20 && cheeseSwitch === true) {
@@ -540,12 +542,12 @@ function addCheese() {
         z.setAttribute("id", "happyHappy");
         // you might need to take this out or create a new class for this
         // z.setAttribute("class", "upgradeBtn");
-        document.getElementById('addingFood').appendChild(z);
+        foodAdd.appendChild(z);
         cheeseSwitch = false;
     } else if (cheeseSwitch === false) {
         // this will prevent appending another cheese burger
     } else {
-        document.getElementById("broadcast").innerHTML = noMoney;
+        bCast.innerHTML = noMoney;
         setTimeout(clearBroadcast, 2000);
     }
 }
