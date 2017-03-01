@@ -476,6 +476,7 @@ var pizzaSwtich = true;
 // change the name of this function to something else
 function testAdding() {
     var src = foodObj.pizzaSnack.src;
+    var bCast = document.getElementById("broadcast");
     if (userObj.money > 10 && pizzaSwtich === true) {
         var i = document.createElement("IMG");
         i.setAttribute("src", src);
@@ -500,7 +501,7 @@ function testAdding() {
     } else if (pizzaSwtich === false) {
         // this will prevent appending another pizza roll to the page
     } else {
-        document.getElementById("broadcast").innerHTML = noMoney;
+        bCast.innerHTML = noMoney;
         setTimeout(clearBroadcast, 2000);
     }
 }
