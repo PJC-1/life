@@ -476,6 +476,8 @@ var pizzaSwtich = true;
 // change the name of this function to something else
 function testAdding() {
     var src = foodObj.pizzaSnack.src;
+    var fInject = document.getElementById('upgradeFoodInject');
+    var fAdd = document.getElementById('addingFood');
     var bCast = document.getElementById("broadcast");
     if (userObj.money > 10 && pizzaSwtich === true) {
         var i = document.createElement("IMG");
@@ -483,7 +485,7 @@ function testAdding() {
         i.setAttribute("width", "50");
         i.setAttribute("onclick", "pizzaSnack()");
         i.setAttribute("id", "pizzaPizza");
-        document.getElementById('addingFood').appendChild(i);
+        fAdd.appendChild(i);
         pizzaSwtich = false;
         // this code will remove the upgrade button
         var parent = document.getElementById("parentDivTest");
@@ -497,7 +499,7 @@ function testAdding() {
         x.setAttribute("onclick", "addCheese()");
         // add a "upgradeBtn" class to this button
         x.setAttribute("class", "upgradeBtn");
-        document.getElementById('upgradeFoodInject').appendChild(x);
+        fInject.appendChild(x);
     } else if (pizzaSwtich === false) {
         // this will prevent appending another pizza roll to the page
     } else {
