@@ -432,14 +432,16 @@ function removeFilterTkn(userObject, tokenObject) {
 var hunger = setInterval(gettingHungery, 60000);
 
 function gettingHungery() {
+    var bCast = document.getElementById('testingBroadcast');
+    var uHunger = document.getElementById('userHunger');
     userObj.hunger -= 5;
-    document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
+    uHunger.innerHTML = hungerSign + userObj.hunger;
     // hunger reminder
     if (userObj.hunger < 39) {
-        document.getElementById('testingBroadcast').innerHTML = "You are getting hungry try eatting some food.";
+        bCast.innerHTML = "You are getting hungry try eatting some food.";
         setTimeout(clearTestBroadcast, 3000);
     }
-    if (userObj.hunger <= 0) {
+    if (userObj.hunger < 1) {
         userObj.hunger = 0;
     }
 }
