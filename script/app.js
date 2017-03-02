@@ -74,7 +74,9 @@ var boostObj = {
         width         :  "50",
         id            :  "coffeeID",
         fltrSwitch    :  true,
-        description   :  "Coffee is a brewed drink prepared from roasted coffee beans. Coffee can have a stimulating effect on humans because of its caffeine content.",
+        description   :  "Coffee is a brewed drink prepared from roasted coffee "
+                         +"beans. Coffee can have a stimulating effect on humans"
+                         +" because of its caffeine content.",
         price         :  4.75,
         fullfillment  :  0,
         durration     :  5000,
