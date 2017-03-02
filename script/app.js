@@ -450,16 +450,19 @@ function gettingHungery() {
 ///////////
 
 function ramenSnack() {
+    var bCast = document.getElementById('broadcast');
+    var uMoney = document.getElementById('moneySpan');
+    var uHunger = document.getElementById('userHunger');
     if (userObj.hunger <= 99 && userObj.money > 2.25) {
         userObj.hunger += 1;
         userObj.money -= 2.25;
-        document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
-        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        uHunger.innerHTML = hungerSign + userObj.hunger;
+        uMoney.innerHTML = moneySign + userObj.money;
     } else if (userObj.hunger < 99) {
-        document.getElementById('broadcast').innerHTML = hungryNoMoney;
+        bCast.innerHTML = hungryNoMoney;
         setTimeout(clearBroadcast, 3000);
     } else if (userObj.hunger > 99) {
-        document.getElementById('broadcast').innerHTML = notHungry;
+        bCast.innerHTML = notHungry;
         setTimeout(clearBroadcast, 3000);
     } else if (userObj.hunger < 99 && userObj.money < 2.25) {
         alert("you are hungry and without money.");
