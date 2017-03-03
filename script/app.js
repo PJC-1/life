@@ -390,18 +390,21 @@ function rmFltrJordan() {
 
 function rmFltrIphone() {
     var iphone = tokenObj.tierOne.iPhone;
+    var phone = document.getElementById(iphone.id);
+    var bCast = document.getElementById("tknBroadcast");
+    var uMoney = document.getElementById('moneySpan');
     if (userObj.money > iphone.price && iphone.fltrSwitch === true) {
         userObj.money -= iphone.price;
         userObj.tokens.push(iphone);
         console.log("Checking userObjs tokens ", userObj.tokens)
-        document.getElementById(iphone.id).removeAttribute("style");
-        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        phone.removeAttribute("style");
+        uMoney.innerHTML = moneySign + userObj.money;
         iphone.fltrSwitch = false;
     } else if (iphone.fltrSwitch === false) {
         // to prevent multiple purchasing
         console.log("iphoneSwitch: " + iphone.fltrSwitch);
     } else if (userObj.money < iphone.price) {
-        document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
+        bCast.innerHTML = "You need more money to purcahse this item.";
         setTimeout(clearTknBroadcast, 3000);
     }
 }
