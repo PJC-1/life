@@ -367,18 +367,22 @@ function rmFltrRubiks() {
 
 function rmFltrJordan() {
     var jordan6 = tokenObj.tierOne.jordan6;
+    var jordan = document.getElementById(jordan6.id);
+    var bCast = document.getElementById("tknBroadcast");
+    var uMoney = document.getElementById('moneySpan');
+    var moreMoney = "You need more money to purcahse this item.";
     if (userObj.money > jordan6.price && jordan6.fltrSwitch === true) {
         userObj.money -= jordan6.price;
         userObj.tokens.push(jordan6);
         console.log("Checking userObjs tokens ", userObj.tokens)
-        document.getElementById(jordan6.id).removeAttribute("style");
-        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        jordan.removeAttribute("style");
+        uMoney.innerHTML = moneySign + userObj.money;
         jordan6.fltrSwitch = false;
     } else if (jordan6.fltrSwitch === false) {
         // to prevent multiple purchasing
         console.log("fltrSwitch: " + jordan6.fltrSwitch);
     } else if (userObj.money < jordan6.price) {
-        document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
+        bCast.innerHTML = moreMoney;
         setTimeout(clearTknBroadcast, 3000);
     }
 }
