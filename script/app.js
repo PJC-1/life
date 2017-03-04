@@ -200,22 +200,26 @@ var skillsObj = {
 // BROADCAST //
 ///////////////
 
-function clearBroadcast() {
-    document.getElementById('broadcast').innerHTML = "";
-}
-
 //  maybe find a solution to consolidate the broadcast system, from multiple to
 //  a single way of broadcasting
+function clearBroadcast() {
+    var bCast = document.getElementById('broadcast');
+    bCast.innerHTML = "";
+}
+
 function clearTestBroadcast() {
-    document.getElementById('testingBroadcast').innerHTML = "";
+    var bCast = document.getElementById('testingBroadcast');
+    bCast.innerHTML = "";
 }
 
 function clearUpgradeBroadcast() {
-    document.getElementById('upgradeBroadcast').innerHTML = "";
+    var bCast = document.getElementById('upgradeBroadcast');
+    bCast.innerHTML = "";
 }
 
 function clearTknBroadcast() {
-    document.getElementById('tknBroadcast').innerHTML = "";
+    var bCast = document.getElementById('tknBroadcast');
+    bCast.innerHTML = "";
 }
 
 
@@ -237,7 +241,8 @@ function supportUpgrade() {
 }
 
 (function () {
-    document.getElementById("testingSpan").innerHTML = jobObj.internship.title;
+    var tSpan = document.getElementById("testingSpan");
+    tSpan.innerHTML = jobObj.internship.title;
 })();
 
 
@@ -246,7 +251,8 @@ function supportUpgrade() {
 ///////////
 
 (function () {
-    document.getElementById("moneySpan").innerHTML = moneySign + userObj.money;
+    var uMoney = document.getElementById("moneySpan");
+    uMoney.innerHTML = moneySign + userObj.money;
 })();
 
 if (userObj.money <= 0) {
