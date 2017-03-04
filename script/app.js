@@ -343,19 +343,23 @@ function unlockTierI() {
 
 function rmFltrRubiks() {
     var rubiks = tokenObj.tierOne.rubiks;
+    var bCast = document.getElementById("tknBroadcast");
+    var mMoney = "You need more money to purcahse this item.";
+    var uMoney = document.getElementById('moneySpan');
+    var rRubiks = document.getElementById(rubiks.id);
     if (userObj.money > rubiks.price && rubiks.fltrSwitch === true) {
         // incorporate fullfillment points
         userObj.money -= rubiks.price;
         userObj.tokens.push(rubiks);
         console.log("Checking userObjs tokens ", userObj.tokens)
-        document.getElementById(rubiks.id).removeAttribute("style");
-        document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
+        rRubiks.removeAttribute("style");
+        uMoney.innerHTML = moneySign + userObj.money;
         rubiks.fltrSwitch = false;
     } else if (rubiks.fltrSwitch === false) {
         // to prevent multiple purchasing
         console.log("fltrSwitch: " + rubiks.fltrSwitch);
     } else if (userObj.money < rubiks.price) {
-        document.getElementById("tknBroadcast").innerHTML = "You need more money to purcahse this item.";
+        bCast.innerHTML = mMoney;
         setTimeout(clearTknBroadcast, 3000);
     }
 }
