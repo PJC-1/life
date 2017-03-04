@@ -309,6 +309,8 @@ var tOneSwitch = true;
 
 function unlockTierI() {
     var tierI = tokenObj.tierOne;
+    var bCast = document.getElementById("tknBroadcast");
+    var tInject = document.getElementById("tokenInject");
     if (userObj.money >= 10.00 && tOneSwitch === true) {
         for (var key in tierI) {
             // hasOwnProperty() filters out built-in key-value pairs inherited by
@@ -324,14 +326,14 @@ function unlockTierI() {
                 i.setAttribute("style", "filter:blur(5px)");
                 // you will need to add onclick as a token's key
                 i.setAttribute("onclick", tierI[key].func);
-                document.getElementById("tokenInject").appendChild(i);
+                tInject.appendChild(i);
             }
         }
         tOneSwitch = false;
     } else if (tOneSwitch === false) {
         // to prevent unlocking multiple times
     } else if (((userObj.money < 10.00) && (userObj.exp >= 10.00) && (tOneSwitch === true)) || ((userObj.money < 10.00) && (userObj.exp < 10.00) && (tOneSwitch === true))) {
-        document.getElementById("tknBroadcast").innerHTML = tier1Locked;
+        bCast.innerHTML = tier1Locked;
         setTimeout(clearTknBroadcast, 3000);
     }
 }
