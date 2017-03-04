@@ -264,6 +264,11 @@ var progressSwitch = true;
 function move() {
     var elem = document.getElementById("myBar");
     var width = 0;
+    var uExp = document.getElementById('userExp');
+    var uHunger = document.getElementById('userHunger');
+    var uMoney = document.getElementById('moneySpan');
+    var uBar = document.getElementById('myBar');
+    var uLabel = document.getElementById('label');
     // here you can set the milleseconds to add delay.
     var id = setInterval(frame, 20);
     function frame() {
@@ -274,7 +279,7 @@ function move() {
             width++;
             //this line is what increments the width attribute in the progress bar element
             elem.style.width = width + '%';
-            document.getElementById("label").innerHTML = width * 1 + '%';
+            uLabel.innerHTML = width * 1 + '%';
         }
         if (width === 100) {
             // find out why this is adding both money + hunger twice
@@ -282,11 +287,11 @@ function move() {
             userObj.hunger -= jobObj.internship.hunger;
             // exp is not yet wired up
             userObj.exp += jobObj.internship.exp;
-            document.getElementById('userExp').innerHTML = expSign + userObj.exp;
-            document.getElementById('userHunger').innerHTML = hungerSign + userObj.hunger;
-            document.getElementById('moneySpan').innerHTML = moneySign + userObj.money;
-            document.getElementById('myBar').setAttribute("style", "width: 0%");
-            document.getElementById('label').innerHTML = "0%";
+            uExp.innerHTML = expSign + userObj.exp;
+            uHunger.innerHTML = hungerSign + userObj.hunger;
+            uMoney.innerHTML = moneySign + userObj.money;
+            uBar.setAttribute("style", "width: 0%");
+            uLabel.innerHTML = "0%";
             progressSwitch = true;
         }
     }
