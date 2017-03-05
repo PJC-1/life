@@ -61,7 +61,14 @@ var foodObj = {
         cost  :  6.00,
         src   :  "./assets/cheeseBurger.png",
         level :  3
+    },
+    hotDog: {
+        fill  :  6,
+        cost  :  5.00,
+        src   :  "./assets/hotDog.png",
+        level :  4
     }
+
 }
 
 
