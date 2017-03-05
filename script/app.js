@@ -626,6 +626,7 @@ function coffeeBoost() {
         moneySpan.innerHTML = moneySign + userObj.money;
         setTimeout(coffeeDurration, coffee.durration);
         coffeeCoolDown = false;
+        // maybe we can do another setTimeout to decrease the hunger
         function addMoneyByTime() {
             userObj.money += 1;
             moneySpan.innerHTML = moneySign + userObj.money;
