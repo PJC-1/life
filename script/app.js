@@ -62,13 +62,13 @@ var foodObj = {
         src   :  "./assets/cheeseBurger.png",
         level :  3
     },
+    // you can build out some functionality for this hotdog
     hotDog: {
         fill  :  6,
         cost  :  5.00,
         src   :  "./assets/hotDog.png",
         level :  4
     }
-
 }
 
 
@@ -633,7 +633,10 @@ function coffeeBoost() {
         moneySpan.innerHTML = moneySign + userObj.money;
         setTimeout(coffeeDurration, coffee.durration);
         coffeeCoolDown = false;
-        // maybe we can do another setTimeout to decrease the hunger
+        function decreaseHunger() {
+            // subtract hunger by 1
+            // use getElementById to grab the users hunger
+        }
         function addMoneyByTime() {
             userObj.money += 1;
             moneySpan.innerHTML = moneySign + userObj.money;
