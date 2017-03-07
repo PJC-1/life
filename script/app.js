@@ -627,15 +627,19 @@ function coffeeBoost() {
     var coffee = boostObj.coffee;
     var moneySpan = document.getElementById('moneySpan');
     var bCast = document.getElementById("testingBroadcast");
+    var uHunger = document.getElementById('userHunger');
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
         var time = setInterval(addMoneyByTime, coffee.rate);
+        var hungryLow = setInterval(decreaseHunger, coffee.rate);
         userObj.money -= coffee.price;
         moneySpan.innerHTML = moneySign + userObj.money;
         setTimeout(coffeeDurration, coffee.durration);
         coffeeCoolDown = false;
         function decreaseHunger() {
             // subtract hunger by 1
+            userObj.hunger -= 1;
             // use getElementById to grab the users hunger
+            uHunger.innerHTML = hungerSign + userObj.hunger;
         }
         function addMoneyByTime() {
             userObj.money += 1;
@@ -643,6 +647,7 @@ function coffeeBoost() {
         }
         function coffeeDurration() {
             clearInterval(time);
+            clearInterval(hungryLow);
             setTimeout(coolDownSwitch, 3000);
         }
         function coolDownSwitch() {
