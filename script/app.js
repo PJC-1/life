@@ -262,7 +262,7 @@ function supportUpgrade() {
     uMoney.innerHTML = moneySign + userObj.money;
 })();
 
-if (userObj.money <= 0) {
+if (userObj.money < 1) {
     userObj.money = 0;
     userObj.happiness -= 25;
 }
@@ -653,6 +653,7 @@ function coffeeBoost() {
         function coolDownSwitch() {
             coffeeCoolDown = true;
         }
+        // you can consider handling when user doesn't have enough money
     } else if (coffeeCoolDown === false) {
         bCast.innerHTML = coffeeBreak;
         setTimeout(clearTestBroadcast, 2000);
