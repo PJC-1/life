@@ -653,7 +653,9 @@ function coffeeBoost() {
         function coolDownSwitch() {
             coffeeCoolDown = true;
         }
-        // you can consider handling when user doesn't have enough money
+    } else if (userObj.money <= coffee.price && coffeeCoolDown === true) {
+        // broad cast for not enough money
+        console.log("testing not enough money for coffee boost");
     } else if (coffeeCoolDown === false) {
         bCast.innerHTML = coffeeBreak;
         setTimeout(clearTestBroadcast, 2000);
