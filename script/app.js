@@ -324,6 +324,10 @@ function move() {
 /////////////////
 
 var tOneSwitch = true;
+var lessThanTen = "userObj.money < 10.00";
+var greatThanTen = "userObj.exp >= 10.00";
+var switchTrue = "tOneSwitch === true";
+var xpLessTen = "userObj.exp < 10.00";
 
 function unlockTierI() {
     var tierI = tokenObj.tierOne;
@@ -350,7 +354,7 @@ function unlockTierI() {
         tOneSwitch = false;
     } else if (tOneSwitch === false) {
         // to prevent unlocking multiple times
-    } else if (((userObj.money < 10.00) && (userObj.exp >= 10.00) && (tOneSwitch === true)) || ((userObj.money < 10.00) && (userObj.exp < 10.00) && (tOneSwitch === true))) {
+    } else if (((lessThanTen) && (greatThanTen) && (switchTrue)) || ((lessThanTen) && (xpLessTen) && (switchTrue))) {
         bCast.innerHTML = tier1Locked;
         setTimeout(clearTknBroadcast, 3000);
     }
