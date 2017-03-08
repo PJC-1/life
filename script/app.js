@@ -657,7 +657,8 @@ function coffeeBoost() {
             coffeeCoolDown = true;
         }
     } else if (userObj.money <= coffee.price && coffeeCoolDown === true) {
-        // replace this log with a broadcast
+        bCast.innerHTML = "You need more money for this cup of joe.";
+        setTimeout(clearTestBroadcast, 2000);
         console.log("testing not enough money for coffee boost");
     } else if (coffeeCoolDown === false) {
         bCast.innerHTML = coffeeBreak;
