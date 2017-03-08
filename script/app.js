@@ -2,15 +2,15 @@
 // CACHED STRINGS //
 ////////////////////
 
-var moneySign     =  "Money: $ ";
 var expSign       =  "Exp: ";
-var purchasedSign =  "Purchased: ";
 var hungerSign    =  "Hunger: ";
-var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
+var moneySign     =  "Money: $ ";
+var purchasedSign =  "Purchased: ";
 var notHungry     =  "You are not hungry now.";
 var noMoney       =  "You do not have enought money for that.";
 // some of these cached strings can be keys in their respective objects
 var coffeeBreak   =  "You need to wait before having more coffee.";
+var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
 var tier1Locked   =  "You are unworthy of unlocking Tier-I. Consider working more.";
 
 
@@ -274,14 +274,22 @@ if (userObj.money < 1) {
 
 var progressSwitch = true;
 
+function funTime() {
+  if (progressSwitch === false) {
+    // disabled onclick while progress bar is in use.
+  } else {
+    move();
+  }
+}
+
 function move() {
-    var elem = document.getElementById("myBar");
     var width = 0;
-    var uExp = document.getElementById('userExp');
-    var uHunger = document.getElementById('userHunger');
-    var uMoney = document.getElementById('moneySpan');
+    var elem = document.getElementById("myBar");
     var uBar = document.getElementById('myBar');
+    var uExp = document.getElementById('userExp');
     var uLabel = document.getElementById('label');
+    var uMoney = document.getElementById('moneySpan');
+    var uHunger = document.getElementById('userHunger');
     // here you can set the milleseconds to add delay.
     var id = setInterval(frame, 20);
     function frame() {
@@ -310,14 +318,6 @@ function move() {
     }
 }
 
-function funTime() {
-    if (progressSwitch === false) {
-        // disabled onclick while progress bar is in use.
-    } else {
-        move();
-    }
-}
-
 
 /////////////////
 // FAME-TOKENS //
@@ -337,10 +337,10 @@ function unlockTierI() {
                 // note how I am able to access the price.
                 console.log(key + " ->" + tierI[key].price);
                 var i = document.createElement("IMG");
+                i.setAttribute("class", "img1");
+                i.setAttribute("id", tierI[key].id);
                 i.setAttribute("src", tierI[key].src);
                 i.setAttribute("width", tierI[key].width);
-                i.setAttribute("id", tierI[key].id);
-                i.setAttribute("class", "img1");
                 i.setAttribute("style", "filter:blur(5px)");
                 // you will need to add onclick as a token's key
                 i.setAttribute("onclick", tierI[key].func);
@@ -363,10 +363,10 @@ function unlockTierI() {
 
 function rmFltrRubiks() {
     var rubiks = tokenObj.tierOne.rubiks;
+    var rRubiks = document.getElementById(rubiks.id);
+    var uMoney = document.getElementById('moneySpan');
     var bCast = document.getElementById("tknBroadcast");
     var mMoney = "You need more money to purcahse this item.";
-    var uMoney = document.getElementById('moneySpan');
-    var rRubiks = document.getElementById(rubiks.id);
     if (userObj.money > rubiks.price && rubiks.fltrSwitch === true) {
         // incorporate fullfillment points
         userObj.money -= rubiks.price;
@@ -392,8 +392,8 @@ function rmFltrRubiks() {
 function rmFltrJordan() {
     var jordan6 = tokenObj.tierOne.jordan6;
     var jordan = document.getElementById(jordan6.id);
-    var bCast = document.getElementById("tknBroadcast");
     var uMoney = document.getElementById('moneySpan');
+    var bCast = document.getElementById("tknBroadcast");
     var moreMoney = "You need more money to purcahse this item.";
     if (userObj.money > jordan6.price && jordan6.fltrSwitch === true) {
         userObj.money -= jordan6.price;
@@ -419,8 +419,8 @@ function rmFltrJordan() {
 function rmFltrIphone() {
     var iphone = tokenObj.tierOne.iPhone;
     var phone = document.getElementById(iphone.id);
-    var bCast = document.getElementById("tknBroadcast");
     var uMoney = document.getElementById('moneySpan');
+    var bCast = document.getElementById("tknBroadcast");
     if (userObj.money > iphone.price && iphone.fltrSwitch === true) {
         userObj.money -= iphone.price;
         userObj.tokens.push(iphone);
@@ -465,8 +465,8 @@ function removeFilterTkn(userObject, tokenObject) {
 var hunger = setInterval(gettingHungery, 60000);
 
 function gettingHungery() {
-    var bCast = document.getElementById('testingBroadcast');
     var uHunger = document.getElementById('userHunger');
+    var bCast = document.getElementById('testingBroadcast');
     userObj.hunger -= 5;
     uHunger.innerHTML = hungerSign + userObj.hunger;
     // hunger reminder
@@ -514,15 +514,15 @@ var pizzaSwtich = true;
 // change the name of this function to something else
 function testAdding() {
     var src = foodObj.pizzaSnack.src;
-    var fInject = document.getElementById('upgradeFoodInject');
     var fAdd = document.getElementById('addingFood');
     var bCast = document.getElementById("broadcast");
+    var fInject = document.getElementById('upgradeFoodInject');
     if (userObj.money > 10 && pizzaSwtich === true) {
         var i = document.createElement("IMG");
         i.setAttribute("src", src);
         i.setAttribute("width", "50");
-        i.setAttribute("onclick", "pizzaSnack()");
         i.setAttribute("id", "pizzaPizza");
+        i.setAttribute("onclick", "pizzaSnack()");
         fAdd.appendChild(i);
         pizzaSwtich = false;
         // this code will remove the upgrade button
@@ -547,14 +547,14 @@ function testAdding() {
 }
 
 function pizzaSnack() {
-    var upCast = document.getElementById('upgradeBroadcast');
     var uMoney = document.getElementById('moneySpan');
     var uHunger = document.getElementById('userHunger');
+    var upCast = document.getElementById('upgradeBroadcast');
     if (userObj.hunger <= 97 && userObj.money > 4.75) {
-        userObj.hunger += foodObj.pizzaSnack.fill;
         userObj.money -= foodObj.pizzaSnack.cost;
-        uHunger.innerHTML = hungerSign + userObj.hunger;
+        userObj.hunger += foodObj.pizzaSnack.fill;
         uMoney.innerHTML = moneySign + userObj.money;
+        uHunger.innerHTML = hungerSign + userObj.hunger;
     } else if (userObj.hunger < 97 && userObj.money < 4.75) {
         upCast.innerHTML = hungryNoMoney;
         setTimeout(clearUpgradeBroadcast, 3000);
@@ -574,16 +574,15 @@ function pizzaSnack() {
 var cheeseSwitch = true;
 
 function addCheese() {
+    var happySrc = foodObj.cheeseBurger.src;
     var bCast = document.getElementById("broadcast");
     var foodAdd = document.getElementById('addingFood');
-    // create a new upgrade button
-    var happySrc = foodObj.cheeseBurger.src;
     if (userObj.money > 20 && cheeseSwitch === true) {
         var z = document.createElement("IMG");
-        z.setAttribute("src", happySrc);
         z.setAttribute("width", "50");
-        z.setAttribute("onclick", "happySnack()");
+        z.setAttribute("src", happySrc);
         z.setAttribute("id", "happyHappy");
+        z.setAttribute("onclick", "happySnack()");
         // you might need to take this out or create a new class for this
         // z.setAttribute("class", "upgradeBtn");
         foodAdd.appendChild(z);
@@ -597,12 +596,12 @@ function addCheese() {
 }
 
 function happySnack() {
-    var bCast = document.getElementById('upgradeBroadcast');
-    var uHunger = document.getElementById('userHunger');
     var uMoney = document.getElementById('moneySpan');
+    var uHunger = document.getElementById('userHunger');
+    var bCast = document.getElementById('upgradeBroadcast');
     if (userObj.hunger < 95 && userObj.money > 6.00) {
-        userObj.hunger += foodObj.cheeseBurger.fill;
         userObj.money -= foodObj.cheeseBurger.cost;
+        userObj.hunger += foodObj.cheeseBurger.fill;
         uHunger.innerHTML = hungerSign + userObj.hunger;
         uMoney.innerHTML = moneySign + userObj.money;
     } else if (userObj.hunger < 95 && userObj.money < 6.00) {
@@ -625,12 +624,12 @@ var coffeeCoolDown = true;
 
 function coffeeBoost() {
     var coffee = boostObj.coffee;
+    var uHunger = document.getElementById('userHunger');
     var moneySpan = document.getElementById('moneySpan');
     var bCast = document.getElementById("testingBroadcast");
-    var uHunger = document.getElementById('userHunger');
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
-        var time = setInterval(addMoneyByTime, coffee.rate);
         var hungryLow = setInterval(decreaseHunger, coffee.rate);
+        var time = setInterval(addMoneyByTime, coffee.rate);
         userObj.money -= coffee.price;
         moneySpan.innerHTML = moneySign + userObj.money;
         setTimeout(coffeeDurration, coffee.durration);
@@ -654,7 +653,7 @@ function coffeeBoost() {
             coffeeCoolDown = true;
         }
     } else if (userObj.money <= coffee.price && coffeeCoolDown === true) {
-        // broad cast for not enough money
+        // replace this log with a broadcast
         console.log("testing not enough money for coffee boost");
     } else if (coffeeCoolDown === false) {
         bCast.innerHTML = coffeeBreak;
