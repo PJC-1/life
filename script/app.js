@@ -8,7 +8,6 @@ var moneySign     =  "Money: $ ";
 var purchasedSign =  "Purchased: ";
 var notHungry     =  "You are not hungry now.";
 var noMoney       =  "You do not have enought money for that.";
-// some of these cached strings can be keys in their respective objects
 var coffeeBreak   =  "You need to wait before having more coffee.";
 var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
 var tier1Locked   =  "You are unworthy of unlocking Tier-I. Consider working more.";
@@ -659,13 +658,17 @@ function coffeeBoost() {
     } else if (userObj.money <= coffee.price && coffeeCoolDown === true) {
         bCast.innerHTML = "You need more money for this cup of joe.";
         setTimeout(clearTestBroadcast, 2000);
-        console.log("testing not enough money for coffee boost");
     } else if (coffeeCoolDown === false) {
         bCast.innerHTML = coffeeBreak;
         setTimeout(clearTestBroadcast, 2000);
     }
 }
 
+var rbSwitch = true;
+
 function boostAdding() {
-    console.log("this is wired to the boost upgrade btn");
+    // if with a condition that user's money is greater than x amount and rebbull switch is true
+    // create the img element of the redbull and then append that element to the DOM
+    // remove the upgrade button
+    // create a new upgrade button
 }
