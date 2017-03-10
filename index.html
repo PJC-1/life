@@ -8,46 +8,43 @@
 </head>
 <body>
     <div id="brTitle"><i>Best Regards</i></div>
-    <div id="colWrapper">
-        <div id="colDeux">
-            <h3 id="workStatus">Current Job: <span id="testingSpan"></span> </h3>
-            <h3 id="money"><span id="moneySpan"></span></h3>
-            <h3 id="userHunger">Hunger: 75</h3>
-            <h3 id="userExp">Exp: 0</h3>
-            <!-- <div id="userStats"></div> -->
-        </div>
-        <div id="colUn">
-            <h3 id="broadcast"></h3>
-            <br>
-            <img onclick="funTime()" id="workImage" src="./assets/programmer.png">
-            <h5 id="progressTitle">job completion</h5>
-            <div id="myProgress">
-                <div id="myBar">
-                    <div id="label">0%</div>
+        <div id="colWrapper">
+            <div id="colDeux">
+                <h3 id="workStatus">Current Job: <span id="testingSpan"></span> </h3>
+                <h3 id="money"><span id="moneySpan"></span></h3>
+                <h3 id="userHunger">Hunger: 75</h3>
+                <h3 id="userExp">Exp: 0</h3>
+            </div>
+            <div id="colUn">
+                <h3 id="broadcast"></h3>
+                <br>
+                <img onclick="funTime()" id="workImage" src="./assets/programmer.png">
+                <h5 id="progressTitle">job completion</h5>
+                <div id="myProgress">
+                    <div id="myBar">
+                        <div id="label">0%</div>
+                    </div>
+                </div>
+                <br>
+                <h3 id="testingBroadcast"></h3>
+                <br>
+                <div id="parentDivTest">
+                    <button class="upgradeBtn" id="testButton" onclick="testAdding()">Upgrade Food</button>
+                </div>
+                <div id="upgradeFoodInject">
+                    <h3 id="upgradeBroadcast"></h3>
+                </div>
+                <div id="addingFood">
+                    <img onclick="ramenSnack()" id="ramenImage" src="./assets/ramen.png">
+                    <!-- this is where food will be injected -->
+                </div>
+                <br>
+                <button class="upgradeBtn" id="boostUpgrade" onclick="boostAdding()">Upgrade Boost</button>
+                <div id="addingBoost">
+                    <img onclick="coffeeBoost()" id="coffeeID" src="./assets/coffee.png" width="70">
                 </div>
             </div>
-            <br>
-            <h3 id="testingBroadcast"></h3>
-            <br>
-            <div id="parentDivTest">
-                <button class="upgradeBtn" id="testButton" onclick="testAdding()">Upgrade Food</button>
-            </div>
-            <div id="upgradeFoodInject">
-                <h3 id="upgradeBroadcast"></h3>
-            </div>
-            <div id="addingFood">
-                <img onclick="ramenSnack()" id="ramenImage" src="./assets/ramen.png">
-                <!-- <img class="img2" src="./assets/locked.png" width="60px"> -->
-                <!-- this is where food will be injected -->
-            </div>
-            <br>
-            <button class="upgradeBtn" id="boostUpgrade" onclick="boostAdding()">Upgrade Boost</button>
-            <!--  you might need a separate broadcast for the boosts, you might be able to share with the broadcast in this column  -->
-            <div id="addingBoost">
-                <img onclick="coffeeBoost()" id="coffeeID" src="./assets/coffee.png" width="70">
-            </div>
         </div>
-    </div>
     <div class="flexy">
         <div id="colTrois">
             <h2 id="tokenTitle">
