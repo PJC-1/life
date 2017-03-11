@@ -266,6 +266,16 @@ if (userObj.money < 1) {
     userObj.happiness -= 25;
 }
 
+// this fixed the hunger issue, just add this into
+// the functions that effect innerHTML of user hunger
+function checkHunger() {
+    var uHunger = document.getElementById('userHunger');
+    if (userObj.hunger < 1) {
+        userObj.hunger = 1
+        uHunger.innerHTML = hungerSign + userObj.hunger
+    }
+}
+
 
 //////////////////
 // PROGRESS BAR //
@@ -306,6 +316,7 @@ function move() {
             userObj.money += jobObj.internship.money;
             userObj.hunger -= jobObj.internship.hunger;
             // exp is not yet wired up
+            checkHunger();
             userObj.exp += jobObj.internship.exp;
             uExp.innerHTML = expSign + userObj.exp;
             uHunger.innerHTML = hungerSign + userObj.hunger;
