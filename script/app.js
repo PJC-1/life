@@ -667,8 +667,12 @@ function coffeeBoost() {
 var rbSwitch = true;
 
 function boostAdding() {
-    // if with a condition that user's money is greater than x amount and rebbull switch is true
     // create the img element of the redbull and then append that element to the DOM
     // remove the upgrade button
     // create a new upgrade button
+    if (userObj.money >= boostObj.redBull.price && rbSwitch === true) {
+        console.log("testing boost addings if condition");
+    } else {
+        console.log("else if");
+    }
 }
