@@ -271,8 +271,10 @@ if (userObj.money < 1) {
 function checkHunger() {
     var uHunger = document.getElementById('userHunger');
     if (userObj.hunger < 1) {
-        userObj.hunger = 1
-        uHunger.innerHTML = hungerSign + userObj.hunger
+        userObj.hunger = 1;
+        uHunger.innerHTML = hungerSign + userObj.hunger;
+        // add a reminder and also think about a reaction
+        // to constantly hitting this reminder like productivity
     }
 }
 
@@ -483,13 +485,10 @@ function gettingHungery() {
     var bCast = document.getElementById('testingBroadcast');
     userObj.hunger -= 5;
     uHunger.innerHTML = hungerSign + userObj.hunger;
-    // hunger reminder
+    checkHunger();
     if (userObj.hunger < 39) {
         bCast.innerHTML = "You are getting hungry try eatting some food.";
         setTimeout(clearTestBroadcast, 3000);
-    }
-    if (userObj.hunger < 1) {
-        userObj.hunger = 0;
     }
 }
 
