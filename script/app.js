@@ -665,8 +665,7 @@ function coffeeBoost() {
 }
 
 var rbSwitch = true;
-// adding this to check that this is dev branch
-// adding this comment to refresh my memory on merging a branch back to master
+
 function boostAdding() {
     // if with a condition that user's money is greater than x amount and rebbull switch is true
     // create the img element of the redbull and then append that element to the DOM
