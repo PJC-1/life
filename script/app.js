@@ -677,18 +677,18 @@ function coffeeBoost() {
 var rbSwitch = true;
 
 function boostAdding() {
-    // create the img element of the redbull and then append that element to the DOM
     // remove the upgrade button
     // create a new upgrade button
     var rb = boostObj.redBull;
+    var inject = document.getElementById("addingBoost");
     if (userObj.money >= rb.price && rbSwitch === true) {
         console.log("testing boost addings if condition");
         var x = document.createElement("IMG");
-        x.setAttribute("width", "50");
+        x.setAttribute("width", rb.width);
         x.setAttribute("src", rb.src );
         x.setAttribute("id", rb.id);
         x.setAttribute("onclick", rb.func);
-        document.getElementById("addingBoost").appendChild(x);
+        inject.appendChild(x);
     } else {
         console.log("else if");
     }
