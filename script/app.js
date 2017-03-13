@@ -680,8 +680,15 @@ function boostAdding() {
     // create the img element of the redbull and then append that element to the DOM
     // remove the upgrade button
     // create a new upgrade button
-    if (userObj.money >= boostObj.redBull.price && rbSwitch === true) {
+    var rb = boostObj.redBull;
+    if (userObj.money >= rb.price && rbSwitch === true) {
         console.log("testing boost addings if condition");
+        var x = document.createElement("IMG");
+        x.setAttribute("width", "50");
+        x.setAttribute("src", rb.src );
+        x.setAttribute("id", rb.id);
+        x.setAttribute("onclick", rb.func);
+        document.getElementById("addingBoost").appendChild(x);
     } else {
         console.log("else if");
     }
