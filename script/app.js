@@ -693,3 +693,7 @@ function boostAdding() {
         console.log("else if");
     }
 }
+
+function redbullBoost() {
+    console.log("successfully wired the redbull");
+}
