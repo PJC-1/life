@@ -689,6 +689,9 @@ function boostAdding() {
         x.setAttribute("id", rb.id);
         x.setAttribute("onclick", rb.func);
         inject.appendChild(x);
+        rbSwitch = false;
+    } else if ( rbSwitch === false ) {
+        console.log("prevented duplicate redbulls");
     } else {
         console.log("else if");
     }
