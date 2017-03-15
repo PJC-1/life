@@ -690,6 +690,9 @@ function boostAdding() {
         x.setAttribute("onclick", rb.func);
         inject.appendChild(x);
         rbSwitch = false;
+        var parent = document.getElementById("boostParent");
+        var child = document.getElementById("boostUpgrade");
+        parent.removeChild(child);
     } else if ( rbSwitch === false ) {
         console.log("prevented duplicate redbulls");
     } else {
