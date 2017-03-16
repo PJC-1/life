@@ -692,10 +692,13 @@ function boostAdding() {
         var parent = document.getElementById("boostParent");
         var child = document.getElementById("boostUpgrade");
         parent.removeChild(child);
-        // now replace that removed button with a new button
-        // use the createElement and then createText node
-        // use appendChild
-        // set some attributes for the button
+        var y = document.createElement("BUTTON");
+        var z = document.createTextNode("UPGRADE");
+        y.appendChild(z);
+        y.setAttribute("class", "upgradeBtn");
+        y.setAttribute("id", "boostUpgrade");
+        y.setAttribute("onclick", "redbullBoost()");
+        document.getElementById("boostParent").appendChild(y);
     } else if ( rbSwitch === false ) {
         console.log("prevented duplicate redbulls");
     } else {
