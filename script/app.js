@@ -682,7 +682,6 @@ function boostAdding() {
     var rb = boostObj.redBull;
     var inject = document.getElementById("addingBoost");
     if (userObj.money >= rb.price && rbSwitch === true) {
-        console.log("testing boost addings if condition");
         var x = document.createElement("IMG");
         x.setAttribute("width", rb.width);
         x.setAttribute("src", rb.src );
@@ -693,6 +692,10 @@ function boostAdding() {
         var parent = document.getElementById("boostParent");
         var child = document.getElementById("boostUpgrade");
         parent.removeChild(child);
+        // now replace that removed button with a new button
+        // use the createElement and then createText node
+        // use appendChild
+        // set some attributes for the button
     } else if ( rbSwitch === false ) {
         console.log("prevented duplicate redbulls");
     } else {
