@@ -697,7 +697,10 @@ function boostAdding() {
         y.appendChild(z);
         y.setAttribute("class", "upgradeBtn");
         y.setAttribute("id", "boostUpgrade");
-        y.setAttribute("onclick", "redbullBoost()");
+        // this is the wrong onclick
+        // you can also maybe just change attributes instead of replacing the
+        // whole button
+        // y.setAttribute("onclick", "redbullBoost()");
         document.getElementById("boostParent").appendChild(y);
     } else if ( rbSwitch === false ) {
         console.log("prevented duplicate redbulls");
