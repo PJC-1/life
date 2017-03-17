@@ -712,9 +712,11 @@ function boostAdding() {
 }
 
 function addRB() {
+    // buildout the next upgrade here
     console.log("this is wired to the upgrade button.");
 }
 
 function redbullBoost() {
+    // build out the rebull boost usage functionality
     console.log("successfully wired the redbull");
 }
