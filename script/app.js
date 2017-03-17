@@ -697,11 +697,10 @@ function boostAdding() {
         y.appendChild(z);
         y.setAttribute("class", "upgradeBtn");
         y.setAttribute("id", "boostUpgrade");
-        // this is the wrong onclick
+        y.setAttribute("onclick", "addRB()");
         // you can also maybe just change attributes instead of replacing the
         // whole button
-        // y.setAttribute("onclick", "redbullBoost()");
-        // you can think about either using a seires of else if and switches
+        // you can think about either using a series of else if and switches
         // or you can use the new upgrade button and link it to a new onlcik that
         // appends a new boost
         document.getElementById("boostParent").appendChild(y);
@@ -710,6 +709,10 @@ function boostAdding() {
     } else {
         console.log("else if");
     }
+}
+
+function addRB() {
+    console.log("this is wired to the upgrade button.");
 }
 
 function redbullBoost() {
