@@ -629,9 +629,9 @@ function happySnack() {
 }
 
 
-///////////
-// BOOST //
-///////////
+//////////////////
+// COFFEE BOOST //
+//////////////////
 
 var coffeeCoolDown = true;
 
@@ -674,8 +674,14 @@ function coffeeBoost() {
     }
 }
 
+
+///////////////////
+// REDBULL BOOST //
+///////////////////
+
 var rbSwitch = true;
 
+// appends Redbull to the DOM
 function boostAdding() {
     // remove the upgrade button
     // create a new upgrade button
@@ -706,15 +712,15 @@ function boostAdding() {
     }
 }
 
-function addRB() {
-    // buildout the next upgrade here
-    console.log("this is wired to the upgrade button.");
-}
-
 var rbCoolDown = true;
 
 function redbullBoost() {
-    if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
-        console.log("test redbull boost user condition success");
-    }
+  if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
+    console.log("wired to the rebull boost usage");
+  }
+}
+
+function addRB() {
+    // buildout the next upgrade here
+    console.log("this is wired to the upgrade button.");
 }
