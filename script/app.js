@@ -698,11 +698,6 @@ function boostAdding() {
         y.setAttribute("class", "upgradeBtn");
         y.setAttribute("id", "boostUpgrade");
         y.setAttribute("onclick", "addRB()");
-        // you can also maybe just change attributes instead of replacing the
-        // whole button
-        // you can think about either using a series of else if and switches
-        // or you can use the new upgrade button and link it to a new onlcik that
-        // appends a new boost
         document.getElementById("boostParent").appendChild(y);
     } else if ( rbSwitch === false ) {
         console.log("prevented duplicate redbulls");
