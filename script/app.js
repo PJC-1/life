@@ -693,7 +693,7 @@ function boostAdding() {
         var child = document.getElementById("boostUpgrade");
         parent.removeChild(child);
         var y = document.createElement("BUTTON");
-        var z = document.createTextNode("UPGRADE");
+        var z = document.createTextNode("Upgrade Boost");
         y.appendChild(z);
         y.setAttribute("class", "upgradeBtn");
         y.setAttribute("id", "boostUpgrade");
