@@ -715,9 +715,25 @@ function boostAdding() {
 var rbCoolDown = true;
 
 function redbullBoost() {
-  if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
-    console.log("wired to the rebull boost usage");
-  }
+    if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
+        // 1)
+        //    create a setInterval that takes a function decreases users hunger and
+        //    displaces the updated hunger in the view, and use the redbull's rate
+        //    for the time perameters.
+        // 2)
+        //    create a setInterval that adds money by time, similar to step 1
+        // 3)
+        //    subtract the cost of redbull from the userOjb.
+        //    update the users money displayed in the view.
+        // 4)
+        //    (i) create a setTime out that takes a function that clears the setInterval
+        //    of step 1 and 2.
+        //    set the redbull cool down switch to false.
+        //    (ii) build a function that resets the redbull cool down switch to true
+        //    add a setTime in the (i) that takes the function from (ii) and uses
+        //    the redbull duration referencing from the boost object
+        console.log("wired to the rebull boost usage");
+    }
 }
 
 function addRB() {
