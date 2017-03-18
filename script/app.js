@@ -711,7 +711,10 @@ function addRB() {
     console.log("this is wired to the upgrade button.");
 }
 
+var rbCoolDown = true;
+
 function redbullBoost() {
-    // build out the rebull boost usage functionality
-    console.log("successfully wired the redbull");
+    if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
+        console.log("test redbull boost user condition success");
+    }
 }
