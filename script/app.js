@@ -683,8 +683,6 @@ var rbSwitch = true;
 
 // appends Redbull to the DOM
 function boostAdding() {
-    // remove the upgrade button
-    // create a new upgrade button
     var rb = boostObj.redBull;
     var inject = document.getElementById("addingBoost");
     if (userObj.money >= rb.price && rbSwitch === true) {
