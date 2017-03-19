@@ -718,6 +718,10 @@ function redbullBoost() {
         //    create a setInterval that takes a function decreases users hunger and
         //    displaces the updated hunger in the view, and use the redbull's rate
         //    for the time perameters.
+        function decreaseHunger() {
+            userObj.hunger -= 1;
+            document.getElementById('userHunger').innerHTML = hungerSign + userObj.money
+        }
         // 2)
         //    create a setInterval that adds money by time, similar to step 1
         // 3)
