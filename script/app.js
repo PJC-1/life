@@ -718,7 +718,7 @@ function redbullBoost() {
         //    create a setInterval that takes a function decreases users hunger and
         //    displaces the updated hunger in the view, and use the redbull's rate
         //    for the time perameters.
-        var hungeryLow = setInterval(decreaseHunger, 300);
+        var hungeryLow = setInterval(decreaseHunger, boostObj.redBull.rate);
         function decreaseHunger() {
             userObj.hunger -= 1;
             document.getElementById("userHunger").innerHTML = hungerSign + userObj.hunger;
