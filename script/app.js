@@ -98,7 +98,9 @@ var boostObj = {
         price         :  8.75,
         fullfillment  :  0,
         durration     :  10000,
-        rate          :  100,
+        // currently your are using the rate in two places for two separe purposes
+        // consider creating another rate: for decreasing hunger and for increasing money
+        rate          :  400,
         func          :  "redbullBoost()",
         src           :  "./assets/redbull.png"
     }
