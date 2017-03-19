@@ -716,10 +716,6 @@ var rbCoolDown = true;
 
 function redbullBoost() {
     if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
-        // 1)
-        //    create a setInterval that takes a function decreases users hunger and
-        //    displaces the updated hunger in the view, and use the redbull's rate
-        //    for the time perameters.
         var hungeryLow = setInterval(decreaseHunger, boostObj.redBull.rate);
         function decreaseHunger() {
             userObj.hunger -= 1;
