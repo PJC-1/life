@@ -730,9 +730,6 @@ function redbullBoost() {
         }
         userObj.money -= boostObj.redBull.price;
         document.getElementById("money").innerHTML = moneySign + userObj.money;
-        // 3)
-        //    subtract the cost of redbull from the userOjb.
-        //    update the users money displayed in the view.
         // 4)
         //    (i) create a setTime out that takes a function that clears the setInterval
         //    of step 1 and 2.
