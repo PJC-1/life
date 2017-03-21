@@ -723,13 +723,12 @@ function redbullBoost() {
             document.getElementById("userHunger").innerHTML = hungerSign + userObj.hunger;
             console.log("testing the decreaseHunger function.");
         }
-        // 2)
-        //    create a setInterval that adds money by time, similar to step 1
         function increaseMoney() {
             userObj.money += 1;
             document.getElementById("money").innerHTML = moneySign + userObj.money;
             console.log("testing the increaseMoney function.");
         }
+        
         // 3)
         //    subtract the cost of redbull from the userOjb.
         //    update the users money displayed in the view.
