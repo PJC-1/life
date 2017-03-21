@@ -717,6 +717,7 @@ var rbCoolDown = true;
 function redbullBoost() {
     if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
         var hungeryLow = setInterval(decreaseHunger, boostObj.redBull.rate);
+        var moneyUp = setInterval(increaseMoney, 200);
         function decreaseHunger() {
             userObj.hunger -= 1;
             document.getElementById("userHunger").innerHTML = hungerSign + userObj.hunger;
@@ -724,6 +725,11 @@ function redbullBoost() {
         }
         // 2)
         //    create a setInterval that adds money by time, similar to step 1
+        function increaseMoney() {
+            userObj.money += 1;
+            document.getElementById("money").innerHTML = moneySign + userObj.money;
+            console.log("testing the increaseMoney function.");
+        }
         // 3)
         //    subtract the cost of redbull from the userOjb.
         //    update the users money displayed in the view.
