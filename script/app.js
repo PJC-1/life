@@ -728,7 +728,8 @@ function redbullBoost() {
             document.getElementById("money").innerHTML = moneySign + userObj.money;
             console.log("testing the increaseMoney function.");
         }
-        
+        userObj.money -= boostObj.redBull.price;
+        document.getElementById("money").innerHTML = moneySign + userObj.money;
         // 3)
         //    subtract the cost of redbull from the userOjb.
         //    update the users money displayed in the view.
