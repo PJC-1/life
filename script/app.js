@@ -721,12 +721,10 @@ function redbullBoost() {
         function decreaseHunger() {
             userObj.hunger -= 1;
             document.getElementById("userHunger").innerHTML = hungerSign + userObj.hunger;
-            console.log("testing the decreaseHunger function.");
         }
         function increaseMoney() {
             userObj.money += 1;
             document.getElementById("money").innerHTML = moneySign + userObj.money;
-            console.log("testing the increaseMoney function.");
         }
         userObj.money -= boostObj.redBull.price;
         document.getElementById("money").innerHTML = moneySign + userObj.money;
@@ -737,7 +735,6 @@ function redbullBoost() {
         //    (ii) build a function that resets the redbull cool down switch to true
         //    add a setTime in the (i) that takes the function from (ii) and uses
         //    the redbull duration referencing from the boost object
-        console.log("wired to the rebull boost usage");
     }
 }
 
