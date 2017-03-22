@@ -732,9 +732,19 @@ function redbullBoost() {
         //    (i) create a setTime out that takes a function that clears the setInterval
         //    of step 1 and 2.
         //    set the redbull cool down switch to false.
+        setTimeout(redbullDurration, boostObj.redBull.durration);
+        rbCoolDown = false;
+        function redbullDurration() {
+            clearInterval(moneyUp);
+            clearInterval(hungeryLow);
+            setTimeout(coolDownSwitch, 3000);
+        }
+        function coolDownSwitch() {
+            rbCoolDown = true;
+        }
         //    (ii) build a function that resets the redbull cool down switch to true
         //    add a setTime in the (i) that takes the function from (ii) and uses
-        //    the redbull duration referencing from the boost object
+        //    the redbull durration referencing from the boost object
     }
 }
 
