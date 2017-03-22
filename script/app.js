@@ -728,10 +728,6 @@ function redbullBoost() {
         }
         userObj.money -= boostObj.redBull.price;
         document.getElementById("money").innerHTML = moneySign + userObj.money;
-        // 4)
-        //    (i) create a setTime out that takes a function that clears the setInterval
-        //    of step 1 and 2.
-        //    set the redbull cool down switch to false.
         setTimeout(redbullDurration, boostObj.redBull.durration);
         rbCoolDown = false;
         function redbullDurration() {
@@ -742,9 +738,6 @@ function redbullBoost() {
         function coolDownSwitch() {
             rbCoolDown = true;
         }
-        //    (ii) build a function that resets the redbull cool down switch to true
-        //    add a setTime in the (i) that takes the function from (ii) and uses
-        //    the redbull durration referencing from the boost object
     }
 }
 
