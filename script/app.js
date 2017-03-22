@@ -716,8 +716,12 @@ var rbCoolDown = true;
 
 function redbullBoost() {
     if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
-        var hungeryLow = setInterval(decreaseHunger, boostObj.redBull.rate);
         var moneyUp = setInterval(increaseMoney, 200);
+        var hungeryLow = setInterval(decreaseHunger, boostObj.redBull.rate);
+        userObj.money -= boostObj.redBull.price;
+        document.getElementById("money").innerHTML = moneySign + userObj.money;
+        setTimeout(redbullDurration, boostObj.redBull.durration);
+        rbCoolDown = false;
         function decreaseHunger() {
             userObj.hunger -= 1;
             document.getElementById("userHunger").innerHTML = hungerSign + userObj.hunger;
@@ -726,10 +730,6 @@ function redbullBoost() {
             userObj.money += 1;
             document.getElementById("money").innerHTML = moneySign + userObj.money;
         }
-        userObj.money -= boostObj.redBull.price;
-        document.getElementById("money").innerHTML = moneySign + userObj.money;
-        setTimeout(redbullDurration, boostObj.redBull.durration);
-        rbCoolDown = false;
         function redbullDurration() {
             clearInterval(moneyUp);
             clearInterval(hungeryLow);
