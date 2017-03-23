@@ -86,7 +86,7 @@ var boostObj = {
         price         :  4.75,
         fullfillment  :  0,
         durration     :  5000,
-        // add a new key value pair for cashRate, for addMoneyByTime setInterval
+        cashRate      :  285,
         rate          :  300,
         func          :  "coffeeBoost()",
         src           :  "./assets/coffee.png"
@@ -645,7 +645,7 @@ function coffeeBoost() {
     var moneySpan = document.getElementById('moneySpan');
     var bCast = document.getElementById("testingBroadcast");
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
-        var hungryLow = setInterval(decreaseHunger, coffee.rate);
+        var hungryLow = setInterval(decreaseHunger, coffee.cashRate);
         var time = setInterval(addMoneyByTime, coffee.rate);
         userObj.money -= coffee.price;
         moneySpan.innerHTML = moneySign + userObj.money;
