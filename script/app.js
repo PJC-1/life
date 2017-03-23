@@ -718,7 +718,7 @@ var rbCoolDown = true;
 
 function redbullBoost() {
     if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
-        var moneyUp = setInterval(increaseMoney, 200);
+        var moneyUp = setInterval(increaseMoney, boostObj.redBull.cashRate);
         var hungeryLow = setInterval(decreaseHunger, boostObj.redBull.rate);
         userObj.money -= boostObj.redBull.price;
         document.getElementById("money").innerHTML = moneySign + userObj.money;
