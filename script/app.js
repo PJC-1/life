@@ -645,8 +645,8 @@ function coffeeBoost() {
     var moneySpan = document.getElementById('moneySpan');
     var bCast = document.getElementById("testingBroadcast");
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
-        var hungryLow = setInterval(decreaseHunger, coffee.cashRate);
-        var time = setInterval(addMoneyByTime, coffee.rate);
+        var hungryLow = setInterval(decreaseHunger, coffee.rate);
+        var time = setInterval(addMoneyByTime, coffee.cashRate);
         userObj.money -= coffee.price;
         moneySpan.innerHTML = moneySign + userObj.money;
         setTimeout(coffeeDurration, coffee.durration);
@@ -721,7 +721,7 @@ function redbullBoost() {
         var moneyUp = setInterval(increaseMoney, boostObj.redBull.cashRate);
         var hungeryLow = setInterval(decreaseHunger, boostObj.redBull.rate);
         userObj.money -= boostObj.redBull.price;
-        document.getElementById("money").innerHTML = moneySign + userObj.money;
+        document.getElementById("moneySpan").innerHTML = moneySign + userObj.money;
         setTimeout(redbullDurration, boostObj.redBull.durration);
         rbCoolDown = false;
         function decreaseHunger() {
@@ -730,7 +730,7 @@ function redbullBoost() {
         }
         function increaseMoney() {
             userObj.money += 1;
-            document.getElementById("money").innerHTML = moneySign + userObj.money;
+            document.getElementById("moneySpan").innerHTML = moneySign + userObj.money;
         }
         function redbullDurration() {
             clearInterval(moneyUp);
