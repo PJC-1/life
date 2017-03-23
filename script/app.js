@@ -86,6 +86,7 @@ var boostObj = {
         price         :  4.75,
         fullfillment  :  0,
         durration     :  5000,
+        // add a new key value pair for cashRate, for addMoneyByTime setInterval
         rate          :  300,
         func          :  "coffeeBoost()",
         src           :  "./assets/coffee.png"
@@ -100,6 +101,7 @@ var boostObj = {
         durration     :  10000,
         // currently your are using the rate in two places for two separe purposes
         // consider creating another rate: for decreasing hunger and for increasing money
+        cashRate      :  200,
         rate          :  400,
         func          :  "redbullBoost()",
         src           :  "./assets/redbull.png"
