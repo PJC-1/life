@@ -261,7 +261,7 @@ function supportUpgrade() {
 ///////////
 
 (function () {
-    var uMoney = document.getElementById("moneySpan");
+    var uMoney = document.getElementById("money");
     uMoney.innerHTML = moneySign + userObj.money;
 })();
 
@@ -303,7 +303,7 @@ function move() {
     var uBar = document.getElementById('myBar');
     var uExp = document.getElementById('userExp');
     var uLabel = document.getElementById('label');
-    var uMoney = document.getElementById('moneySpan');
+    var uMoney = document.getElementById('money');
     var uHunger = document.getElementById('userHunger');
     // here you can set the milleseconds to add delay.
     var id = setInterval(frame, 20);
@@ -384,7 +384,7 @@ function unlockTierI() {
 function rmFltrRubiks() {
     var rubiks = tokenObj.tierOne.rubiks;
     var rRubiks = document.getElementById(rubiks.id);
-    var uMoney = document.getElementById('moneySpan');
+    var uMoney = document.getElementById("money");
     var bCast = document.getElementById("tknBroadcast");
     var mMoney = "You need more money to purcahse this item.";
     if (userObj.money > rubiks.price && rubiks.fltrSwitch === true) {
@@ -412,7 +412,7 @@ function rmFltrRubiks() {
 function rmFltrJordan() {
     var jordan6 = tokenObj.tierOne.jordan6;
     var jordan = document.getElementById(jordan6.id);
-    var uMoney = document.getElementById('moneySpan');
+    var uMoney = document.getElementById("money");
     var bCast = document.getElementById("tknBroadcast");
     var moreMoney = "You need more money to purcahse this item.";
     if (userObj.money > jordan6.price && jordan6.fltrSwitch === true) {
@@ -439,7 +439,7 @@ function rmFltrJordan() {
 function rmFltrIphone() {
     var iphone = tokenObj.tierOne.iPhone;
     var phone = document.getElementById(iphone.id);
-    var uMoney = document.getElementById('moneySpan');
+    var uMoney = document.getElementById("money");
     var bCast = document.getElementById("tknBroadcast");
     if (userObj.money > iphone.price && iphone.fltrSwitch === true) {
         userObj.money -= iphone.price;
@@ -503,7 +503,7 @@ function gettingHungery() {
 
 function ramenSnack() {
     var bCast = document.getElementById('broadcast');
-    var uMoney = document.getElementById('moneySpan');
+    var uMoney = document.getElementById("money");
     var uHunger = document.getElementById('userHunger');
     if (userObj.hunger <= 99 && userObj.money > 2.25) {
         userObj.hunger += 1;
@@ -564,7 +564,7 @@ function testAdding() {
 }
 
 function pizzaSnack() {
-    var uMoney = document.getElementById('moneySpan');
+    var uMoney = document.getElementById("money");
     var uHunger = document.getElementById('userHunger');
     var upCast = document.getElementById('upgradeBroadcast');
     if (userObj.hunger <= 97 && userObj.money > 4.75) {
@@ -613,7 +613,7 @@ function addCheese() {
 }
 
 function happySnack() {
-    var uMoney = document.getElementById('moneySpan');
+    var uMoney = document.getElementById("money");
     var uHunger = document.getElementById('userHunger');
     var bCast = document.getElementById('upgradeBroadcast');
     if (userObj.hunger < 95 && userObj.money > 6.00) {
@@ -642,7 +642,7 @@ var coffeeCoolDown = true;
 function coffeeBoost() {
     var coffee = boostObj.coffee;
     var uHunger = document.getElementById('userHunger');
-    var moneySpan = document.getElementById('moneySpan');
+    var moneySpan = document.getElementById("money");
     var bCast = document.getElementById("testingBroadcast");
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
         var hungryLow = setInterval(decreaseHunger, coffee.rate);
@@ -721,7 +721,7 @@ function redbullBoost() {
         var moneyUp = setInterval(increaseMoney, boostObj.redBull.cashRate);
         var hungeryLow = setInterval(decreaseHunger, boostObj.redBull.rate);
         userObj.money -= boostObj.redBull.price;
-        document.getElementById("moneySpan").innerHTML = moneySign + userObj.money;
+        document.getElementById("money").innerHTML = moneySign + userObj.money;
         setTimeout(redbullDurration, boostObj.redBull.durration);
         rbCoolDown = false;
         function decreaseHunger() {
@@ -730,7 +730,7 @@ function redbullBoost() {
         }
         function increaseMoney() {
             userObj.money += 1;
-            document.getElementById("moneySpan").innerHTML = moneySign + userObj.money;
+            document.getElementById("money").innerHTML = moneySign + userObj.money;
         }
         function redbullDurration() {
             clearInterval(moneyUp);
