@@ -717,12 +717,13 @@ function boostAdding() {
 var rbCoolDown = true;
 
 function redbullBoost() {
-    if (userObj.money >= boostObj.redBull.price && rbCoolDown === true) {
-        var moneyUp = setInterval(increaseMoney, boostObj.redBull.cashRate);
-        var hungeryLow = setInterval(decreaseHunger, boostObj.redBull.rate);
-        userObj.money -= boostObj.redBull.price;
+    var rb = boostObj.redBull;
+    if (userObj.money >= rb.price && rbCoolDown === true) {
+        var moneyUp = setInterval(increaseMoney, rb.cashRate);
+        var hungeryLow = setInterval(decreaseHunger, rb.rate);
+        userObj.money -= rb.price;
         document.getElementById("money").innerHTML = moneySign + userObj.money;
-        setTimeout(redbullDurration, boostObj.redBull.durration);
+        setTimeout(redbullDurration, rb.durration);
         rbCoolDown = false;
         function decreaseHunger() {
             userObj.hunger -= 1;
