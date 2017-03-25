@@ -213,22 +213,22 @@ var skillsObj = {
 //  maybe find a solution to consolidate the broadcast system, from multiple to
 //  a single way of broadcasting
 function clearBroadcast() {
-    var bCast = document.getElementById('broadcast');
+    var bCast = document.getElementById("broadcast");
     bCast.innerHTML = "";
 }
 
 function clearTestBroadcast() {
-    var bCast = document.getElementById('testingBroadcast');
+    var bCast = document.getElementById("testingBroadcast");
     bCast.innerHTML = "";
 }
 
 function clearUpgradeBroadcast() {
-    var bCast = document.getElementById('upgradeBroadcast');
+    var bCast = document.getElementById("upgradeBroadcast");
     bCast.innerHTML = "";
 }
 
 function clearTknBroadcast() {
-    var bCast = document.getElementById('tknBroadcast');
+    var bCast = document.getElementById("tknBroadcast");
     bCast.innerHTML = "";
 }
 
@@ -273,7 +273,7 @@ if (userObj.money < 1) {
 // this fixed the hunger issue, just add this into
 // the functions that effect innerHTML of user hunger
 function checkHunger() {
-    var uHunger = document.getElementById('userHunger');
+    var uHunger = document.getElementById("userHunger");
     if (userObj.hunger < 1) {
         userObj.hunger = 1;
         uHunger.innerHTML = hungerSign + userObj.hunger;
@@ -300,11 +300,11 @@ function funTime() {
 function move() {
     var width = 0;
     var elem = document.getElementById("myBar");
-    var uBar = document.getElementById('myBar');
-    var uExp = document.getElementById('userExp');
-    var uLabel = document.getElementById('label');
-    var uMoney = document.getElementById('money');
-    var uHunger = document.getElementById('userHunger');
+    var uBar = document.getElementById("myBar");
+    var uExp = document.getElementById("userExp");
+    var uLabel = document.getElementById("label");
+    var uMoney = document.getElementById("money");
+    var uHunger = document.getElementById("userHunger");
     // here you can set the milleseconds to add delay.
     var id = setInterval(frame, 20);
     function frame() {
@@ -314,8 +314,8 @@ function move() {
             progressSwitch = false;
             width++;
             //this line is what increments the width attribute in the progress bar element
-            elem.style.width = width + '%';
-            uLabel.innerHTML = width * 1 + '%';
+            elem.style.width = width + "%";
+            uLabel.innerHTML = width * 1 + "%";
         }
         if (width === 100) {
             // find out why this is adding both money + hunger twice
@@ -485,8 +485,8 @@ function removeFilterTkn(userObject, tokenObject) {
 var hunger = setInterval(gettingHungery, 60000);
 
 function gettingHungery() {
-    var uHunger = document.getElementById('userHunger');
-    var bCast = document.getElementById('testingBroadcast');
+    var uHunger = document.getElementById("userHunger");
+    var bCast = document.getElementById("testingBroadcast");
     userObj.hunger -= 5;
     uHunger.innerHTML = hungerSign + userObj.hunger;
     checkHunger();
@@ -502,9 +502,9 @@ function gettingHungery() {
 ///////////
 
 function ramenSnack() {
-    var bCast = document.getElementById('broadcast');
+    var bCast = document.getElementById("broadcast");
     var uMoney = document.getElementById("money");
-    var uHunger = document.getElementById('userHunger');
+    var uHunger = document.getElementById("userHunger");
     if (userObj.hunger <= 99 && userObj.money > 2.25) {
         userObj.hunger += 1;
         userObj.money -= 2.25;
@@ -531,9 +531,9 @@ var pizzaSwtich = true;
 // change the name of this function to something else
 function testAdding() {
     var src = foodObj.pizzaSnack.src;
-    var fAdd = document.getElementById('addingFood');
+    var fAdd = document.getElementById("addingFood");
     var bCast = document.getElementById("broadcast");
-    var fInject = document.getElementById('upgradeFoodInject');
+    var fInject = document.getElementById("upgradeFoodInject");
     if (userObj.money > 10 && pizzaSwtich === true) {
         var i = document.createElement("IMG");
         i.setAttribute("src", src);
@@ -565,8 +565,8 @@ function testAdding() {
 
 function pizzaSnack() {
     var uMoney = document.getElementById("money");
-    var uHunger = document.getElementById('userHunger');
-    var upCast = document.getElementById('upgradeBroadcast');
+    var uHunger = document.getElementById("userHunger");
+    var upCast = document.getElementById("upgradeBroadcast");
     if (userObj.hunger <= 97 && userObj.money > 4.75) {
         userObj.money -= foodObj.pizzaSnack.cost;
         userObj.hunger += foodObj.pizzaSnack.fill;
@@ -593,7 +593,7 @@ var cheeseSwitch = true;
 function addCheese() {
     var happySrc = foodObj.cheeseBurger.src;
     var bCast = document.getElementById("broadcast");
-    var foodAdd = document.getElementById('addingFood');
+    var foodAdd = document.getElementById("addingFood");
     if (userObj.money > 20 && cheeseSwitch === true) {
         var z = document.createElement("IMG");
         z.setAttribute("width", "50");
@@ -614,8 +614,8 @@ function addCheese() {
 
 function happySnack() {
     var uMoney = document.getElementById("money");
-    var uHunger = document.getElementById('userHunger');
-    var bCast = document.getElementById('upgradeBroadcast');
+    var uHunger = document.getElementById("userHunger");
+    var bCast = document.getElementById("upgradeBroadcast");
     if (userObj.hunger < 95 && userObj.money > 6.00) {
         userObj.money -= foodObj.cheeseBurger.cost;
         userObj.hunger += foodObj.cheeseBurger.fill;
@@ -641,7 +641,7 @@ var coffeeCoolDown = true;
 
 function coffeeBoost() {
     var coffee = boostObj.coffee;
-    var uHunger = document.getElementById('userHunger');
+    var uHunger = document.getElementById("userHunger");
     var moneySpan = document.getElementById("money");
     var bCast = document.getElementById("testingBroadcast");
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
