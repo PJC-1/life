@@ -718,11 +718,12 @@ var rbCoolDown = true;
 
 function redbullBoost() {
     var rb = boostObj.redBull;
+    var uMoney = document.getElementById("money");
     if (userObj.money >= rb.price && rbCoolDown === true) {
         var moneyUp = setInterval(increaseMoney, rb.cashRate);
         var hungeryLow = setInterval(decreaseHunger, rb.rate);
         userObj.money -= rb.price;
-        document.getElementById("money").innerHTML = moneySign + userObj.money;
+        uMoney.innerHTML = moneySign + userObj.money;
         setTimeout(redbullDurration, rb.durration);
         rbCoolDown = false;
         function decreaseHunger() {
@@ -731,7 +732,7 @@ function redbullBoost() {
         }
         function increaseMoney() {
             userObj.money += 1;
-            document.getElementById("money").innerHTML = moneySign + userObj.money;
+            uMoney.innerHTML = moneySign + userObj.money;
         }
         function redbullDurration() {
             clearInterval(moneyUp);
