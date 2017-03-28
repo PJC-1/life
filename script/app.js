@@ -319,6 +319,10 @@ function move() {
         }
         if (width === 100) {
             // find out why this is adding both money + hunger twice
+            //
+            // find a way to be adding the user money by the user's current job
+            // you might iterate over the user's job array, and getting the last
+            // job, and accessing the wage.
             userObj.money += jobObj.internship.money;
             userObj.hunger -= jobObj.internship.hunger;
             // exp is not yet wired up
