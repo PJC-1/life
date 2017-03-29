@@ -256,7 +256,11 @@ function supportUpgrade() {
 })();
 
 function upgradeEmployment() {
-    console.log("wired to upgrade job onclick.");
+    // what this needs to do is have an if statement, that has a condition that
+    // will check if user meets exp, money, etc (think about how user levels up)
+    // then it should push the next job (in this case support engineer) in to the
+    // employment array
+    // then make the last job in the array the user's current job
 }
 
 
