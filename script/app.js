@@ -255,6 +255,10 @@ function supportUpgrade() {
     tSpan.innerHTML = jobObj.internship.title;
 })();
 
+function upgradeEmployment() {
+    console.log("wired to upgrade job onclick.");
+}
+
 
 ///////////
 // MONEY //
