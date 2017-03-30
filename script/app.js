@@ -243,13 +243,6 @@ function clearTknBroadcast() {
     console.log(userObj.employment);
 })();
 
-// create a function to upgrade to the next job
-function supportUpgrade() {
-    // this will have to push the new job into the userObj
-    // and then iterate to that new job, this might change how the rest of the
-    // functionality interacts with the jobs. look into it.
-}
-
 (function () {
     var tSpan = document.getElementById("testingSpan");
     tSpan.innerHTML = jobObj.internship.title;
