@@ -248,11 +248,14 @@ function clearTknBroadcast() {
     tSpan.innerHTML = jobObj.internship.title;
 })();
 
+var supportSwitch = true;
+
 function upgradeEmployment() {
-    // what this needs to do is have an if statement, that has a condition that
-    // will check if user meets exp, money, etc (think about how user levels up)
-    if (userObj.exp >= 10) {
+    if (userObj.exp >= 10 && supportSwitch == true) {
         console.log("user has more than 10 exp");
+        userObj.employment.push(jobObj.supportEngineer);
+        supportSwitch = false;
+        console.log(userObj.employment);
     } else {
         console.log("if condition is not satisfied.");
     }
