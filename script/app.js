@@ -251,6 +251,8 @@ function clearTknBroadcast() {
 var supportSwitch = true;
 
 function upgradeEmployment() {
+    // if you look at the job object you will see the current key which is a
+    // boolean, which you should consider when building out this functionality.
     if (userObj.exp >= 10 && supportSwitch == true) {
         console.log("user has more than 10 exp");
         userObj.employment.push(jobObj.supportEngineer);
@@ -259,8 +261,6 @@ function upgradeEmployment() {
     } else {
         console.log("if condition is not satisfied.");
     }
-    // then it should push the next job (in this case support engineer) in to the
-    // employment array
     // then make the last job in the array the user's current job
 }
 
