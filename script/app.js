@@ -258,6 +258,7 @@ function upgradeEmployment() {
         userObj.employment.push(jobObj.supportEngineer);
         supportSwitch = false;
         console.log(userObj.employment);
+        // now update the inner html of the employment in user stats
     } else {
         console.log("if condition is not satisfied.");
     }
