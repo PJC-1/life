@@ -261,7 +261,7 @@ function upgradeEmployment() {
         // now update the inner html of the employment in user stats
         // document.getElementById("testingSpan").innerHTML =
         for (var i=0; i < userObj.employment.length; i++) {
-            console.log("testing the for loop");
+            console.log(userObj.employment[i].title);
         }
     } else {
         console.log("if condition is not satisfied.");
