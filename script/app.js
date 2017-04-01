@@ -248,11 +248,16 @@ function clearTknBroadcast() {
     tSpan.innerHTML = jobObj.internship.title;
 })();
 
-var supportSwitch = true;
+// var supportSwitch = true;
 
 function upgradeEmployment() {
-    // if you look at the job object you will see the current key which is a
-    // boolean, which you should consider when building out this functionality.
+    // what you would have to do is loop through the employment array
+    // then check the job object for the current key for true, if true
+    // userObj.employment[current_job + 1], the one being the next job
+    //      set current to true
+    // then go back (or find a smooth way to do this in the last step) to
+    //      userObj.employment[current_job] and set current to false
+    // then proceed with the if statement you have already
     if (userObj.exp >= 10 && supportSwitch == true) {
         userObj.employment.push(jobObj.supportEngineer);
         supportSwitch = false;
