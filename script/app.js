@@ -252,6 +252,9 @@ function clearTknBroadcast() {
 
 function upgradeEmployment() {
     // what you would have to do is loop through the employment array
+    for (var i=0; i < userObj.employment.length; i++) {
+        console.log(userObj.employment[i].title);
+    }
     // then check the job object for the current key for true, if true
     // userObj.employment[current_job + 1], the one being the next job
     //      set current to true
