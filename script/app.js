@@ -258,8 +258,7 @@ function upgradeEmployment() {
         userObj.employment.push(jobObj.supportEngineer);
         supportSwitch = false;
         console.log(userObj.employment);
-        // now update the inner html of the employment in user stats
-        // document.getElementById("testingSpan").innerHTML =
+        document.getElementById("testingSpan").innerHTML = userObj.employment[userObj.employment.length - 1].title;
         for (var i=0; i < userObj.employment.length; i++) {
             console.log(userObj.employment[i].title);
         }
