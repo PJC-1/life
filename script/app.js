@@ -252,7 +252,6 @@ function clearTknBroadcast() {
 var supportSwitch = true;
 
 function upgradeEmployment() {
-    // what you would have to do is loop through the employment array
     for (var i=0; i < userObj.employment.length; i++) {
         if (userObj.employment[i].current === true) {
             console.log("current job: " + userObj.employment[i].title);
