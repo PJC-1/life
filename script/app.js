@@ -252,23 +252,18 @@ function clearTknBroadcast() {
 var supportSwitch = true;
 
 function upgradeEmployment() {
-    // for (var i=0; i < userObj.employment.length; i++) {
-    //     if (userObj.employment[i].current === true) {
-    //         console.log("current job: " + userObj.employment[i].title);
-    //
-    //     }
-    // }
+
     for (var key in jobObj) {
         if (jobObj.hasOwnProperty(key)) {
             console.log(key + "->" + jobObj[key].current);
+            // if statement that checks the current key for true
+            // if true then access the next job and push into employment array
+            // then access old job set current to false
+            // set new job current to true
+            // update the inner html of the user job
         }
     }
-    // then check the job object for the current key for true, if true
-    // userObj.employment[current_job + 1], the one being the next job
-    //      set current to true
-    // then go back (or find a smooth way to do this in the last step) to
-    //      userObj.employment[current_job] and set current to false
-    // then proceed with the if statement you have already
+
     if (userObj.exp >= 10 && supportSwitch == true) {
         userObj.employment.push(jobObj.supportEngineer);
         supportSwitch = false;
