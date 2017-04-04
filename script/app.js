@@ -264,7 +264,7 @@ function upgradeEmployment() {
     // loop the job object
     for (var key in jobObj) {
         if (jobObj.hasOwnProperty(key)) {
-            console.log(key + "->" + jobObj[key].title);
+            console.log(key + "->" + jobObj[key].current);
         }
     }
     // check each job for current key
