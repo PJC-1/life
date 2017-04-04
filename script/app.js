@@ -261,7 +261,13 @@ function upgradeEmployment() {
     //     }
     // }
 
-
+    // loop the job object
+    for (var key in jobObj) {
+        if (jobObj.hasOwnProperty(key)) {
+            console.log(key + "->" + jobObj[key].title);
+        }
+    }
+    // check each job for current key
 
     // then check the job object for the current key for true, if true
     // userObj.employment[current_job + 1], the one being the next job
