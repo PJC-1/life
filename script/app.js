@@ -255,6 +255,11 @@ function upgradeEmployment() {
         if (jobObj.hasOwnProperty(key)) {
             if (jobObj[key].current === true) {
                 console.log("if condition satisfied from the object");
+                // maybe what you could do is set the if condition to === false
+                // then when it hits the first current === false (which is the next job)
+                // then you can push that object into the employment array.
+                // access the last item in the array set that to true, and all the others
+                // set to false.
             } else {
                 console.log("this is the else condition");
             }
