@@ -248,15 +248,11 @@ function clearTknBroadcast() {
     tSpan.innerHTML = jobObj.internship.title;
 })();
 
-// you will most likely not need this switch after the additional steps are complete
-var supportSwitch = true;
 
 function upgradeEmployment() {
 
     for (var key in jobObj) {
         if (jobObj.hasOwnProperty(key)) {
-            console.log(key + " -> " + jobObj[key].current);
-            // if statement that checks the current key for true
             if (jobObj[key].current === true) {
                 console.log("if condition satisfied from the object");
             } else {
@@ -269,7 +265,7 @@ function upgradeEmployment() {
         }
     }
 
-    if (userObj.exp >= 10 && supportSwitch == true) {
+    if (userObj.exp >= 10) {
         userObj.employment.push(jobObj.supportEngineer);
         supportSwitch = false;
         document.getElementById("testingSpan").innerHTML = userObj.employment[userObj.employment.length - 1].title;
