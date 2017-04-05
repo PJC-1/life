@@ -257,6 +257,11 @@ function upgradeEmployment() {
         if (jobObj.hasOwnProperty(key)) {
             console.log(key + " -> " + jobObj[key].current);
             // if statement that checks the current key for true
+            if (jobObj[key].current === true) {
+                console.log("if condition satisfied from the object");
+            } else {
+                console.log("this is the else condition");
+            }
             // if true then access the next job and push into employment array
             // then access old job set current to false
             // set new job current to true
