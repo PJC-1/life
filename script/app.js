@@ -253,10 +253,10 @@ function upgradeEmployment() {
 
     for (var key in jobObj) {
         if (jobObj.hasOwnProperty(key)) {
-            if (jobObj[key].current === true) {
-                console.log("if condition satisfied from the object");
-                // maybe what you could do is set the if condition to === false
-                // then when it hits the first current === false (which is the next job)
+            if (jobObj[key].current === false) {
+                console.log("if condition satisfied from the object " + jobObj[key].title);
+                // you can use the break statement to jump out of the loop.
+                break;
                 // then you can push that object into the employment array.
                 // access the last item in the array set that to true, and all the others
                 // set to false.
@@ -275,7 +275,6 @@ function upgradeEmployment() {
         supportSwitch = false;
         document.getElementById("testingSpan").innerHTML = userObj.employment[userObj.employment.length - 1].title;
     } else {
-        console.log("if condition is not satisfied.");
     }
     // then make the last job in the array the user's current job
 }
