@@ -255,18 +255,16 @@ function upgradeEmployment() {
         if (jobObj.hasOwnProperty(key)) {
             if (jobObj[key].current === false) {
                 console.log("if condition satisfied from the object " + jobObj[key].title);
-                // you can use the break statement to jump out of the loop.
-                break;
+
                 // then you can push that object into the employment array.
                 // access the last item in the array set that to true, and all the others
                 // set to false.
+
+                // you can use the break statement to jump out of the loop.
+                break;
             } else {
                 console.log("this is the else condition");
             }
-            // if true then access the next job and push into employment array
-            // then access old job set current to false
-            // set new job current to true
-            // update the inner html of the user job
         }
     }
 
