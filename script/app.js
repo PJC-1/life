@@ -250,31 +250,31 @@ function clearTknBroadcast() {
 
 
 function upgradeEmployment() {
-    for (var key in jobObj) {
-        if (jobObj.hasOwnProperty(key)) {
-            if (jobObj[key].current === false) {
-                console.log("if condition satisfied from the object " + jobObj[key].title);
-                userObj.employment.push(jobObj[key]);
-                console.log(userObj.employment);
-                // handling all of the current key setting in the employment array
-                // access the last item in the array set that to true, and all the others
-                // set to false.
-
-                // you can use the break statement to jump out of the loop.
-                break;
-            } else {
-                console.log("this is the else condition");
-            }
-        }
-    }
-
     if (userObj.exp >= 10) {
-        userObj.employment.push(jobObj.supportEngineer);
-        supportSwitch = false;
-        document.getElementById("testingSpan").innerHTML = userObj.employment[userObj.employment.length - 1].title;
+        for (var key in jobObj) {
+            if (jobObj.hasOwnProperty(key)) {
+                if (jobObj[key].current === false) {
+                    console.log("if condition satisfied from the object " + jobObj[key].title);
+                    userObj.employment.push(jobObj[key]);
+                    console.log(userObj.employment);
+                    // handling all of the current key setting in the employment array
+                    // access the last item in the array set that to true, and all the others
+                    // set to false.
+
+                    // you can use the break statement to jump out of the loop.
+                    break;
+                } else {
+                    console.log("this is the else condition");
+                }
+                console.log("This is after the first if");
+            }
+            console.log("This is after the second if");
+        }
+        console.log("this is after the for in loop");
+        // document.getElementById("testingSpan").innerHTML = userObj.employment[userObj.employment.length - 1].title;
     } else {
+        console.log("the if condition was not satisfied");
     }
-    // then make the last job in the array the user's current job
 }
 
 
