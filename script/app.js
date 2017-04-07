@@ -256,6 +256,8 @@ function upgradeEmployment() {
             if (jobObj[key].current === false) {
                 console.log("if condition satisfied from the object " + jobObj[key].title);
 
+                userObj.employment.push(jobObj[key]);
+                console.log(userObj.employment);
                 // then you can push that object into the employment array.
                 // access the last item in the array set that to true, and all the others
                 // set to false.
