@@ -257,9 +257,10 @@ function upgradeEmployment() {
                     console.log("if condition satisfied from the object " + jobObj[key].title);
                     userObj.employment.push(jobObj[key]);
                     console.log(userObj.employment);
-                    // handling all of the current key setting in the employment array
-                    // access the last item in the array set that to true, and all the others
-                    // set to false.
+                    // you might have to either access both job objects and
+                    // set the current key to their new value or loop through to change
+                    // in this case i think a loop would be a better idea to be more consistent
+
 
                     // you can use the break statement to jump out of the loop.
                     break;
@@ -270,7 +271,7 @@ function upgradeEmployment() {
             }
             console.log("This is after the second if");
         }
-        console.log("this is after the for in loop");
+        console.log("this is after the for in loop, directly after the break.");
         document.getElementById("testingSpan").innerHTML = userObj.employment[userObj.employment.length - 1].title;
     } else {
         console.log("the if condition was not satisfied");
