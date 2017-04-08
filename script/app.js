@@ -271,7 +271,7 @@ function upgradeEmployment() {
             console.log("This is after the second if");
         }
         console.log("this is after the for in loop");
-        // document.getElementById("testingSpan").innerHTML = userObj.employment[userObj.employment.length - 1].title;
+        document.getElementById("testingSpan").innerHTML = userObj.employment[userObj.employment.length - 1].title;
     } else {
         console.log("the if condition was not satisfied");
     }
