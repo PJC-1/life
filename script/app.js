@@ -257,10 +257,13 @@ function upgradeEmployment() {
                     console.log("if condition satisfied from the object " + jobObj[key].title);
                     userObj.employment.push(jobObj[key]);
                     console.log(userObj.employment);
-                    // you might have to either access both job objects and
-                    // set the current key to their new value or loop through to change
-                    // in this case i think a loop would be a better idea to be more consistent
 
+                    // one idea is to set the jobObj[key].current for this job
+                    // to true, this means that you will have two true current JOBS with the value true
+                    // and then you can loop through the jobObj again do an if condition that checks for current being true
+                    // that means the prior job will be the object being referenced in the loop first
+                    // then you can set current to false.
+                    
 
                     // you can use the break statement to jump out of the loop.
                     break;
