@@ -271,6 +271,8 @@ function upgradeEmployment() {
                     // for both the jobObj and employment array, or only one of them
                     // think about whether or not the data type will be refferenced
 
+                    // or you could pop the old job out and only have one current job at a time.
+
                     for (var i=0; i < userObj.employment.length; i++){
                         console.log(userObj.employment[i].title + " => " + userObj.employment[i].current);
                     }
