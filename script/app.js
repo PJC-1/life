@@ -267,7 +267,9 @@ function upgradeEmployment() {
 
                     userObj.employment.push(jobObj[key]);
                     console.log(userObj.employment);
-
+                    // one thing to think about is if I need to change the current key
+                    // for both the jobObj and employment array, or only one of them
+                    // think about whether or not the data type will be refferenced
 
 
                     // you can use the break statement to jump out of the loop.
