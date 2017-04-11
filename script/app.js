@@ -255,15 +255,20 @@ function upgradeEmployment() {
             if (jobObj.hasOwnProperty(key)) {
                 if (jobObj[key].current === false) {
                     console.log("if condition satisfied from the object " + jobObj[key].title);
-                    userObj.employment.push(jobObj[key]);
-                    console.log(userObj.employment);
 
+                    jobObj[key].current = true;
+                    console.log("Newly updated job object => " + jobObj[key].current);
                     // one idea is to set the jobObj[key].current for this job
                     // to true, this means that you will have two true current JOBS with the value true
                     // and then you can loop through the jobObj again do an if condition that checks for current being true
                     // that means the prior job will be the object being referenced in the loop first
                     // then you can set current to false.
-                    
+
+
+                    userObj.employment.push(jobObj[key]);
+                    console.log(userObj.employment);
+
+
 
                     // you can use the break statement to jump out of the loop.
                     break;
