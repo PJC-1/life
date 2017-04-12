@@ -268,12 +268,12 @@ function upgradeEmployment() {
 
 
                     userObj.employment.push(jobObj[key]);
-                    console.log(userObj.employment);
-                    // one thing to think about is if I need to change the current key
-                    // for both the jobObj and employment array, or only one of them
-                    // think about whether or not the data type will be refferenced
 
-                    // or you could pop the old job out and only have one current job at a time.
+                    console.log("indexOf => " + userObj.employment[0].title);
+                    // splice the old job
+                    userObj.employment.splice(0,1);
+                    console.log("employment array after splice => " + userObj.employment[0].title);
+
 
                     for (var i=0; i < userObj.employment.length; i++){
                         console.log(userObj.employment[i].title + " => " + userObj.employment[i].current);
