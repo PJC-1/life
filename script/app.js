@@ -130,7 +130,7 @@ var jobObj = {
             exp          :  2.5,
             hunger       :  .5,
             fullfillment :  0,
-            current      :  true
+            current      :  false
         },
         supportEngineer: {
             title        :  "Software Support Engineer",
@@ -239,6 +239,8 @@ function clearTknBroadcast() {
 
 // test function to upgrade users job
 (function upgradeJob() {
+    jobObj.internship.current = true;
+    console.log("current => " + jobObj.internship.current);
     userObj.employment.push(jobObj.internship);
     console.log(userObj.employment);
 })();
