@@ -256,13 +256,13 @@ function upgradeEmployment() {
         for (var key in jobObj) {
             if (jobObj.hasOwnProperty(key)) {
                 if (jobObj[key].current === false) {
+
                     console.log("if condition satisfied from the object " + jobObj[key].title);
 
                     // setting current to true will make it so you will find the
                     // next job by finding the first false job
                     jobObj[key].current = true;
                     console.log("Newly updated job object => " + jobObj[key].current);
-
 
                     userObj.employment.push(jobObj[key]);
 
@@ -271,14 +271,13 @@ function upgradeEmployment() {
                     userObj.employment.splice(0,1);
                     console.log("employment array after splice => " + userObj.employment[0].title);
 
-
                     for (var i=0; i < userObj.employment.length; i++){
                         console.log(userObj.employment[i].title + " => " + userObj.employment[i].current);
                     }
 
-
                     // you can use the break statement to jump out of the loop.
                     break;
+
                 } else {
                     console.log("this is the else condition");
                 }
@@ -287,7 +286,7 @@ function upgradeEmployment() {
             console.log("This is after the second if");
         }
         console.log("this is after the for in loop, directly after the break.");
-        document.getElementById("testingSpan").innerHTML = userObj.employment[userObj.employment.length - 1].title;
+        document.getElementById("testingSpan").innerHTML = userObj.employment[0].title;
     } else {
         console.log("the if condition was not satisfied");
     }
@@ -357,12 +356,14 @@ function move() {
         }
         if (width === 100) {
             // find out why this is adding both money + hunger twice
-            //
-            // find a way to be adding the user money by the user's current job
-            // you might iterate over the user's job array, and getting the last
-            // job, and accessing the wage.
-            userObj.money += jobObj.internship.money;
-            userObj.hunger -= jobObj.internship.hunger;
+
+
+            // userObj.money += jobObj.internship.money;
+            // userObj.hunger -= jobObj.internship.hunger;
+
+            userObj.money += userObj.employment[0].money;
+            userObj.hunger -= userObj.employment[0].hunger;
+
             // exp is not yet wired up
             checkHunger();
             userObj.exp += jobObj.internship.exp;
