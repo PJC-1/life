@@ -256,28 +256,12 @@ function upgradeEmployment() {
         for (var key in jobObj) {
             if (jobObj.hasOwnProperty(key)) {
                 if (jobObj[key].current === false) {
-
-                    console.log("if condition satisfied from the object " + jobObj[key].title);
-
-                    // setting current to true will make it so you will find the
-                    // next job by finding the first false job
                     jobObj[key].current = true;
-                    console.log("Newly updated job object => " + jobObj[key].current);
-
                     userObj.employment.push(jobObj[key]);
-
-                    console.log("indexOf => " + userObj.employment[0].title);
                     // splice the old job
                     userObj.employment.splice(0,1);
-                    console.log("employment array after splice => " + userObj.employment[0].title);
-
-                    for (var i=0; i < userObj.employment.length; i++){
-                        console.log(userObj.employment[i].title + " => " + userObj.employment[i].current);
-                    }
-
                     // you can use the break statement to jump out of the loop.
                     break;
-
                 } else {
                     console.log("this is the else condition");
                 }
@@ -357,14 +341,9 @@ function move() {
         if (width === 100) {
             // find out why this is adding both money + hunger twice
 
-
-            // userObj.money += jobObj.internship.money;
-            // userObj.hunger -= jobObj.internship.hunger;
-
             userObj.money += userObj.employment[0].money;
             userObj.hunger -= userObj.employment[0].hunger;
 
-            // exp is not yet wired up
             checkHunger();
             userObj.exp += jobObj.internship.exp;
             uExp.innerHTML = expSign + userObj.exp;
