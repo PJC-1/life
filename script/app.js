@@ -237,12 +237,13 @@ function clearTknBroadcast() {
 // EMPLOYMENT //
 ////////////////
 
-// test function to upgrade users job
 (function upgradeJob() {
-    jobObj.internship.current = true;
-    console.log("current => " + jobObj.internship.current);
-    userObj.employment.push(jobObj.internship);
-    console.log(userObj.employment);
+    var current = jobObj.internship.current;
+    var employment = userObj.employment;
+    current = true;
+    console.log("current => " + current);
+    employment.push(jobObj.internship);
+    console.log(employment);
 })();
 
 (function () {
@@ -479,25 +480,6 @@ function rmFltrIphone() {
     }
 }
 
-
-///////////////////
-// REMOVE FILTER //
-///////////////////
-
-// you will need to figure out all the different arguments so that you can use
-// the removeFilterTkn function for all the tokens.
-
-function removeFilterTkn(userObject, tokenObject) {
-    // use an if condition that checks the token's swtich and compares the user's
-    // money to the token's price
-    // if that condition is met then subtract the tokens price to the users money
-    // push the token into the user's tokens
-    // remove the filter attribute
-    // update the users money in the view
-    // set the filterSwitch to false
-    // else if the filterSwitch is equal to false then nothing
-    // else if condition that users money is less than token's price then broadcast
-}
 
 
 ////////////
