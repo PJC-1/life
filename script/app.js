@@ -346,7 +346,8 @@ function move() {
             userObj.hunger -= userObj.employment[0].hunger;
 
             checkHunger();
-            userObj.exp += jobObj.internship.exp;
+            // userObj.exp += jobObj.internship.exp;
+            userObj.exp += userObj.employment[0].exp;
             uExp.innerHTML = expSign + userObj.exp;
             uHunger.innerHTML = hungerSign + userObj.hunger;
             uMoney.innerHTML = moneySign + userObj.money;
