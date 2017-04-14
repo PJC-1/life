@@ -44,30 +44,6 @@ img {
 }
 
 
-/**********/
-/* LOCKED */
-/**********/
-
-/* using relatives and absolutes to get the overlay of images to work */
-.pRent {
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-.img1 {
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-.img2 {
-    position: absolute;
-    /*top: 10px;
-    left: 0px;*/
-}
-
-
 /***********/
 /* COLUMNS */
 /***********/
