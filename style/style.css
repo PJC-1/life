@@ -71,6 +71,10 @@ img {
       #colUn's medua query selector to take precedence, prepend an ancestor
       element to it.
     */
+    body{
+        background: #380f54;
+    }
+
     body #colWrapper {
         display: block;
     }
