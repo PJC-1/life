@@ -387,10 +387,12 @@ function unlockTierI() {
                 i.setAttribute("id", tierI[key].id);
                 i.setAttribute("src", tierI[key].src);
                 i.setAttribute("width", tierI[key].width);
-                i.setAttribute("style", "filter:blur(5px)");
+                // i.setAttribute("style", "filter:blur(5px)");
                 // you will need to add onclick as a token's key
                 i.setAttribute("onclick", tierI[key].func);
                 tInject.appendChild(i);
+                // You needed webkit prefix to get this to work on safri (iphone)
+                document.getElementById(tierI[key].id).style.WebkitFilter="blur(5px)";
             }
         }
         tOneSwitch = false;
