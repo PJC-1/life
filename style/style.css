@@ -91,6 +91,11 @@ img {
         width: 95%;
     }
 
+    #brTitle {
+        text-align: center;
+        color: #b7fff1;
+    }
+
 }
 
 
@@ -111,7 +116,7 @@ img {
 }
 
 #colTrois {
-
+    margin: 10px;
 }
 
 
