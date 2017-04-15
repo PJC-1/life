@@ -10,7 +10,7 @@ var notHungry     =  "You are not hungry now.";
 var noMoney       =  "You do not have enought money for that.";
 var coffeeBreak   =  "You need to wait before having more coffee.";
 var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
-var tier1Locked   =  "You are unworthy of unlocking Tier-I. Consider working more.";
+var tier1Locked   =  "You dont have enough money to unlock these tokens. Consider working more.";
 
 
 /////////////////
@@ -130,7 +130,7 @@ var jobObj = {
             exp          :  2.5,
             hunger       :  .5,
             fullfillment :  0,
-            current      :  false
+            current      :  true
         },
         supportEngineer: {
             title        :  "Software Support Engineer",
@@ -251,9 +251,9 @@ function clearTknBroadcast() {
     tSpan.innerHTML = jobObj.internship.title;
 })();
 
-
+// think about why you have to click the upgrade button twice before it works
 function upgradeEmployment() {
-    if (userObj.exp >= 10) {
+    if (userObj.exp >= 100) {
         for (var key in jobObj) {
             if (jobObj.hasOwnProperty(key)) {
                 if (jobObj[key].current === false) {
@@ -274,6 +274,8 @@ function upgradeEmployment() {
         document.getElementById("testingSpan").innerHTML = userObj.employment[0].title;
     } else {
         console.log("the if condition was not satisfied");
+        document.getElementById("broadcast").innerHTML = "You dont have enough experience to upgrade your job.";
+        setTimeout(clearBroadcast, 3000);
     }
 }
 
@@ -373,7 +375,7 @@ function unlockTierI() {
     var tierI = tokenObj.tierOne;
     var bCast = document.getElementById("tknBroadcast");
     var tInject = document.getElementById("tokenInject");
-    if (userObj.money >= 10.00 && tOneSwitch === true) {
+    if (userObj.money >= 100.00 && tOneSwitch === true) {
         for (var key in tierI) {
             // hasOwnProperty() filters out built-in key-value pairs inherited by
             // parent (i.e. prototype || __proto__)
