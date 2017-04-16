@@ -719,6 +719,7 @@ function boostAdding() {
     } else if ( rbSwitch === false ) {
         console.log("prevented duplicate redbulls");
     } else {
+        // consider adding a broadcast here
         console.log("else if");
     }
 }
@@ -752,6 +753,8 @@ function redbullBoost() {
         function coolDownSwitch() {
             rbCoolDown = true;
         }
+    } else {
+        console.log("this is the else for the rebullBoost");
     }
 }
 
