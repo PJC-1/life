@@ -261,7 +261,7 @@ function upgradeEmployment() {
                     userObj.employment.push(jobObj[key]);
                     // splice the old job
                     userObj.employment.splice(0,1);
-                    // you can use the break statement to jump out of the loop.
+                    // using break to jump out of the loop.
                     break;
                 } else {
                     console.log("this is the else condition");
@@ -661,9 +661,7 @@ function coffeeBoost() {
         setTimeout(coffeeDurration, coffee.durration);
         coffeeCoolDown = false;
         function decreaseHunger() {
-            // subtract hunger by 1
             userObj.hunger -= 1;
-            // use getElementById to grab the users hunger
             uHunger.innerHTML = hungerSign + userObj.hunger;
         }
         function addMoneyByTime() {
