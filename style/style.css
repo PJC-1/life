@@ -81,6 +81,7 @@ img {
 
     body #colUn {
         width: 95%;
+        text-align: -webkit-center;
     }
 
     body #colDeux {
