@@ -115,6 +115,32 @@ img {
         border-right: solid 3px cadetblue;
         border-bottom: solid 3px goldenrod;
     }
+
+    body #workImage {
+        margin-left: 0px;
+        margin-top: 13px;
+        width: 110px;
+    }
+
+    body #progressTitle  {
+        margin-bottom: 5px;
+        margin-left: 0px;
+        font-size: 14px;
+    }
+
+    body #label {
+        line-height: 35px;
+        margin-left: 7px;
+        font-size: 19px;
+    }
+
+    body #myProgress {
+        width: 65%;
+        height: 35px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
     body .flexy {
         margin: 7px;
     }
