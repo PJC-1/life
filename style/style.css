@@ -81,29 +81,36 @@ img {
 
     body #colUn {
         width: 95%;
+        margin: 7px;
+        margin-bottom: 18px;
         text-align: -webkit-center;
     }
 
     body #colDeux {
         width: 95%;
+        text-align: -webkit-center;
     }
 
     body #colTrois {
         width: 95%;
+        margin: 5px;
+        text-align: -webkit-center;
     }
 
-    #brTitle {
+    body #brTitle {
         text-align: center;
         color: #b7fff1;
     }
 
-    .upgradeBtn{
+    body .upgradeBtn {
         padding: 20px;
         font-size: 22px;
         margin: 10px;
         border-radius: 2px;
     }
-
+    body .flexy {
+        margin: 7px;
+    }
 }
 
 
