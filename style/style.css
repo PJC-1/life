@@ -80,7 +80,7 @@ img {
         margin-left: -1px;
         font-size: 51px;
         text-align: center;
-        color: #b7fff1;
+        color: #e13d3d;
     }
 
     body #colWrapper {
@@ -112,6 +112,8 @@ img {
         font-size: 22px;
         margin: 10px;
         border-radius: 2px;
+        border-right: solid 3px cadetblue;
+        border-bottom: solid 3px goldenrod;
     }
     body .flexy {
         margin: 7px;
