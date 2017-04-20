@@ -71,8 +71,16 @@ img {
       #colUn's medua query selector to take precedence, prepend an ancestor
       element to it.
     */
-    body{
+
+    html body{
         background: #380f54;
+    }
+
+    body #brTitle {
+        margin-left: -1px;
+        font-size: 51px;
+        text-align: center;
+        color: #b7fff1;
     }
 
     body #colWrapper {
@@ -88,6 +96,8 @@ img {
 
     body #colDeux {
         width: 95%;
+        margin: 7px;
+        margin-bottom: 18px;
         text-align: -webkit-center;
     }
 
@@ -95,11 +105,6 @@ img {
         width: 95%;
         margin: 5px;
         text-align: -webkit-center;
-    }
-
-    body #brTitle {
-        text-align: center;
-        color: #b7fff1;
     }
 
     body .upgradeBtn {
