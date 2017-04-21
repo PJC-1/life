@@ -78,7 +78,9 @@ img {
 
     body #brTitle {
         margin-left: -1px;
+        margin-bottom: 20px;
         font-size: 51px;
+        font-weight: bold;
         text-align: center;
         color: #e13d3d;
     }
@@ -96,6 +98,7 @@ img {
 
     body #colDeux {
         width: 95%;
+        padding-top: 1px;
         margin: 7px;
         margin-bottom: 18px;
         text-align: -webkit-center;
