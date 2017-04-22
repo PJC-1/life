@@ -144,6 +144,11 @@ img {
         height: 35px;
         margin-left: 0px;
         margin-top: 0px;
+        background: linear-gradient(to bottom right, #3fefff, #63f9db);
+    }
+
+    body #myBar {
+        background: linear-gradient(to bottom right, #4781ff, #e947ff)
     }
 
     body .flexy {
