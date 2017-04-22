@@ -93,6 +93,7 @@ img {
         width: 95%;
         margin: 7px;
         margin-bottom: 18px;
+        border-radius: 3px;
         text-align: -webkit-center;
     }
 
@@ -101,6 +102,7 @@ img {
         padding-top: 1px;
         margin: 7px;
         margin-bottom: 18px;
+        border-radius: 3px;
         text-align: -webkit-center;
     }
 
@@ -146,6 +148,7 @@ img {
 
     body .flexy {
         margin: 7px;
+        border-radius: 3px;
     }
 }
 
