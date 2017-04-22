@@ -65,12 +65,19 @@ img {
 }
 
 
-@media screen and (max-width: 450px) and (min-width: 300px) {
+@media screen and (max-width: 450px) and (min-width: 300px) and (orientation:landscape) {
     /*
       Media queries use the same specificity as regular CSS so in order to get
       #colUn's medua query selector to take precedence, prepend an ancestor
       element to it.
     */
+
+    html{
+      -ms-transform: rotate(-90deg); /* IE 9 */
+      -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+      transform: rotate(-90deg);
+      overflow: scroll;
+    }
 
     html body{
         background: #380f54;
