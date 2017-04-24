@@ -105,6 +105,19 @@ var boostObj = {
         rate          :  400,
         func          :  "redbullBoost()",
         src           :  "./assets/redbull.png"
+    },
+    kind: {
+        width: "50",
+        id: "kID",
+        fltrSwitch: true,
+        description: "",
+        price: 3.00,
+        fullfillment: 0,
+        durration: 15000,
+        cashRate: 200,
+        rate: 425,
+        function: "kindBoost()",
+        src: "./assets/kind.png"
     }
 }
 
