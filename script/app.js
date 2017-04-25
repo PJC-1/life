@@ -95,7 +95,12 @@ var boostObj = {
         width         :  "50",
         id            :  "rbID",
         fltrSwitch    :  true,
-        description   :  "Red Bull gives you wings",
+        description   :  "Redbull drinks have the effects that caffeine and sugar"
+                         + "provide, but experts still argue about the possible "
+                         + "effects of the other ingredients. Most of the effects"
+                         + " of energy drinks on cognitive performance, such as "
+                         + "increased attention and reaction speed, are primarily"
+                         + " due to the presence of caffeine.",
         price         :  8.75,
         fullfillment  :  0,
         durration     :  10000,
@@ -115,10 +120,7 @@ var boostObj = {
                          + " Healthy Grains and KIND Healthy Grains Clusters are"
                          + " certified by the NON-GMO Project. All KIND bars "
                          + "range between 180-210 calories and have healthy fats"
-                         + " and protein. The KIND Healthy Grains bars are "
-                         + "140-150 calories with 18 grams or more of whole "
-                         + "grains per bar. STRONG & KIND bars are all 230 "
-                         + "calories each with 10 grams of protein.",
+                         + " and protein.",
         price         :  3.00,
         fullfillment  :  0,
         durration     :  15000,
