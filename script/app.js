@@ -110,7 +110,15 @@ var boostObj = {
         width         :  "50",
         id            :  "kID",
         fltrSwitch    :  true,
-        description   :  "",
+        description   :  "All KIND snacks are gluten-free, made from whole "
+                         + "ingredients and low in sodium. Currently, their KIND"
+                         + " Healthy Grains and KIND Healthy Grains Clusters are"
+                         + " certified by the NON-GMO Project. All KIND bars "
+                         + "range between 180-210 calories and have healthy fats"
+                         + " and protein. The KIND Healthy Grains bars are "
+                         + "140-150 calories with 18 grams or more of whole "
+                         + "grains per bar. STRONG & KIND bars are all 230 "
+                         + "calories each with 10 grams of protein.",
         price         :  3.00,
         fullfillment  :  0,
         durration     :  15000,
