@@ -783,7 +783,6 @@ function redbullBoost() {
 var kdSwitch = true;
 
 function addRB() {
-    console.log("this is wired to the upgrade button.");
     var kd = boostObj.kind;
     var inject = document.getElementById("addingBoost");
     if (userObj.money >= kd.price && kdSwitch === true) {
@@ -802,6 +801,7 @@ function addRB() {
         y.appendChild(z);
         y.setAttribute("class", "upgradeBtn");
         y.setAttribute("id", "boostUpgrade");
+        // find a way to not have this value hardcoded
         y.setAttribute("onclick", "addKD");
         document.getElementById("boostParent").appendChild(y);
     } else if (kdSwitch === false) {
@@ -809,4 +809,12 @@ function addRB() {
     } else {
         console.log("else in addRB function");
     }
+}
+
+
+// try to break down the function above function into more modular code.
+function appendBoost() {
+    // what you have to figure out is what you are going to
+    // do with the main switch, which works because it's a global
+    // variable. Take some time to research this point.
 }
