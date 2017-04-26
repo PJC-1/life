@@ -779,7 +779,34 @@ function redbullBoost() {
     }
 }
 
+
+var kdSwitch = true;
+
 function addRB() {
-    // buildout the next upgrade here
     console.log("this is wired to the upgrade button.");
+    var kd = boostObj.kind;
+    var inject = document.getElementById("addingBoost");
+    if (userObj.money >= kd.price && kdSwitch === true) {
+        var x = document.createElement("IMG");
+        x.setAttribute("width", kd.width);
+        x.setAttribute("src", kd.src);
+        x.setAttribute("id", kd.id);
+        x.setAttribute("onclick", kd.func);
+        inject.appendChild(x);
+        kdSwitch = false;
+        var parent = document.getElementById("boostParent");
+        var child = document.getElementById("boostUpgrade");
+        parent.removeChild(child);
+        var y = document.createElement("BUTTON");
+        var z = document.createTextNode("Upgrade Boost");
+        y.appendChild(z);
+        y.setAttribute("class", "upgradeBtn");
+        y.setAttribute("id", "boostUpgrade");
+        y.setAttribute("onclick", "addKD");
+        document.getElementById("boostParent").appendChild(y);
+    } else if (kdSwitch === false) {
+        console.log("prevent duplicate kind bar");
+    } else {
+        console.log("else in addRB function");
+    }
 }
