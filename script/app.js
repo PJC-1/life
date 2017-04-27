@@ -811,8 +811,13 @@ function addRB() {
     }
 }
 
+// list of all the parameters for this function, from the above example
+// - boost => boostObj.kind
+// - inject => "addingBoost" from document.getElementById("addingBoost")
+// - user => userObj
+// - switch => kdSwitch
+// - element => "IMG" from document.createElement("IMG") maybe make this a key in boostObj
 
-// try to break down the function above function into more modular code.
 function appendBoost() {
     // what you have to figure out is what you are going to
     // do with the main switch, which works because it's a global
