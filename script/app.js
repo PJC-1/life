@@ -817,7 +817,13 @@ function addRB() {
 // - user => userObj
 // - switch => kdSwitch
 // - element => "IMG" from document.createElement("IMG") maybe make this a key in boostObj
-
+// - parent => "boostParent" from document.getElementById("boostParent")
+// - child => "boostUpgrade" from document.getElementById("boostUpgrade")
+// - newElement => "BUTTON" from document.createElement("BUTTON")
+// - textNode => "Upgrade Boost" from document.createTextNode("Upgrade Boost")
+// - classAttribute => "upgradeBtn" from y.setAttribute("class", "upgradeBtn")
+// - idAttribute => "boostUpgrade" from y.setAttribute("id", "boostUpgrade")
+// - clickAttribute => "addKD" from y.setAttribute("onlick", "addKD")
 function appendBoost() {
     // what you have to figure out is what you are going to
     // do with the main switch, which works because it's a global
