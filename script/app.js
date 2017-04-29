@@ -815,6 +815,7 @@ function addRB() {
 // - boost => boostObj.kind
 // - inject => "addingBoost" from document.getElementById("addingBoost")
 // - user => userObj
+//   can't name it switch, its a reserved word in javascript
 // - switch => kdSwitch
 // - element => "IMG" from document.createElement("IMG") maybe make this a key in boostObj
 // - parent => "boostParent" from document.getElementById("boostParent")
@@ -824,8 +825,36 @@ function addRB() {
 // - classAttribute => "upgradeBtn" from y.setAttribute("class", "upgradeBtn")
 // - idAttribute => "boostUpgrade" from y.setAttribute("id", "boostUpgrade")
 // - clickAttribute => "addKD" from y.setAttribute("onlick", "addKD")
-function appendBoost() {
-    // what you have to figure out is what you are going to
-    // do with the main switch, which works because it's a global
-    // variable. Take some time to research this point.
+var mainSwitch = true;
+function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElement,textNode,classAttribute,idAttribute,clickAttribute) {
+    var kd = boostObj.kind;
+    var inject = document.getElementById("addingBoost");
+    if (userObj.money >= kd.price && kdSwitch === true) {
+        var x = document.createElement("IMG");
+        x.setAttribute("width", kd.width);
+        x.setAttribute("src", kd.src);
+        x.setAttribute("id", kd.id);
+        x.setAttribute("onclick", kd.func);
+        inject.appendChild(x);
+        // If a function changes an argument's value, it does not change the parameter's original value.
+        // so mainSwitch might not work because you want to change the original value of mainSwitch.
+        // BUT NOTE: Changes to object properties are visible (reflected) outside the function.
+        // so perhaps you can change the mainSwitch to be a switchObj.
+        kdSwitch = false;
+        var parent = document.getElementById("boostParent");
+        var child = document.getElementById("boostUpgrade");
+        parent.removeChild(child);
+        var y = document.createElement("BUTTON");
+        var z = document.createTextNode("Upgrade Boost");
+        y.appendChild(z);
+        y.setAttribute("class", "upgradeBtn");
+        y.setAttribute("id", "boostUpgrade");
+        // find a way to not have this value hardcoded
+        y.setAttribute("onclick", "addKD");
+        document.getElementById("boostParent").appendChild(y);
+    } else if (kdSwitch === false) {
+        console.log("prevent duplicate kind bar");
+    } else {
+        console.log("else in addRB function");
+    }
 }
