@@ -825,34 +825,33 @@ function addRB() {
 // - classAttribute => "upgradeBtn" from y.setAttribute("class", "upgradeBtn")
 // - idAttribute => "boostUpgrade" from y.setAttribute("id", "boostUpgrade")
 // - clickAttribute => "addKD" from y.setAttribute("onlick", "addKD")
-var mainSwitch = true;
 function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElement,textNode,classAttribute,idAttribute,clickAttribute) {
-    var kd = boostObj.kind;
-    var inject = document.getElementById("addingBoost");
-    if (userObj.money >= kd.price && kdSwitch === true) {
-        var x = document.createElement("IMG");
+    var kd = boost;
+    var injectDOM = document.getElementById(inject);
+    if (user.money >= kd.price && mainSwitch === true) {
+        var x = document.createElement(element);
         x.setAttribute("width", kd.width);
         x.setAttribute("src", kd.src);
         x.setAttribute("id", kd.id);
         x.setAttribute("onclick", kd.func);
-        inject.appendChild(x);
+        injectDOM.appendChild(x);
         // If a function changes an argument's value, it does not change the parameter's original value.
         // so mainSwitch might not work because you want to change the original value of mainSwitch.
         // BUT NOTE: Changes to object properties are visible (reflected) outside the function.
         // so perhaps you can change the mainSwitch to be a switchObj.
-        kdSwitch = false;
-        var parent = document.getElementById("boostParent");
-        var child = document.getElementById("boostUpgrade");
-        parent.removeChild(child);
-        var y = document.createElement("BUTTON");
-        var z = document.createTextNode("Upgrade Boost");
+        mainSwitch = false;
+        var parentNode = document.getElementById(parent);
+        var childNode = document.getElementById(child);
+        parentNode.removeChild(childNode);
+        var y = document.createElement(newElement);
+        var z = document.createTextNode(textNode);
         y.appendChild(z);
-        y.setAttribute("class", "upgradeBtn");
-        y.setAttribute("id", "boostUpgrade");
+        y.setAttribute("class", classAttribute);
+        y.setAttribute("id", idAttribute);
         // find a way to not have this value hardcoded
-        y.setAttribute("onclick", "addKD");
-        document.getElementById("boostParent").appendChild(y);
-    } else if (kdSwitch === false) {
+        y.setAttribute("onclick", clickAttribute);
+        document.getElementById(parent).appendChild(y);
+    } else if (mainSwitch === false) {
         console.log("prevent duplicate kind bar");
     } else {
         console.log("else in addRB function");
