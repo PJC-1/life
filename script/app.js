@@ -783,7 +783,8 @@ function redbullBoost() {
 var kdSwitch = true;
 // to test appendBoost you will need to create another functions that is wired
 // to the onclick and when envoked calls appendBoost
-function addRB() {
+// function addRB() {
+   function tempFunctionName() {
     var kd = boostObj.kind;
     var inject = document.getElementById("addingBoost");
     if (userObj.money >= kd.price && kdSwitch === true) {
@@ -813,7 +814,7 @@ function addRB() {
 }
 
 // list of all the parameters for this function, from the above example
-// - boost => boostObj.kind
+// - boost => boostObj.kind, maybe just grab the boostObj and then access the boost you want in the function when caching the local variable
 // - inject => "addingBoost" from document.getElementById("addingBoost")
 // - user => userObj
 //   can't name it switch, its a reserved word in javascript
@@ -857,4 +858,12 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
     } else {
         console.log("else in addRB function");
     }
+}
+
+// (boost,inject,user,mainSwitch,element,parent,child,newElement,textNode,classAttribute,idAttribute,clickAttribute) {
+
+function addRB() {
+
+    appendBoost(boostObj.kind, "addingBoost", userObj, kdSwitch, "IMG", "boostParent", "boostUpgrade", "BUTTON", "Upgrade Boost", "upgradeBtn", "boostUpgrade", "addKD");
+
 }
