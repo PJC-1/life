@@ -830,6 +830,8 @@ var kdSwitch = true;
 // - idAttribute => "boostUpgrade" from y.setAttribute("id", "boostUpgrade")
 // - clickAttribute => "addKD" from y.setAttribute("onlick", "addKD")
 function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElement,textNode,classAttribute,idAttribute,clickAttribute) {
+    // think about changing all of these variable names to make them more general
+    // to suit a more modular functionality.
     var kd = boost;
     var injectDOM = document.getElementById(inject);
     if (user.money >= kd.price && mainSwitch === true) {
