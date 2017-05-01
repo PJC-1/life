@@ -779,10 +779,12 @@ function redbullBoost() {
     }
 }
 
-
+// note that, running the function appendBoost, does not set the kdSwitch variable
+// this is because kdSwitch is passed through to the function an argument, which
+// will not allow it to be affected by changes within the function. Reffer to note
+// within the appendBoost function.
 var kdSwitch = true;
-// to test appendBoost you will need to create another functions that is wired
-// to the onclick and when envoked calls appendBoost
+
 // function addRB() {
    function tempFunctionName() {
     var kd = boostObj.kind;
@@ -859,8 +861,6 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
         console.log("else in addRB function");
     }
 }
-
-// (boost,inject,user,mainSwitch,element,parent,child,newElement,textNode,classAttribute,idAttribute,clickAttribute) {
 
 function addRB() {
 
