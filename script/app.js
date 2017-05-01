@@ -781,7 +781,8 @@ function redbullBoost() {
 
 
 var kdSwitch = true;
-
+// to test appendBoost you will need to create another functions that is wired
+// to the onclick and when envoked calls appendBoost
 function addRB() {
     var kd = boostObj.kind;
     var inject = document.getElementById("addingBoost");
