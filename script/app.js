@@ -783,7 +783,10 @@ function redbullBoost() {
 // this is because kdSwitch is passed through to the function an argument, which
 // will not allow it to be affected by changes within the function. Reffer to note
 // within the appendBoost function.
-var kdSwitch = true;
+// var kdSwitch = true;
+var switches = {
+    kdSwitch : true
+};
 
 // function addRB() {
    function tempFunctionName() {
@@ -829,6 +832,8 @@ var kdSwitch = true;
 // - classAttribute => "upgradeBtn" from y.setAttribute("class", "upgradeBtn")
 // - idAttribute => "boostUpgrade" from y.setAttribute("id", "boostUpgrade")
 // - clickAttribute => "addKD" from y.setAttribute("onlick", "addKD")
+
+
 function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElement,textNode,classAttribute,idAttribute,clickAttribute) {
     // think about changing all of these variable names to make them more general
     // to suit a more modular functionality.
@@ -866,6 +871,6 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
 
 function addRB() {
 
-    appendBoost(boostObj.kind, "addingBoost", userObj, kdSwitch, "IMG", "boostParent", "boostUpgrade", "BUTTON", "Upgrade Boost", "upgradeBtn", "boostUpgrade", "addKD");
+    appendBoost(boostObj.kind, "addingBoost", userObj, switches.kdSwitch, "IMG", "boostParent", "boostUpgrade", "BUTTON", "Upgrade Boost", "upgradeBtn", "boostUpgrade", "addKD");
 
 }
