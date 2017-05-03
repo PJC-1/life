@@ -856,10 +856,10 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
         x.setAttribute("id", kd.id);
         x.setAttribute("onclick", kd.func);
         injectDOM.appendChild(x);
-        // If a function changes an argument's value, it does not change the parameter's original value.
-        // so mainSwitch might not work because you want to change the original value of mainSwitch.
-        // BUT NOTE: Changes to object properties are visible (reflected) outside the function.
-        // so perhaps you can change the mainSwitch to be a switchObj.
+        // // If a function changes an argument's value, it does not change the parameter's original value.
+        // // so mainSwitch might not work because you want to change the original value of mainSwitch.
+        // // BUT NOTE: Changes to object properties are visible (reflected) outside the function.
+        // // so perhaps you can change the mainSwitch to be a switchObj.
         switchChanger(mainSwitch);
         var parentNode = document.getElementById(parent);
         var childNode = document.getElementById(child);
@@ -881,6 +881,10 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
 
 function addRB() {
 
-    appendBoost(boostObj.kind, "addingBoost", userObj, kdSwitch, "IMG", "boostParent", "boostUpgrade", "BUTTON", "Upgrade Boost", "upgradeBtn", "boostUpgrade", "addKD");
+    appendBoost(boostObj.kind, "addingBoost", userObj, kdSwitch, "IMG", "boostParent", "boostUpgrade", "BUTTON", "Upgrade Boost", "upgradeBtn", "boostUpgrade", "addKD()");
 
+}
+
+function addKD(){
+    console.log("testing the new function wired to the onclick");
 }
