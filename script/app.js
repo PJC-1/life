@@ -784,39 +784,38 @@ function redbullBoost() {
 // will not allow it to be affected by changes within the function. Reffer to note
 // within the appendBoost function.
 // var kdSwitch = true;
-var switches = {
-    kdSwitch : true
-};
+
+
 
 // function addRB() {
-   function tempFunctionName() {
-    var kd = boostObj.kind;
-    var inject = document.getElementById("addingBoost");
-    if (userObj.money >= kd.price && kdSwitch === true) {
-        var x = document.createElement("IMG");
-        x.setAttribute("width", kd.width);
-        x.setAttribute("src", kd.src);
-        x.setAttribute("id", kd.id);
-        x.setAttribute("onclick", kd.func);
-        inject.appendChild(x);
-        kdSwitch = false;
-        var parent = document.getElementById("boostParent");
-        var child = document.getElementById("boostUpgrade");
-        parent.removeChild(child);
-        var y = document.createElement("BUTTON");
-        var z = document.createTextNode("Upgrade Boost");
-        y.appendChild(z);
-        y.setAttribute("class", "upgradeBtn");
-        y.setAttribute("id", "boostUpgrade");
-        // find a way to not have this value hardcoded
-        y.setAttribute("onclick", "addKD");
-        document.getElementById("boostParent").appendChild(y);
-    } else if (kdSwitch === false) {
-        console.log("prevent duplicate kind bar");
-    } else {
-        console.log("else in addRB function");
-    }
-}
+//    function tempFunctionName() {
+//     var kd = boostObj.kind;
+//     var inject = document.getElementById("addingBoost");
+//     if (userObj.money >= kd.price && kdSwitch === true) {
+//         var x = document.createElement("IMG");
+//         x.setAttribute("width", kd.width);
+//         x.setAttribute("src", kd.src);
+//         x.setAttribute("id", kd.id);
+//         x.setAttribute("onclick", kd.func);
+//         inject.appendChild(x);
+//         kdSwitch = false;
+//         var parent = document.getElementById("boostParent");
+//         var child = document.getElementById("boostUpgrade");
+//         parent.removeChild(child);
+//         var y = document.createElement("BUTTON");
+//         var z = document.createTextNode("Upgrade Boost");
+//         y.appendChild(z);
+//         y.setAttribute("class", "upgradeBtn");
+//         y.setAttribute("id", "boostUpgrade");
+//         // find a way to not have this value hardcoded
+//         y.setAttribute("onclick", "addKD");
+//         document.getElementById("boostParent").appendChild(y);
+//     } else if (kdSwitch === false) {
+//         console.log("prevent duplicate kind bar");
+//     } else {
+//         console.log("else in addRB function");
+//     }
+// }
 
 // list of all the parameters for this function, from the above example
 // - boost => boostObj.kind, maybe just grab the boostObj and then access the boost you want in the function when caching the local variable
@@ -833,13 +832,24 @@ var switches = {
 // - idAttribute => "boostUpgrade" from y.setAttribute("id", "boostUpgrade")
 // - clickAttribute => "addKD" from y.setAttribute("onlick", "addKD")
 
+var kdSwitch = {
+  switchy : true
+};
+
+function mySwitch(){
+  this.switchy = true;
+}
+
+function switchChanger(fnc){
+  fnc.switchy = false;
+}
 
 function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElement,textNode,classAttribute,idAttribute,clickAttribute) {
     // think about changing all of these variable names to make them more general
     // to suit a more modular functionality.
     var kd = boost;
     var injectDOM = document.getElementById(inject);
-    if (user.money >= kd.price && mainSwitch === true) {
+    if ((user.money >= kd.price) && (mainSwitch.switchy === true)) {
         var x = document.createElement(element);
         x.setAttribute("width", kd.width);
         x.setAttribute("src", kd.src);
@@ -850,7 +860,7 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
         // so mainSwitch might not work because you want to change the original value of mainSwitch.
         // BUT NOTE: Changes to object properties are visible (reflected) outside the function.
         // so perhaps you can change the mainSwitch to be a switchObj.
-        mainSwitch = false;
+        switchChanger(mainSwitch);
         var parentNode = document.getElementById(parent);
         var childNode = document.getElementById(child);
         parentNode.removeChild(childNode);
@@ -862,7 +872,7 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
         // find a way to not have this value hardcoded
         y.setAttribute("onclick", clickAttribute);
         document.getElementById(parent).appendChild(y);
-    } else if (mainSwitch === false) {
+    } else if (mainSwitch.switchy === false) {
         console.log("prevent duplicate kind bar");
     } else {
         console.log("else in addRB function");
@@ -871,6 +881,6 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
 
 function addRB() {
 
-    appendBoost(boostObj.kind, "addingBoost", userObj, switches.kdSwitch, "IMG", "boostParent", "boostUpgrade", "BUTTON", "Upgrade Boost", "upgradeBtn", "boostUpgrade", "addKD");
+    appendBoost(boostObj.kind, "addingBoost", userObj, kdSwitch, "IMG", "boostParent", "boostUpgrade", "BUTTON", "Upgrade Boost", "upgradeBtn", "boostUpgrade", "addKD");
 
 }
