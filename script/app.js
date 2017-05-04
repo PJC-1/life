@@ -891,7 +891,7 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
 
 function addRB() {
 
-    appendBoost(boostObj.kind, "addingBoost", userObj, kdSwitch, "IMG", "boostParent", "boostUpgrade", "BUTTON", "Upgrade Boost", "upgradeBtn", "boostUpgrade", "addKD()");
+    appendBoost(boostObj.kind, boostObj.kind.inject, userObj, kdSwitch, boostObj.kind.element, boostObj.kind.parent, boostObj.kind.child, boostObj.kind.newElement, boostObj.kind.textNode, boostObj.kind.classAttribute, boostObj.kind.idAttribute, boostObj.kind.clickAttribute);
 
 }
 
@@ -905,9 +905,6 @@ function addRB() {
 // "upgradeBtn" => classAttribute => argument #10 =>
 // "boostUpgrade" => idAttribute => argument #11 =>
 // "addKD()" => clickAttribute => argument #12 =>
-//
-//
-//
 
 function addKD(){
     console.log("testing the new function wired to the onclick");
