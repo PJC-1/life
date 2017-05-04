@@ -885,6 +885,14 @@ function addRB() {
 
 }
 
+// List of the arguments that could be added to the boostObj instead of hardcoded values
+// "addingBoost" => inject => argument #2
+// "IMG" => element => argument #5
+// "boostParent" => parent => argument #6
+// "boostUpgrade" => child => argument #7
+// "BUTTON" => newElement => argument #8
+// "Upgrade Boost" => textNode => argument #9
+
 function addKD(){
     console.log("testing the new function wired to the onclick");
 }
