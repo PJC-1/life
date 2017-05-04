@@ -854,7 +854,20 @@ function switchChanger(fnc){
   fnc.switchy = false;
 }
 
-function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElement,textNode,classAttribute,idAttribute,clickAttribute) {
+function appendBoost(
+    boost,
+    inject,
+    user,
+    mainSwitch,
+    element,
+    parent,
+    child,
+    newElement,
+    textNode,
+    classAttribute,
+    idAttribute,
+    clickAttribute
+) {
     // think about changing all of these variable names to make them more general
     // to suit a more modular functionality.
     var kd = boost;
@@ -891,20 +904,22 @@ function appendBoost(boost,inject,user,mainSwitch,element,parent,child,newElemen
 
 function addRB() {
 
-    appendBoost(boostObj.kind, boostObj.kind.inject, userObj, kdSwitch, boostObj.kind.element, boostObj.kind.parent, boostObj.kind.child, boostObj.kind.newElement, boostObj.kind.textNode, boostObj.kind.classAttribute, boostObj.kind.idAttribute, boostObj.kind.clickAttribute);
+    appendBoost(
+        boostObj.kind,
+        boostObj.kind.inject,
+        userObj,
+        kdSwitch,
+        boostObj.kind.element,
+        boostObj.kind.parent,
+        boostObj.kind.child,
+        boostObj.kind.newElement,
+        boostObj.kind.textNode,
+        boostObj.kind.classAttribute,
+        boostObj.kind.idAttribute,
+        boostObj.kind.clickAttribute
+    );
 
 }
-
-// List of the arguments that could be added to the boostObj instead of hardcoded values
-// "addingBoost" => inject => argument #2 => inject:"addingBoost"
-// "IMG" => element => argument #5 =>
-// "boostParent" => parent => argument #6 =>
-// "boostUpgrade" => child => argument #7 =>
-// "BUTTON" => newElement => argument #8 =>
-// "Upgrade Boost" => textNode => argument #9 =>
-// "upgradeBtn" => classAttribute => argument #10 =>
-// "boostUpgrade" => idAttribute => argument #11 =>
-// "addKD()" => clickAttribute => argument #12 =>
 
 function addKD(){
     console.log("testing the new function wired to the onclick");
