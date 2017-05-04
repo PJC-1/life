@@ -112,22 +112,32 @@ var boostObj = {
         src           :  "./assets/redbull.png"
     },
     kind: {
-        width         :  "50",
-        id            :  "kID",
-        fltrSwitch    :  true,
-        description   :  "All KIND snacks are gluten-free, made from whole "
-                         + "ingredients and low in sodium. Currently, their KIND"
-                         + " Healthy Grains and KIND Healthy Grains Clusters are"
-                         + " certified by the NON-GMO Project. All KIND bars "
-                         + "range between 180-210 calories and have healthy fats"
-                         + " and protein.",
-        price         :  3.00,
-        fullfillment  :  0,
-        durration     :  15000,
-        cashRate      :  200,
-        rate          :  425,
-        function      :  "kindBoost()",
-        src           :  "./assets/kind.png"
+        width          :  "50",
+        id             :  "kID",
+        fltrSwitch     :  true,
+        description    :  "All KIND snacks are gluten-free, made from whole "
+                          + "ingredients and low in sodium. Currently, their KIND"
+                          + " Healthy Grains and KIND Healthy Grains Clusters are"
+                          + " certified by the NON-GMO Project. All KIND bars "
+                          + "range between 180-210 calories and have healthy fats"
+                          + " and protein.",
+        price          :  3.00,
+        fullfillment   :  0,
+        durration      :  15000,
+        cashRate       :  200,
+        rate           :  425,
+        function       :  "kindBoost()",
+        src            :  "./assets/kind.png",
+        // below are new key-values for boosts
+        inject         :  "addingBoost",
+        element        :  "IMG",
+        parent         :  "boostParent",
+        child          :  "boostUpgrade",
+        newElement     :  "BUTTON",
+        textNode       :  "Upgrade Boost",
+        classAttribute :  "upgradeBtn",
+        idAttribute    :  "boostUpgrade",
+        clickAttribute :  "addKD()"
     }
 }
 
@@ -886,12 +896,18 @@ function addRB() {
 }
 
 // List of the arguments that could be added to the boostObj instead of hardcoded values
-// "addingBoost" => inject => argument #2
-// "IMG" => element => argument #5
-// "boostParent" => parent => argument #6
-// "boostUpgrade" => child => argument #7
-// "BUTTON" => newElement => argument #8
-// "Upgrade Boost" => textNode => argument #9
+// "addingBoost" => inject => argument #2 => inject:"addingBoost"
+// "IMG" => element => argument #5 =>
+// "boostParent" => parent => argument #6 =>
+// "boostUpgrade" => child => argument #7 =>
+// "BUTTON" => newElement => argument #8 =>
+// "Upgrade Boost" => textNode => argument #9 =>
+// "upgradeBtn" => classAttribute => argument #10 =>
+// "boostUpgrade" => idAttribute => argument #11 =>
+// "addKD()" => clickAttribute => argument #12 =>
+//
+//
+//
 
 function addKD(){
     console.log("testing the new function wired to the onclick");
