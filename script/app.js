@@ -686,53 +686,8 @@ function happySnack() {
 
 
 //////////////////
-// COFFEE BOOST //
+// APPEND BOOST //
 //////////////////
-
-var coffeeCoolDown = true;
-
-function coffeeBoost() {
-    var coffee = boostObj.coffee;
-    var uHunger = document.getElementById("userHunger");
-    var moneySpan = document.getElementById("money");
-    var bCast = document.getElementById("testingBroadcast");
-    if (userObj.money >= coffee.price && coffeeCoolDown === true) {
-        var hungryLow = setInterval(decreaseHunger, coffee.rate);
-        var time = setInterval(addMoneyByTime, coffee.cashRate);
-        userObj.money -= coffee.price;
-        moneySpan.innerHTML = moneySign + userObj.money;
-        setTimeout(coffeeDurration, coffee.durration);
-        coffeeCoolDown = false;
-        function decreaseHunger() {
-            userObj.hunger -= 1;
-            uHunger.innerHTML = hungerSign + userObj.hunger;
-        }
-        function addMoneyByTime() {
-            userObj.money += 1;
-            moneySpan.innerHTML = moneySign + userObj.money;
-        }
-        function coffeeDurration() {
-            clearInterval(time);
-            clearInterval(hungryLow);
-            setTimeout(coolDownSwitch, 3000);
-        }
-        function coolDownSwitch() {
-            coffeeCoolDown = true;
-        }
-    } else if (userObj.money <= coffee.price && coffeeCoolDown === true) {
-        bCast.innerHTML = "You need more money for this cup of joe.";
-        setTimeout(clearTestBroadcast, 2000);
-    } else if (coffeeCoolDown === false) {
-        bCast.innerHTML = coffeeBreak;
-        setTimeout(clearTestBroadcast, 2000);
-    }
-}
-
-
-///////////////////
-// REDBULL BOOST //
-///////////////////
-
 
 function switchChanger(fnc){
     fnc.switchy = false;
@@ -780,6 +735,54 @@ function appendBoost(
 }
 
 
+//////////////////
+// COFFEE BOOST //
+//////////////////
+
+var coffeeCoolDown = true;
+
+function coffeeBoost() {
+    var coffee = boostObj.coffee;
+    var uHunger = document.getElementById("userHunger");
+    var moneySpan = document.getElementById("money");
+    var bCast = document.getElementById("testingBroadcast");
+    if (userObj.money >= coffee.price && coffeeCoolDown === true) {
+        var hungryLow = setInterval(decreaseHunger, coffee.rate);
+        var time = setInterval(addMoneyByTime, coffee.cashRate);
+        userObj.money -= coffee.price;
+        moneySpan.innerHTML = moneySign + userObj.money;
+        setTimeout(coffeeDurration, coffee.durration);
+        coffeeCoolDown = false;
+        function decreaseHunger() {
+            userObj.hunger -= 1;
+            uHunger.innerHTML = hungerSign + userObj.hunger;
+        }
+        function addMoneyByTime() {
+            userObj.money += 1;
+            moneySpan.innerHTML = moneySign + userObj.money;
+        }
+        function coffeeDurration() {
+            clearInterval(time);
+            clearInterval(hungryLow);
+            setTimeout(coolDownSwitch, 3000);
+        }
+        function coolDownSwitch() {
+            coffeeCoolDown = true;
+        }
+    } else if (userObj.money <= coffee.price && coffeeCoolDown === true) {
+        bCast.innerHTML = "You need more money for this cup of joe.";
+        setTimeout(clearTestBroadcast, 2000);
+    } else if (coffeeCoolDown === false) {
+        bCast.innerHTML = coffeeBreak;
+        setTimeout(clearTestBroadcast, 2000);
+    }
+}
+
+
+///////////////////
+// REDBULL BOOST //
+///////////////////
+
 var rbCoolDown = true;
 
 function redbullBoost() {
@@ -814,25 +817,11 @@ function redbullBoost() {
     }
 }
 
-// list of all the parameters for this function, from the above example
-// - boost => boostObj.kind, maybe just grab the boostObj and then access the boost you want in the function when caching the local variable
-// - inject => "addingBoost" from document.getElementById("addingBoost")
-// - user => userObj
-//   can't name it switch, its a reserved word in javascript
-// - switch => kdSwitch
-// - element => "IMG" from document.createElement("IMG") maybe make this a key in boostObj
-// - parent => "boostParent" from document.getElementById("boostParent")
-// - child => "boostUpgrade" from document.getElementById("boostUpgrade")
-// - newElement => "BUTTON" from document.createElement("BUTTON")
-// - textNode => "Upgrade Boost" from document.createTextNode("Upgrade Boost")
-// - classAttribute => "upgradeBtn" from y.setAttribute("class", "upgradeBtn")
-// - idAttribute => "boostUpgrade" from y.setAttribute("id", "boostUpgrade")
-// - clickAttribute => "addKD" from y.setAttribute("onlick", "addKD")
-
 var rbSwitch = {
     switchy : true
 };
 
+// adds redbull boost
 function boostAdding() {
     appendBoost(
         boostObj.redBull,
@@ -850,10 +839,16 @@ function boostAdding() {
     );
 }
 
+
+//////////////
+// KIND BAR //
+//////////////
+
 var kdSwitch = {
     switchy : true
 };
 
+// adds kind boost
 function addRB() {
     appendBoost(
         boostObj.kind,
