@@ -785,6 +785,7 @@ function coffeeBoost() {
 
 var rbCoolDown = true;
 
+// consider making this function more modular
 function redbullBoost() {
     var rb = boostObj.redBull;
     var uMoney = document.getElementById("money");
@@ -817,9 +818,11 @@ function redbullBoost() {
     }
 }
 
+// you can consider creating a function object that can combine the
+// rbSwitch and the rbCooldown into one location
 var rbSwitch = {
     switchy : true
-};
+}
 
 // adds redbull boost
 function boostAdding() {
@@ -840,13 +843,13 @@ function boostAdding() {
 }
 
 
-//////////////
-// KIND BAR //
-//////////////
+////////////////
+// KIND BOOST //
+////////////////
 
 var kdSwitch = {
     switchy : true
-};
+}
 
 // adds kind boost
 function addRB() {
