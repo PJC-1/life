@@ -789,14 +789,6 @@ function redbullBoost() {
     }
 }
 
-// note that, running the function appendBoost, does not set the kdSwitch variable
-// this is because kdSwitch is passed through to the function an argument, which
-// will not allow it to be affected by changes within the function. Reffer to note
-// within the appendBoost function.
-// var kdSwitch = true;
-
-
-
 // function addRB() {
 //    function tempFunctionName() {
 //     var kd = boostObj.kind;
@@ -855,34 +847,28 @@ function switchChanger(fnc){
 }
 
 function appendBoost(
-    boost,
-    inject,
-    user,
-    mainSwitch,
-    element,
-    parent,
-    child,
-    newElement,
-    textNode,
-    classAttribute,
-    idAttribute,
-    clickAttribute
-) {
-    // think about changing all of these variable names to make them more general
-    // to suit a more modular functionality.
-    var kd = boost;
+      boost,
+      inject,
+      user,
+      mainSwitch,
+      element,
+      parent,
+      child,
+      newElement,
+      textNode,
+      classAttribute,
+      idAttribute,
+      clickAttribute
+  ) {
+    var b = boost;
     var injectDOM = document.getElementById(inject);
-    if ((user.money >= kd.price) && (mainSwitch.switchy === true)) {
+    if ((user.money >= b.price) && (mainSwitch.switchy === true)) {
         var x = document.createElement(element);
-        x.setAttribute("width", kd.width);
-        x.setAttribute("src", kd.src);
-        x.setAttribute("id", kd.id);
-        x.setAttribute("onclick", kd.func);
+        x.setAttribute("width", b.width);
+        x.setAttribute("src", b.src);
+        x.setAttribute("id", b.id);
+        x.setAttribute("onclick", b.func);
         injectDOM.appendChild(x);
-        // // If a function changes an argument's value, it does not change the parameter's original value.
-        // // so mainSwitch might not work because you want to change the original value of mainSwitch.
-        // // BUT NOTE: Changes to object properties are visible (reflected) outside the function.
-        // // so perhaps you can change the mainSwitch to be a switchObj.
         switchChanger(mainSwitch);
         var parentNode = document.getElementById(parent);
         var childNode = document.getElementById(child);
@@ -892,13 +878,12 @@ function appendBoost(
         y.appendChild(z);
         y.setAttribute("class", classAttribute);
         y.setAttribute("id", idAttribute);
-        // find a way to not have this value hardcoded
         y.setAttribute("onclick", clickAttribute);
         document.getElementById(parent).appendChild(y);
     } else if (mainSwitch.switchy === false) {
         console.log("prevent duplicate kind bar");
     } else {
-        console.log("else in addRB function");
+        console.log("else from appendBoost");
     }
 }
 
