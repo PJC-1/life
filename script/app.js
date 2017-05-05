@@ -109,7 +109,17 @@ var boostObj = {
         cashRate      :  200,
         rate          :  400,
         func          :  "redbullBoost()",
-        src           :  "./assets/redbull.png"
+        src           :  "./assets/redbull.png",
+        // below are new key-values for boosts
+        inject         :  "addingBoost",
+        element        :  "IMG",
+        parent         :  "boostParent",
+        child          :  "boostUpgrade",
+        newElement     :  "BUTTON",
+        textNode       :  "Upgrade Boost",
+        classAttribute :  "upgradeBtn",
+        idAttribute    :  "boostUpgrade",
+        clickAttribute :  "addRB()"
     },
     kind: {
         width          :  "50",
@@ -723,127 +733,9 @@ function coffeeBoost() {
 // REDBULL BOOST //
 ///////////////////
 
-var rbSwitch = true;
-
-// appends Redbull to the DOM
-function boostAdding() {
-    var rb = boostObj.redBull;
-    var inject = document.getElementById("addingBoost");
-    if (userObj.money >= rb.price && rbSwitch === true) {
-        var x = document.createElement("IMG");
-        x.setAttribute("width", rb.width);
-        x.setAttribute("src", rb.src );
-        x.setAttribute("id", rb.id);
-        x.setAttribute("onclick", rb.func);
-        inject.appendChild(x);
-        rbSwitch = false;
-        var parent = document.getElementById("boostParent");
-        var child = document.getElementById("boostUpgrade");
-        parent.removeChild(child);
-        var y = document.createElement("BUTTON");
-        var z = document.createTextNode("Upgrade Boost");
-        y.appendChild(z);
-        y.setAttribute("class", "upgradeBtn");
-        y.setAttribute("id", "boostUpgrade");
-        y.setAttribute("onclick", "addRB()");
-        document.getElementById("boostParent").appendChild(y);
-    } else if ( rbSwitch === false ) {
-        console.log("prevented duplicate redbulls");
-    } else {
-        // consider adding a broadcast here
-        console.log("else if");
-    }
-}
-
-var rbCoolDown = true;
-
-function redbullBoost() {
-    var rb = boostObj.redBull;
-    var uMoney = document.getElementById("money");
-    var uHunger = document.getElementById("userHunger");
-    if (userObj.money >= rb.price && rbCoolDown === true) {
-        var moneyUp = setInterval(increaseMoney, rb.cashRate);
-        var hungeryLow = setInterval(decreaseHunger, rb.rate);
-        userObj.money -= rb.price;
-        uMoney.innerHTML = moneySign + userObj.money;
-        setTimeout(redbullDurration, rb.durration);
-        rbCoolDown = false;
-        function decreaseHunger() {
-            userObj.hunger -= 1;
-            uHunger.innerHTML = hungerSign + userObj.hunger;
-        }
-        function increaseMoney() {
-            userObj.money += 1;
-            uMoney.innerHTML = moneySign + userObj.money;
-        }
-        function redbullDurration() {
-            clearInterval(moneyUp);
-            clearInterval(hungeryLow);
-            setTimeout(coolDownSwitch, 3000);
-        }
-        function coolDownSwitch() {
-            rbCoolDown = true;
-        }
-    } else {
-        console.log("this is the else for the rebullBoost");
-    }
-}
-
-// function addRB() {
-//    function tempFunctionName() {
-//     var kd = boostObj.kind;
-//     var inject = document.getElementById("addingBoost");
-//     if (userObj.money >= kd.price && kdSwitch === true) {
-//         var x = document.createElement("IMG");
-//         x.setAttribute("width", kd.width);
-//         x.setAttribute("src", kd.src);
-//         x.setAttribute("id", kd.id);
-//         x.setAttribute("onclick", kd.func);
-//         inject.appendChild(x);
-//         kdSwitch = false;
-//         var parent = document.getElementById("boostParent");
-//         var child = document.getElementById("boostUpgrade");
-//         parent.removeChild(child);
-//         var y = document.createElement("BUTTON");
-//         var z = document.createTextNode("Upgrade Boost");
-//         y.appendChild(z);
-//         y.setAttribute("class", "upgradeBtn");
-//         y.setAttribute("id", "boostUpgrade");
-//         // find a way to not have this value hardcoded
-//         y.setAttribute("onclick", "addKD");
-//         document.getElementById("boostParent").appendChild(y);
-//     } else if (kdSwitch === false) {
-//         console.log("prevent duplicate kind bar");
-//     } else {
-//         console.log("else in addRB function");
-//     }
-// }
-
-// list of all the parameters for this function, from the above example
-// - boost => boostObj.kind, maybe just grab the boostObj and then access the boost you want in the function when caching the local variable
-// - inject => "addingBoost" from document.getElementById("addingBoost")
-// - user => userObj
-//   can't name it switch, its a reserved word in javascript
-// - switch => kdSwitch
-// - element => "IMG" from document.createElement("IMG") maybe make this a key in boostObj
-// - parent => "boostParent" from document.getElementById("boostParent")
-// - child => "boostUpgrade" from document.getElementById("boostUpgrade")
-// - newElement => "BUTTON" from document.createElement("BUTTON")
-// - textNode => "Upgrade Boost" from document.createTextNode("Upgrade Boost")
-// - classAttribute => "upgradeBtn" from y.setAttribute("class", "upgradeBtn")
-// - idAttribute => "boostUpgrade" from y.setAttribute("id", "boostUpgrade")
-// - clickAttribute => "addKD" from y.setAttribute("onlick", "addKD")
-
-var kdSwitch = {
-  switchy : true
-};
-
-function mySwitch(){
-  this.switchy = true;
-}
 
 function switchChanger(fnc){
-  fnc.switchy = false;
+    fnc.switchy = false;
 }
 
 function appendBoost(
@@ -881,14 +773,88 @@ function appendBoost(
         y.setAttribute("onclick", clickAttribute);
         document.getElementById(parent).appendChild(y);
     } else if (mainSwitch.switchy === false) {
-        console.log("prevent duplicate kind bar");
+        console.log("prevent duplicate boost");
     } else {
         console.log("else from appendBoost");
     }
 }
 
-function addRB() {
 
+var rbCoolDown = true;
+
+function redbullBoost() {
+    var rb = boostObj.redBull;
+    var uMoney = document.getElementById("money");
+    var uHunger = document.getElementById("userHunger");
+    if (userObj.money >= rb.price && rbCoolDown === true) {
+        var moneyUp = setInterval(increaseMoney, rb.cashRate);
+        var hungeryLow = setInterval(decreaseHunger, rb.rate);
+        userObj.money -= rb.price;
+        uMoney.innerHTML = moneySign + userObj.money;
+        setTimeout(redbullDurration, rb.durration);
+        rbCoolDown = false;
+        function decreaseHunger() {
+            userObj.hunger -= 1;
+            uHunger.innerHTML = hungerSign + userObj.hunger;
+        }
+        function increaseMoney() {
+            userObj.money += 1;
+            uMoney.innerHTML = moneySign + userObj.money;
+        }
+        function redbullDurration() {
+            clearInterval(moneyUp);
+            clearInterval(hungeryLow);
+            setTimeout(coolDownSwitch, 3000);
+        }
+        function coolDownSwitch() {
+            rbCoolDown = true;
+        }
+    } else {
+        console.log("this is the else for the rebullBoost");
+    }
+}
+
+// list of all the parameters for this function, from the above example
+// - boost => boostObj.kind, maybe just grab the boostObj and then access the boost you want in the function when caching the local variable
+// - inject => "addingBoost" from document.getElementById("addingBoost")
+// - user => userObj
+//   can't name it switch, its a reserved word in javascript
+// - switch => kdSwitch
+// - element => "IMG" from document.createElement("IMG") maybe make this a key in boostObj
+// - parent => "boostParent" from document.getElementById("boostParent")
+// - child => "boostUpgrade" from document.getElementById("boostUpgrade")
+// - newElement => "BUTTON" from document.createElement("BUTTON")
+// - textNode => "Upgrade Boost" from document.createTextNode("Upgrade Boost")
+// - classAttribute => "upgradeBtn" from y.setAttribute("class", "upgradeBtn")
+// - idAttribute => "boostUpgrade" from y.setAttribute("id", "boostUpgrade")
+// - clickAttribute => "addKD" from y.setAttribute("onlick", "addKD")
+
+var rbSwitch = {
+    switchy : true
+};
+
+function boostAdding() {
+    appendBoost(
+        boostObj.redBull,
+        boostObj.redBull.inject,
+        userObj,
+        rbSwitch,
+        boostObj.redBull.element,
+        boostObj.redBull.parent,
+        boostObj.redBull.child,
+        boostObj.redBull.newElement,
+        boostObj.redBull.textNode,
+        boostObj.redBull.classAttribute,
+        boostObj.redBull.idAttribute,
+        boostObj.redBull.clickAttribute
+    );
+}
+
+var kdSwitch = {
+    switchy : true
+};
+
+function addRB() {
     appendBoost(
         boostObj.kind,
         boostObj.kind.inject,
@@ -903,7 +869,6 @@ function addRB() {
         boostObj.kind.idAttribute,
         boostObj.kind.clickAttribute
     );
-
 }
 
 function addKD(){
