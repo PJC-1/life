@@ -92,7 +92,7 @@ var boostObj = {
         src           :  "./assets/coffee.png"
     },
     redBull: {
-        width         :  "50",
+        width         :  "55",
         id            :  "rbID",
         fltrSwitch    :  true,
         description   :  "Redbull drinks have the effects that caffeine and sugar"
@@ -122,7 +122,7 @@ var boostObj = {
         clickAttribute :  "addRB()"
     },
     kind: {
-        width          :  "50",
+        width          :  "65",
         id             :  "kID",
         fltrSwitch     :  true,
         description    :  "All KIND snacks are gluten-free, made from whole "
