@@ -779,6 +779,15 @@ function coffeeBoost() {
     }
 }
 
+function appendBoostBroadcast(cast, message,clear,time){
+    document.getElementById(cast).innerHTML = message;
+    setTimeout(clear, time);
+}
+
+function clearBCast(cast){
+    document.getElementById(cast).innerHTML = "";
+}
+
 
 ///////////////////
 // REDBULL BOOST //
