@@ -731,6 +731,7 @@ function appendBoost(
         console.log("prevent duplicate boost");
     } else {
         console.log("else from appendBoost");
+        // add broadcast here for when user does not have enough money
     }
 }
 
