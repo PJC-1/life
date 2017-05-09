@@ -779,6 +779,8 @@ function coffeeBoost() {
     }
 }
 
+// this about implementing a callback function to resolve this issue
+
 function appendBoostBroadcast(cast, message,clear,time){
     document.getElementById(cast).innerHTML = message;
     setTimeout(clear, time);
@@ -788,6 +790,7 @@ function clearBCast(cast){
     document.getElementById(cast).innerHTML = "";
 }
 
+appendBoostBroadcast("appendBoostBCast","testing the appendBoostBroadcast function",clearBCast,3000);
 
 ///////////////////
 // REDBULL BOOST //
