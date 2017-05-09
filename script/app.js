@@ -782,10 +782,10 @@ function coffeeBoost() {
 
 function appendBoostBroadcast(cast, message,callback,time){
     document.getElementById(cast).innerHTML = message;
-
     setTimeout(callback, time);
 }
 // figure out a way to replace this hardcoded value in this callback function
+// http://stackoverflow.com/questions/1190642/how-can-i-pass-a-parameter-to-a-settimeout-callback
 function clearBCast(){
     document.getElementById("appendBoostBCast").innerHTML = "";
 }
