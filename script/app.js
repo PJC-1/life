@@ -781,13 +781,14 @@ function coffeeBoost() {
 
 // this about implementing a callback function to resolve this issue
 
-function appendBoostBroadcast(cast, message,clear,time){
+function appendBoostBroadcast(cast, message,callback,time){
     document.getElementById(cast).innerHTML = message;
-    setTimeout(clear, time);
+
+    setTimeout(callback, time);
 }
 
-function clearBCast(cast){
-    document.getElementById(cast).innerHTML = "";
+function clearBCast(){
+    document.getElementById("appendBoostBCast").innerHTML = "";
 }
 
 appendBoostBroadcast("appendBoostBCast","testing the appendBoostBroadcast function",clearBCast,3000);
