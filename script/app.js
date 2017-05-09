@@ -779,14 +779,13 @@ function coffeeBoost() {
     }
 }
 
-// this about implementing a callback function to resolve this issue
 
 function appendBoostBroadcast(cast, message,callback,time){
     document.getElementById(cast).innerHTML = message;
 
     setTimeout(callback, time);
 }
-
+// figure out a way to replace this hardcoded value in this callback function
 function clearBCast(){
     document.getElementById("appendBoostBCast").innerHTML = "";
 }
