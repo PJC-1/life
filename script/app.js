@@ -685,6 +685,22 @@ function happySnack() {
 }
 
 
+//////////////////////////
+// REFACTORED BROADCAST //
+//////////////////////////
+
+function appendBoostBroadcast(cast, message,callback,time){
+    document.getElementById(cast).innerHTML = message;
+    setTimeout(function(){
+        callback(cast);
+    }, time);
+}
+
+function clearBCast(castID){
+    document.getElementById(castID).innerHTML = "";
+}
+
+
 //////////////////
 // APPEND BOOST //
 //////////////////
@@ -730,8 +746,7 @@ function appendBoost(
     } else if (mainSwitch.switchy === false) {
         console.log("prevent duplicate boost");
     } else {
-        console.log("else from appendBoost");
-        // add broadcast here for when user does not have enough money
+        appendBoostBroadcast("appendBoostBCast","You need more money",clearBCast,3000);
     }
 }
 
@@ -779,20 +794,6 @@ function coffeeBoost() {
     }
 }
 
-
-function appendBoostBroadcast(cast, message,callback,time){
-    document.getElementById(cast).innerHTML = message;
-    setTimeout(function(){
-        callback(cast);
-    }, time);
-}
-
-// http://stackoverflow.com/questions/1190642/how-can-i-pass-a-parameter-to-a-settimeout-callback
-function clearBCast(castID){
-    document.getElementById(castID).innerHTML = "";
-}
-
-appendBoostBroadcast("appendBoostBCast","testing the appendBoostBroadcast function",clearBCast,3000);
 
 ///////////////////
 // REDBULL BOOST //
