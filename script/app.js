@@ -148,7 +148,6 @@ var boostObj = {
         classAttribute :  "upgradeBtn",
         idAttribute    :  "boostUpgrade",
         clickAttribute :  "addKD()"
-        // consider adding the arguments for the refactored broadcast to the boost object
     }
 }
 
@@ -751,6 +750,11 @@ function appendBoost(
     }
 }
 
+var broadCastObj = {
+    // reorganize the code, put all broadcast variables in this object
+    // maybe create a new object for each different broadcast
+    // keys: id, string, time
+}
 
 //////////////////
 // COFFEE BOOST //
