@@ -148,6 +148,7 @@ var boostObj = {
         classAttribute :  "upgradeBtn",
         idAttribute    :  "boostUpgrade",
         clickAttribute :  "addKD()"
+        // consider adding the arguments for the refactored broadcast to the boost object
     }
 }
 
