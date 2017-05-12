@@ -746,14 +746,16 @@ function appendBoost(
     } else if (mainSwitch.switchy === false) {
         console.log("prevent duplicate boost");
     } else {
-        appendBoostBroadcast("appendBoostBCast","You need more money",clearBCast,3000);
+        appendBoostBroadcast(broadCastObj.boost.id,broadCastObj.boost.string,clearBCast,broadCastObj.boost.time);
     }
 }
 
 var broadCastObj = {
-    // reorganize the code, put all broadcast variables in this object
-    // maybe create a new object for each different broadcast
-    // keys: id, string, time
+    boost: {
+        id     : "appendBoostBCast",
+        string : "You need more money.",
+        time   : 3000
+    }
 }
 
 //////////////////
