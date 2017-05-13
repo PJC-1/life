@@ -721,7 +721,11 @@ function appendBoost(
       textNode,
       classAttribute,
       idAttribute,
-      clickAttribute
+      clickAttribute,
+      // appendBroadcast, broadcast, and callback are new arguments
+      appendBroadcast,
+      broadcast,
+      callback
   ) {
     var b = boost;
     var injectDOM = document.getElementById(inject);
@@ -746,7 +750,8 @@ function appendBoost(
     } else if (mainSwitch.switchy === false) {
         console.log("prevent duplicate boost");
     } else {
-        appendBoostBroadcast(broadCastObj.boost.id,broadCastObj.boost.string,clearBCast,broadCastObj.boost.time);
+        appendBroadcast(broadcast.id, broadcast.string, callback, broadcast.time);
+        // appendBoostBroadcast(broadCastObj.boost.id,broadCastObj.boost.string,clearBCast,broadCastObj.boost.time);
     }
 }
 
@@ -861,7 +866,10 @@ function boostAdding() {
         boostObj.redBull.textNode,
         boostObj.redBull.classAttribute,
         boostObj.redBull.idAttribute,
-        boostObj.redBull.clickAttribute
+        boostObj.redBull.clickAttribute,
+        appendBoostBroadcast,
+        broadCastObj.boost,
+        clearBCast
     );
 }
 
@@ -888,7 +896,10 @@ function addRB() {
         boostObj.kind.textNode,
         boostObj.kind.classAttribute,
         boostObj.kind.idAttribute,
-        boostObj.kind.clickAttribute
+        boostObj.kind.clickAttribute,
+        appendBoostBroadcast,
+        broadCastObj.boost,
+        clearBCast
     );
 }
 
