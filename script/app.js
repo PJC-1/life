@@ -689,6 +689,14 @@ function happySnack() {
 // REFACTORED BROADCAST //
 //////////////////////////
 
+var broadCastObj = {
+    boost: {
+        id     : "appendBoostBCast",
+        string : "You need more money.",
+        time   : 3000
+    }
+}
+
 function appendBoostBroadcast(cast, message,callback,time){
     document.getElementById(cast).innerHTML = message;
     setTimeout(function(){
@@ -722,7 +730,6 @@ function appendBoost(
       classAttribute,
       idAttribute,
       clickAttribute,
-      // appendBroadcast, broadcast, and callback are new arguments
       appendBroadcast,
       broadcast,
       callback
@@ -751,17 +758,9 @@ function appendBoost(
         console.log("prevent duplicate boost");
     } else {
         appendBroadcast(broadcast.id, broadcast.string, callback, broadcast.time);
-        // appendBoostBroadcast(broadCastObj.boost.id,broadCastObj.boost.string,clearBCast,broadCastObj.boost.time);
     }
 }
 
-var broadCastObj = {
-    boost: {
-        id     : "appendBoostBCast",
-        string : "You need more money.",
-        time   : 3000
-    }
-}
 
 //////////////////
 // COFFEE BOOST //
