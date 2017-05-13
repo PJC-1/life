@@ -694,6 +694,13 @@ var broadCastObj = {
         id     : "appendBoostBCast",
         string : "You need more money.",
         time   : 3000
+    },
+    test: {
+        id : "testingBroadcast",
+        hungerString : "You are getting hungry try eatting some food.",
+        moneyCoffeeString : "You need more money for this cup of joe.",
+        coffeeCooldownString : "You need to wait before having more coffee.",
+        time : 3000
     }
 }
 
