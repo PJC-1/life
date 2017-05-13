@@ -699,8 +699,8 @@ var broadCastObj = {
 
 function appendBoostBroadcast(cast, message,callback,time){
     document.getElementById(cast).innerHTML = message;
-    // using an annonymous function here to be able to call a function in the
-    // setTimeout with an argument, look into a more elegant way of executing this
+    // you can now pass arguments to the function inside setTimeout using Function.prototype.bind()
+    // setTimeout(callback.bind(null,cast), time)
     setTimeout(function(){
         callback(cast);
     }, time);
