@@ -914,3 +914,7 @@ function addRB() {
 function addKD(){
     console.log("testing the new function wired to the onclick");
 }
+
+function kindBoost(){
+    console.log("kindBoost is wired, woo hoo!");
+}
