@@ -136,7 +136,7 @@ var boostObj = {
         durration      :  15000,
         cashRate       :  200,
         rate           :  425,
-        function       :  "kindBoost()",
+        func           :  "kindBoost()",
         src            :  "./assets/kind.png",
         // below are new key-values for boosts
         inject         :  "addingBoost",
