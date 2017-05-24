@@ -713,6 +713,7 @@ function appendBoostBroadcast(cast, message,callback,time){
     }, time);
 }
 
+// this is used in the appendBoostBroadcast() as the callback function in the setTimeout.
 function clearBCast(castID){
     document.getElementById(castID).innerHTML = "";
 }
