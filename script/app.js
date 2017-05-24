@@ -834,6 +834,7 @@ function redbullBoost() {
         uMoney.innerHTML = moneySign + userObj.money;
         setTimeout(redbullDurration, rb.durration);
         rbCoolDown = false;
+        // maybe think about taking these functions out and making them available globally
         function decreaseHunger() {
             userObj.hunger -= 1;
             uHunger.innerHTML = hungerSign + userObj.hunger;
