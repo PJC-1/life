@@ -701,8 +701,28 @@ var broadCastObj = {
         moneyCoffeeString : "You need more money for this cup of joe.",
         coffeeCooldownString : "You need to wait before having more coffee.",
         time : 3000
+    },
+    upgrade: {
+        id : "upgradeBroadcast",
+        noHungryString : "You are not hungry now.",
+        hungryNoMoneyString : "You are hungry, but don't have enough money for this item.",
+
     }
 }
+
+// Think about what is the best way to structure/organize the broadcast refactor.
+// Maybe have all the cached strings together and then a separate broadcast object that contains the id and time value
+
+// var expSign       =  "Exp: ";
+// var hungerSign    =  "Hunger: ";
+// var moneySign     =  "Money: $ ";
+// var purchasedSign =  "Purchased: ";
+// var notHungry     =  "You are not hungry now.";
+// var noMoney       =  "You do not have enought money for that.";
+// var hungryNoMoney =  "You are hungry, but don't have enough money for this item.";
+// var tier1Locked   =  "You dont have enough money to unlock these tokens. Consider working more.";
+
+
 
 function appendBoostBroadcast(cast, message,callback,time){
     document.getElementById(cast).innerHTML = message;
