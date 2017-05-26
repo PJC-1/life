@@ -872,8 +872,10 @@ function redbullBoost() {
             rbCoolDown = true;
         }
     } else if (userObj.money <= rb.price && rbCoolDown === true) {
+        // consider adding the broadcast here
         console.log("RB log when user needs more money to by a redbull");
     } else if (rbCoolDown === false) {
+        // consider adding the broadcast here
         console.log("RB log for the cooldown.");
     }
 }
