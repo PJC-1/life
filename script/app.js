@@ -804,8 +804,8 @@ function coffeeBoost() {
     var moneySpan = document.getElementById("money");
     var bCast = document.getElementById("testingBroadcast");
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
-        var hungryLow = setInterval(decreaseHunger, coffee.rate);
         var time = setInterval(addMoneyByTime, coffee.cashRate);
+        var hungryLow = setInterval(decreaseHunger, coffee.rate);
         userObj.money -= coffee.price;
         moneySpan.innerHTML = moneySign + userObj.money;
         setTimeout(coffeeDurration, coffee.durration);
