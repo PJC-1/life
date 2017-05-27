@@ -842,6 +842,7 @@ function coffeeBoost() {
 
 var rbCoolDown = true;
 
+// testing commit from another computer
 // consider making this function more modular
 function redbullBoost() {
     var rb = boostObj.redBull;
