@@ -874,12 +874,30 @@ function redbullBoost() {
         }
     } else if (userObj.money <= rb.price && rbCoolDown === true) {
         // consider adding the broadcast here
+        appendBoostBroadcast(broadCastObj.test.id, "You need more money for a redbull", clearBCast, broadCastObj.test.time)
         console.log("RB log when user needs more money to by a redbull");
     } else if (rbCoolDown === false) {
         // consider adding the broadcast here
         console.log("RB log for the cooldown.");
     }
 }
+
+
+function appendBoostBroadcast(cast, message,callback,time){
+    document.getElementById(cast).innerHTML = message;
+    // you can now pass arguments to the function inside setTimeout using Function.prototype.bind()
+    // setTimeout(callback.bind(null,cast), time)
+    setTimeout(function(){
+        callback(cast);
+    }, time);
+}
+
+// this is used in the appendBoostBroadcast() as the callback function in the setTimeout.
+function clearBCast(castID){
+    document.getElementById(castID).innerHTML = "";
+}
+
+
 
 // you can consider creating a function object that can combine the
 // rbSwitch and the rbCooldown into one location
