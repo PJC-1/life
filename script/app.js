@@ -874,10 +874,11 @@ function redbullBoost() {
         }
     } else if (userObj.money <= rb.price && rbCoolDown === true) {
         // consider adding the broadcast here
-        appendBoostBroadcast(broadCastObj.test.id, "You need more money for a redbull", clearBCast, broadCastObj.test.time)
+        appendBoostBroadcast(broadCastObj.test.id, "You need more money for a redbull", clearBCast, broadCastObj.test.time);
         console.log("RB log when user needs more money to by a redbull");
     } else if (rbCoolDown === false) {
         // consider adding the broadcast here
+        appendBoostBroadcast(broadCastObj.test.id, "No double-fisting Redbulls at work.", clearBCast, broadCastObj.test.time);
         console.log("RB log for the cooldown.");
     }
 }
