@@ -875,6 +875,7 @@ function redbullBoost() {
         appendBoostBroadcast(broadCastObj.test.id, "You need more money for a redbull", clearBCast, broadCastObj.test.time);
         console.log("RB log when user needs more money to by a redbull");
     } else if (rbCoolDown === false) {
+        // consider having multiple replies for the cooldown broadcasts, stored in an array and randomized
         appendBoostBroadcast(broadCastObj.test.id, "No double-fisting Redbulls at work.", clearBCast, broadCastObj.test.time);
         console.log("RB log for the cooldown.");
     }
