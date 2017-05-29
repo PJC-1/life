@@ -827,6 +827,7 @@ function coffeeBoost() {
             coffeeCoolDown = true;
         }
     } else if (userObj.money <= coffee.price && coffeeCoolDown === true) {
+        // use the new broadcasting functions here
         bCast.innerHTML = "You need more money for this cup of joe.";
         setTimeout(clearTestBroadcast, 2000);
     } else if (coffeeCoolDown === false) {
