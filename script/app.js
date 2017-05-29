@@ -802,7 +802,6 @@ function coffeeBoost() {
     var coffee = boostObj.coffee;
     var uHunger = document.getElementById("userHunger");
     var moneySpan = document.getElementById("money");
-    var bCast = document.getElementById("testingBroadcast");
     if (userObj.money >= coffee.price && coffeeCoolDown === true) {
         var time = setInterval(addMoneyByTime, coffee.cashRate);
         var hungryLow = setInterval(decreaseHunger, coffee.rate);
@@ -833,6 +832,7 @@ function coffeeBoost() {
     }
 }
 
+// note: the redbullBoost() and the coffeeBoost() are now ready to refactor
 
 ///////////////////
 // REDBULL BOOST //
@@ -840,11 +840,10 @@ function coffeeBoost() {
 
 var rbCoolDown = true;
 
-// consider making this function more modular
 function redbullBoost() {
     var rb = boostObj.redBull;
-    var uMoney = document.getElementById("money");
     var uHunger = document.getElementById("userHunger");
+    var uMoney = document.getElementById("money");
     if (userObj.money >= rb.price && rbCoolDown === true) {
         var moneyUp = setInterval(increaseMoney, rb.cashRate);
         var hungeryLow = setInterval(decreaseHunger, rb.rate);
