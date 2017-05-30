@@ -809,6 +809,7 @@ function coffeeBoost() {
         moneySpan.innerHTML = moneySign + userObj.money;
         setTimeout(coffeeDurration, coffee.durration);
         coffeeCoolDown = false;
+        // maybe think about first modularizing these first
         function decreaseHunger() {
             userObj.hunger -= 1;
             uHunger.innerHTML = hungerSign + userObj.hunger;
@@ -832,7 +833,18 @@ function coffeeBoost() {
     }
 }
 
-// note: the redbullBoost() and the coffeeBoost() are now ready to refactor
+
+
+// userBoost()
+// ARGUMENTS:
+// coolDown => from coffeeCoolDown, this should probably be part of the boost object
+// boost => from coffee = boostObj.coffee
+// userHuner => from uHunger = document.getElementById("userHunger")
+// userMoney => from moneySpan = document.getElementById("money")
+// 
+// 
+// 
+// 
 
 ///////////////////
 // REDBULL BOOST //
