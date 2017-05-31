@@ -833,18 +833,19 @@ function coffeeBoost() {
     }
 }
 
-
-
-// userBoost()
+// useBoost()
 // ARGUMENTS:
 // coolDown => from coffeeCoolDown, this should probably be part of the boost object
 // boost => from coffee = boostObj.coffee
 // userHuner => from uHunger = document.getElementById("userHunger")
 // userMoney => from moneySpan = document.getElementById("money")
-// 
-// 
-// 
-// 
+// uObject => from userObj.money, maybe just pass in the userObj for reusability
+// moneyString => from moneySign
+// hungeryString => from hungerSign
+// appendBroadcast => from appendBoostBroadcast
+// broadcastObject => from broadCastObj.test.id
+// broadcastString => from coffeeBreak
+// callback => from clearBCast
 
 ///////////////////
 // REDBULL BOOST //
@@ -890,7 +891,7 @@ function redbullBoost() {
     }
 }
 
-// you can consider creating a function object that can combine the
+// you can consider creating a object that can combine the
 // rbSwitch and the rbCooldown into one location
 var rbSwitch = {
     switchy : true
