@@ -809,7 +809,6 @@ function coffeeBoost() {
         moneySpan.innerHTML = moneySign + userObj.money;
         setTimeout(coffeeDurration, coffee.durration);
         coffeeCoolDown = false;
-        // maybe think about first modularizing these first
         function decreaseHunger() {
             userObj.hunger -= 1;
             uHunger.innerHTML = hungerSign + userObj.hunger;
@@ -843,7 +842,7 @@ function coffeeBoost() {
 // moneyString => from moneySign
 // hungeryString => from hungerSign
 // appendBroadcast => from appendBoostBroadcast
-// broadcastObject => from broadCastObj.test.id
+// broadcastObject => from broadCastObj.test (this will cover broadCastObj.test and broadCastObj.id)
 // broadcastString => from coffeeBreak
 // callback => from clearBCast
 
@@ -864,7 +863,6 @@ function redbullBoost() {
         uMoney.innerHTML = moneySign + userObj.money;
         setTimeout(redbullDurration, rb.durration);
         rbCoolDown = false;
-        // maybe think about taking these functions out and making them available globally
         function decreaseHunger() {
             userObj.hunger -= 1;
             uHunger.innerHTML = hungerSign + userObj.hunger;
