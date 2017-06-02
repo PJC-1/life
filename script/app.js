@@ -836,7 +836,7 @@ function coffeeBoost() {
 // ARGUMENTS:
 // coolDown => from coffeeCoolDown, this should probably be part of the boost object
 // boost => from coffee = boostObj.coffee
-// userHuner => from uHunger = document.getElementById("userHunger")
+// userHunger => from uHunger = document.getElementById("userHunger")
 // userMoney => from moneySpan = document.getElementById("money")
 // uObject => from userObj.money, maybe just pass in the userObj for reusability
 // moneyString => from moneySign
@@ -845,6 +845,12 @@ function coffeeBoost() {
 // broadcastObject => from broadCastObj.test (this will cover broadCastObj.test and broadCastObj.id)
 // broadcastString => from coffeeBreak
 // callback => from clearBCast
+
+function useBoost(boost,userHunger,userMoney){
+    var b = boost;
+    var hunger = doument.getElementById(userHunger);
+    var money = document.getElementById(userMoney);
+}
 
 ///////////////////
 // REDBULL BOOST //
