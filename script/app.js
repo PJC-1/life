@@ -846,10 +846,11 @@ function coffeeBoost() {
 // broadcastString => from coffeeBreak
 // callback => from clearBCast
 
-function useBoost(boost,userHunger,userMoney){
+function useBoost(coolDown,boost,userHunger,userMoney,user){
     var b = boost;
-    var hunger = doument.getElementById(userHunger);
+    var hunger = document.getElementById(userHunger);
     var money = document.getElementById(userMoney);
+    if (user.money >= boost && )
 }
 
 ///////////////////
