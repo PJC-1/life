@@ -796,6 +796,8 @@ function appendBoost(
 // COFFEE BOOST //
 //////////////////
 
+
+
 var coffeeCoolDown = true;
 
 function coffeeBoost() {
@@ -846,11 +848,22 @@ function coffeeBoost() {
 // broadcastString => from coffeeBreak
 // callback => from clearBCast
 
-function useBoost(coolDown,boost,userHunger,userMoney,user){
+function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerString){
     var b = boost;
     var hunger = document.getElementById(userHunger);
-    var money = document.getElementById(userMoney);
-    if (user.money >= boost && )
+    var uMoney = document.getElementById(userMoney);
+    if (user.money >= b.price && coolDown === true) {
+        var moneyUp = setInterval(increaseMoney, b.cashRate);
+        var hungerDown = setInterval(decreaseHunger, b.rate);
+        user.money -= b.price;
+        uMoney.innerHTML = moneyString + user.money;
+        setTimeout(boostDurration, b.durration);
+        coolDown = false;
+        function decreaseHunger() {
+                user.hunger -= 1;
+                uHunger.innerHTML = hungerString + user.hunger;
+        }
+    }
 }
 
 ///////////////////
