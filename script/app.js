@@ -848,6 +848,10 @@ function coffeeBoost() {
 // broadcastString => from coffeeBreak
 // callback => from clearBCast
 
+var chill = {
+    coffee : true;
+}
+
 function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerString){
     var b = boost;
     var hunger = document.getElementById(userHunger);
