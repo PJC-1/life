@@ -863,6 +863,10 @@ function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerStr
                 user.hunger -= 1;
                 uHunger.innerHTML = hungerString + user.hunger;
         }
+        function increaseMoney() {
+                user.money += 1;
+                uMoney.innerHTML = moneyString + user.money;
+        }
     }
 }
 
