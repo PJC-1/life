@@ -871,6 +871,14 @@ function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerStr
                 user.money += 1;
                 uMoney.innerHTML = moneyString + user.money;
         }
+        function boostDurration() {
+                clearInterval(moneyUp);
+                clearInterval(hungeryLow);
+                setTimeout(coolDownSwitch, 3000);
+        }
+        function coolDownSwitch() {
+                coolDown = true;
+        }
     }
 }
 
