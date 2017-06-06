@@ -879,6 +879,12 @@ function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerStr
         function coolDownSwitch() {
                 coolDown = true;
         }
+    } else if (user.money <= b.price && coolDown === true) {
+            // add the appendBoostBroadcast here
+            console.log("useBoost() else if, user needs more money");
+    } else if (coolDown === false) {
+            // add the appendBoostBroadcast here as well
+            console.log("useBoost() else if coolDown equals false");
     }
 }
 
