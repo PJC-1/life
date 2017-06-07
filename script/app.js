@@ -89,7 +89,18 @@ var boostObj = {
         cashRate      :  285,
         rate          :  300,
         func          :  "coffeeBoost()",
-        src           :  "./assets/coffee.png"
+        src           :  "./assets/coffee.png",
+        // below are new key-values for boosts
+        // change these to fit the coffee boost object
+        inject         :  "addingBoost",
+        element        :  "IMG",
+        parent         :  "boostParent",
+        child          :  "boostUpgrade",
+        newElement     :  "BUTTON",
+        textNode       :  "Upgrade Boost",
+        classAttribute :  "upgradeBtn",
+        idAttribute    :  "boostUpgrade",
+        clickAttribute :  "addRB()"
     },
     redBull: {
         width         :  "55",
@@ -886,6 +897,10 @@ function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerStr
             // add the appendBoostBroadcast here as well
             console.log("useBoost() else if coolDown equals false");
     }
+}
+
+function testUseBoost(){
+        useBoost(chill.coffee, boostObj.coffee, );
 }
 
 ///////////////////
