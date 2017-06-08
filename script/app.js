@@ -92,6 +92,7 @@ var boostObj = {
         src           :  "./assets/coffee.png",
         // below are new key-values for boosts
         // change these to fit the coffee boost object
+        // consider that the coffee boost is already enabled at the start so keys such as inject, element, etc are needed
         inject         :  "addingBoost",
         element        :  "IMG",
         parent         :  "boostParent",
