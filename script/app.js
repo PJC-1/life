@@ -89,19 +89,7 @@ var boostObj = {
         cashRate      :  285,
         rate          :  300,
         func          :  "coffeeBoost()",
-        src           :  "./assets/coffee.png",
-        // below are new key-values for boosts
-        // change these to fit the coffee boost object
-        // consider that the coffee boost is already enabled at the start so keys such as inject, element, etc are needed
-        inject         :  "addingBoost",
-        element        :  "IMG",
-        parent         :  "boostParent",
-        child          :  "boostUpgrade",
-        newElement     :  "BUTTON",
-        textNode       :  "Upgrade Boost",
-        classAttribute :  "upgradeBtn",
-        idAttribute    :  "boostUpgrade",
-        clickAttribute :  "addRB()"
+        src           :  "./assets/coffee.png"
     },
     redBull: {
         width         :  "55",
