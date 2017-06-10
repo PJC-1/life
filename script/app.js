@@ -848,6 +848,8 @@ function coffeeBoost() {
 // broadcastString => from coffeeBreak
 // callback => from clearBCast
 
+
+
 var chill = {
     coffee : true;
 }
@@ -888,8 +890,11 @@ function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerStr
     }
 }
 
+// function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerString){
+
 function testUseBoost(){
-        useBoost(chill.coffee, boostObj.coffee, );
+        console.log("envoked testUseBoost()");
+        useBoost(chill.coffee, boostObj.coffee,"userHunger","money",userObj,moneySign,hungerSign);
 }
 
 ///////////////////
