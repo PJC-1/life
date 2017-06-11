@@ -851,12 +851,12 @@ function coffeeBoost() {
 
 
 var chill = {
-    coffee : true;
+    coffee : true
 }
 
 function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerString){
     var b = boost;
-    var hunger = document.getElementById(userHunger);
+    var uHunger = document.getElementById(userHunger);
     var uMoney = document.getElementById(userMoney);
     if (user.money >= b.price && coolDown === true) {
         var moneyUp = setInterval(increaseMoney, b.cashRate);
