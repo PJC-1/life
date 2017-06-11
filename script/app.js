@@ -875,7 +875,7 @@ function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerStr
         }
         function boostDurration() {
                 clearInterval(moneyUp);
-                clearInterval(hungeryLow);
+                clearInterval(hungerDown);
                 setTimeout(coolDownSwitch, 3000);
         }
         function coolDownSwitch() {
