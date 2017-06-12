@@ -854,6 +854,7 @@ var chill = {
     coffee : true
 }
 
+// think about adding the broadcasts first before futher optimizing
 function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerString){
     var b = boost;
     var uHunger = document.getElementById(userHunger);
@@ -889,8 +890,6 @@ function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerStr
             console.log("useBoost() else if coolDown equals false");
     }
 }
-
-// function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerString){
 
 function testUseBoost(){
         console.log("envoked testUseBoost()");
