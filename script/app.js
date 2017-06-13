@@ -723,7 +723,7 @@ var broadCastObj = {
 // var tier1Locked   =  "You dont have enough money to unlock these tokens. Consider working more.";
 
 
-
+// for consistency, perhaps rename the cast argument to castID, for readability.
 function appendBoostBroadcast(cast, message,callback,time){
     document.getElementById(cast).innerHTML = message;
     // you can now pass arguments to the function inside setTimeout using Function.prototype.bind()
