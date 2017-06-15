@@ -88,7 +88,8 @@ var boostObj = {
         durration     :  5000,
         cashRate      :  285,
         rate          :  300,
-        func          :  "coffeeBoost()",
+        // func          :  "coffeeBoost()",
+        func          :  "testUseBoost()",           
         src           :  "./assets/coffee.png"
     },
     redBull: {
@@ -885,6 +886,7 @@ function useBoost(coolDown,boost,userHunger,userMoney,user,moneyString,hungerStr
     } else if (user.money <= b.price && coolDown === true) {
             // add the appendBoostBroadcast here
             console.log("useBoost() else if, user needs more money");
+    // this is not working for some reason, look in to the coolDown false
     } else if (coolDown === false) {
             // add the appendBoostBroadcast here as well
             console.log("useBoost() else if coolDown equals false");
