@@ -725,7 +725,7 @@ var broadCastObj = {
 
 
 // for consistency, perhaps rename the cast argument to castID, for readability.
-// testing external repository connection.
+// testing external repository connection
 function appendBoostBroadcast(cast, message,callback,time){
     document.getElementById(cast).innerHTML = message;
     // you can now pass arguments to the function inside setTimeout using Function.prototype.bind()
